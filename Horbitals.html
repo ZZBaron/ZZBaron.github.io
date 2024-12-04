@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydrogen Wavefunction Eigenstates - Project Details</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Additional styles specific to this page */
+        .detail-container {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--dark);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .github-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .detail-content {
+            margin-top: 3rem;
+        }
+
+        .detail-content h2 {
+            margin: 2rem 0 1rem;
+            color: var(--dark);
+        }
+
+        .detail-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="detail-container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        
+        <div class="project-header">
+            <h1>Hydrogen Wavefunction Eigenstates</h1>
+            <a href="https://github.com/ZZBaron/2D-Black-Hole-Sim" 
+               class="github-link" 
+               target="_blank">View on GitHub</a>
+        </div>
+
+        <img src="media/hydrogen_orbital_rotation_numerical.gif" alt="Hydrogen Orbital Visualization" class="project-video">
+
+
+        <div class="detail-content">
+            <h2>Project Overview</h2>
+            <p>This project provides a comprehensive visualization of hydrogen atom quantum states by solving both analytical and numerical forms of the 
+                Schrödinger equation. It demonstrates the complex probability distributions of electron orbitals through interactive 3D visualizations 
+                and animated rotations of probability density planes.</p>
+    
+            <h2>Key Features</h2>
+            <p>The simulation provides:</p>
+            <ul>
+                <li>Comparative visualization of analytical and numerical solutions to the radial Schrödinger equation</li>
+                <li>Real-time 3D visualization of probability density distributions in rotatable planes</li>
+                <li>Interactive controls for rotation angles (θ and φ) to explore orbital geometry</li>
+                <li>Support for any valid combination of quantum numbers (n, l, m)</li>
+                <li>Animated orbital visualization showing both φ and θ rotations</li>
+                <li>Normalized probability density calculations with color-coded visualization</li>
+            </ul>
+    
+            <h2>Technical Implementation</h2>
+            <p>Built using Python with several specialized scientific computing libraries:</p>
+            <ul>
+                <li>NumPy and SciPy for quantum mechanical calculations and differential equation solving</li>
+                <li>Matplotlib for 3D visualization and interactive plotting</li>
+                <li>Custom implementation of both analytical and numerical solutions for radial wavefunctions</li>
+                <li>Vectorized calculations for improved performance</li>
+                <li>Integration with spherical harmonics for angular components</li>
+            </ul>
+    
+            <h2>Mathematical Foundation</h2>
+            <p>The simulation solves the quantum mechanical hydrogen atom using multiple approaches:</p>
+            <ul>
+                <li>Analytical solution using generalized Laguerre polynomials and spherical harmonics</li>
+                <li>Numerical solution of the radial Schrödinger equation using solve_ivp</li>
+                <li>Proper normalization of wavefunctions through numerical integration</li>
+                <li>Transformation between spherical and Cartesian coordinates for visualization</li>
+                <li>Complete treatment of quantum numbers n, l, and m with appropriate constraints</li>
+            </ul>
+        </div>    
+    </div>
+</body>
+</html>
