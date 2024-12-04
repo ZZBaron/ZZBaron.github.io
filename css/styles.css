@@ -1,0 +1,334 @@
+/* Root Variables - Easy to modify color scheme */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #50c878;
+    --accent-color: #ff6b6b;
+    --background: #f8f9fa;
+    --dark: #2d3436;
+}
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    background: var(--background);
+    color: var(--dark);
+}
+
+/* Navigation Styles */
+.navbar {
+    background: rgba(45, 52, 54, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-brand:hover {
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.nav-menu a:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s 0.3s forwards;
+}
+
+/* Section Styles */
+.section {
+    padding: 6rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--dark);
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    padding: 0 1rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 2rem;
+    letter-spacing: -0.3px;
+}
+
+/* Projects Section */
+.projects {
+    padding: 8rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--background);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 2rem;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Video Styles */
+.project-video {
+    width: 846px;
+    height: 840px;
+    max-width: 100%;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background: #000;
+}
+
+/* Project Content Styles */
+.project-content {
+    padding: 1.5rem;
+}
+
+.simulation-item {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.simulation-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.simulation-item h4 {
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.simulation-item p {
+    color: #666;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Research Section */
+.research {
+    background: #fff;
+    padding: 6rem 2rem;
+}
+
+.research-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.research-card {
+    background: var(--background);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.research-card:hover {
+    transform: translateX(10px);
+}
+
+/* Contact Section */
+.contact {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1.5rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: var(--dark);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.submit-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2.8rem;
+    }
+
+    .section-subtitle {
+        font-size: 2rem;
+    }
+
+    .simulation-item h4 {
+        font-size: 1.5rem;
+    }
+
+    .project-video {
+        height: auto;
+    }
+}

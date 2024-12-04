@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydrogen Wavefunction Eigenstates - Project Details</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Additional styles specific to this page */
+        .detail-container {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--dark);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .github-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .detail-content {
+            margin-top: 3rem;
+        }
+
+        .detail-content h2 {
+            margin: 2rem 0 1rem;
+            color: var(--dark);
+        }
+
+        .detail-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="detail-container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+        <div class="project-header">
+            <h1>3D Physics Game Engine</h1>
+            <a href="https://github.com/ZZBaron/3D-Physics-Engine" class="github-link" target="_blank">View on GitHub</a>
+        </div>
+        <!-- Img for gif, video for mp4 -->
+        <video class="project-video" controls>
+            <source src="media/bad engine.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="detail-content">
+            <h2>Project Overview</h2>
+            <p>A real-time 3D physics engine built from scratch using OpenGL and C++. The engine features a robust rigid body dynamics system with accurate collision detection and response, supporting both real-time physics simulation and pre-computed physics playback modes.</p>
+
+            <h2>Key Features</h2>
+            <p>The engine provides:</p>
+            <ul>
+                <li>Rigid body dynamics with 6 degrees of freedom (translation and rotation)</li>
+                <li>Advanced collision detection using SAT (Separating Axis Theorem) and convex hull generation</li>
+                <li>RK4 numerical integration for accurate physics simulation</li>
+                <li>Real-time and pre-computed simulation modes with interpolated playback</li>
+                <li>Dynamic shadow mapping and modern rendering techniques</li>
+                <li>Support for various 3D primitives including spheres and rectangular prisms</li>
+                <li>Texture mapping and material system with configurable properties</li>
+            </ul>
+
+            <h2>Technical Implementation</h2>
+            <p>Built using modern C++ and OpenGL, the engine implements:</p>
+            <ul>
+                <li>Custom rigid body physics solver with quaternion-based rotations</li>
+                <li>AABB-based broad-phase and SAT-based narrow-phase collision detection</li>
+                <li>Impulse-based collision resolution with configurable restitution</li>
+                <li>Shader-based rendering pipeline with shadow mapping and texture support</li>
+                <li>Interactive camera system with configurable views and tracking modes</li>
+                <li>Efficient memory management using smart pointers and optimized data structures</li>
+            </ul>
+
+            <h2>Physical Systems</h2>
+            <p>The engine accurately simulates:</p>
+            <ul>
+                <li>Gravitational forces with configurable field strength</li>
+                <li>Angular momentum and inertia tensor calculations</li>
+                <li>Energy preservation and momentum conservation in collisions</li>
+                <li>Air resistance and rotational damping effects</li>
+                <li>Static and dynamic friction (configurable coefficients)</li>
+                <li>Resting contact resolution with stability corrections</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

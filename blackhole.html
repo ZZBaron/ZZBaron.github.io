@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Hole Light Ray Simulation - Project Details</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Additional styles specific to this page */
+        .detail-container {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--dark);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .github-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .detail-content {
+            margin-top: 3rem;
+        }
+
+        .detail-content h2 {
+            margin: 2rem 0 1rem;
+            color: var(--dark);
+        }
+
+        .detail-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="detail-container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        
+        <div class="project-header">
+            <h1>Black Hole Light Ray Simulation</h1>
+            <a href="https://github.com/ZZBaron/2D-Black-Hole-Sim" 
+               class="github-link" 
+               target="_blank">View on GitHub</a>
+        </div>
+
+        <video class="project-video" controls>
+            <source src="media/Black Hole Sim.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="detail-content">
+            <h2>Project Overview</h2>
+            <p>This simulation explores the fascinating behavior of light rays near a black hole. 
+            Using principles from general relativity, it demonstrates how strong gravitational 
+            fields bend the path of light, creating unique visual phenomena.</p>
+
+            <h2>Key Features</h2>
+            <p>The simulation allows users to visualize:
+            - Light ray trajectories near the event horizon
+            - Formation of Einstein rings
+            - Effects of gravitational lensing on light paths
+            - Real-time manipulation of black hole parameters</p>
+
+            <h2>Technical Implementation</h2>
+            <p>Built using Python with NumPy for calculations and Pygame for visualization. 
+            The simulation solves the geodesic equations in curved spacetime to accurately 
+            model light behavior in strong gravitational fields.</p>
+
+            <h2>Mathematical Background</h2>
+            <p>The simulation is based on the mathematical framework of general relativity, 
+            specifically focusing on null geodesics in Schwarzschild spacetime. This allows 
+            for accurate representation of how light behaves in the extreme gravitational 
+            conditions near a black hole.</p>
+        </div>
+    </div>
+</body>
+</html>
