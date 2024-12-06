@@ -130,6 +130,11 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
+.detail-content ul {
+    text-align: left;
+    margin-left: 40px;
+}
+
 /* Back Link Styles */
 .back-link {
     display: block;
