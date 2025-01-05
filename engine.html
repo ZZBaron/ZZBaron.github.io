@@ -12,7 +12,7 @@
 
         <div class="project-header">
             <h1>3D Physics Game Engine (WIP)</h1>
-            <a href="https://github.com/ZZBaron/GameEngine" class="github-link" target="_blank">View on GitHub</a>
+            <a href="https://github.com/ZZBaron/GameEngine-Physx" class="github-link" target="_blank">View on GitHub</a>
         </div>
         <!-- Img for gif, video for mp4 -->
         <video class="project-video" controls>
@@ -22,40 +22,59 @@
 
         <div class="detail-content">
             <h2>Project Overview</h2>
-            <p>A real-time 3D physics engine built from scratch using OpenGL and C++. The engine features a robust rigid body dynamics system with accurate collision detection and response, supporting both real-time physics simulation and pre-computed physics playback modes.</p>
+            <p>A comprehensive 3D physics engine built using OpenGL and NVIDIA's PhysX SDK. The engine combines modern graphics rendering with industrial-strength physics simulation, providing a robust platform for real-time physics-based applications and games.</p>
 
             <h2>Key Features</h2>
-            <p>The engine provides:</p>
             <ul>
-                <li>Rigid body dynamics with 6 degrees of freedom (translation and rotation)</li>
-                <li>Advanced collision detection using SAT (Separating Axis Theorem) and convex hull generation</li>
-                <li>RK4 numerical integration for accurate physics simulation</li>
-                <li>Real-time and pre-computed simulation modes with interpolated playback</li>
-                <li>Dynamic shadow mapping and modern rendering techniques</li>
-                <li>Support for various 3D primitives including spheres and rectangular prisms</li>
-                <li>Texture mapping and material system with configurable properties</li>
+                <li>Integration with NVIDIA PhysX for physics simulation</li>
+                <li>Advanced material system with physically based shaders</li>
+                <li>Real-time shadow mapping with PCF filtering for soft shadows</li>
+                <li>Support for primitive shapes (spheres, boxes, cylinders)</li>
+                <li>Interactive camera system with configurable movement modes</li>
+                <li>ImGui-based debug interface for real-time parameter adjustment</li>
+                <li>Scene management with object hierarchy support</li>
+                <li>Advanced asset importing with texture and material handling</li>
             </ul>
 
             <h2>Technical Implementation</h2>
-            <p>Built using modern C++ and OpenGL, the engine implements:</p>
+            <p>Built using modern C++20 and OpenGL, featuring:</p>
             <ul>
-                <li>Custom rigid body physics solver with quaternion-based rotations</li>
-                <li>AABB-based broad-phase and SAT-based narrow-phase collision detection</li>
-                <li>Impulse-based collision resolution with configurable restitution</li>
-                <li>Shader-based rendering pipeline with shadow mapping and texture support</li>
-                <li>Interactive camera system with configurable views and tracking modes</li>
-                <li>Efficient memory management using smart pointers and optimized data structures</li>
+                <li>CMake-based build system with vcpkg package management</li>
+                <li>Modern shader-based rendering pipeline</li>
+                <li>Sophisticated material system supporting PBR workflows</li>
+                <li>Scene graph architecture for complex object hierarchies</li>
+                <li>Cross-platform compatibility (Windows, Linux, macOS)</li>
+                <li>Assimp integration for 3D model importing</li>
+                <li>Robust file I/O system for asset management</li>
             </ul>
 
-            <h2>Physical Systems</h2>
-            <p>The engine accurately simulates:</p>
+            <h2>Physics Features</h2>
+            <p>Powered by NVIDIA PhysX, the engine supports:</p>
             <ul>
-                <li>Gravitational forces with configurable field strength</li>
-                <li>Angular momentum and inertia tensor calculations</li>
-                <li>Energy preservation and momentum conservation in collisions</li>
-                <li>Air resistance and rotational damping effects</li>
-                <li>Static and dynamic friction (configurable coefficients)</li>
-                <li>Resting contact resolution with stability corrections</li>
+                <li>Dynamic and static rigid bodies with full 6-DOF simulation</li>
+                <li>Efficient broad-phase and narrow-phase collision detection</li>
+                <li>Material-based physical properties (friction, restitution)</li>
+                <li>Real-time physics debugging and visualization</li>
+                <li>Configurable gravity and environmental parameters</li>
+            </ul>
+
+            <h2>Graphics Features</h2>
+            <ul>
+                <li>Dynamic shadow mapping with configurable resolution</li>
+                <li>Support for multiple material types and textures</li>
+                <li>Texture uv mapping</li>
+                <li>Wireframe visualization mode for debugging</li>
+                <li>Configurable lighting with adjustable parameters</li>
+            </ul>
+
+            <h2>Development Tools</h2>
+            <ul>
+                <li>Interactive ImGui-based debug interface</li>
+                <li>Real-time physics parameter adjustment</li>
+                <li>Console system for command input</li>
+                <li>Performance monitoring and debugging tools</li>
+                <li>Scene object hierarchy viewer</li>
+                <li>Material and texture preview system</li>
             </ul>
         </div>
     </div>
