@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <!-- AOS CSS for scroll animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- Can use \( \) to wrap inline math with mathjax, like in \( E = mc^2 \)-->>
     <!-- Favicon -->
     <link rel="icon" type="image/jpg" href="media/favicon-32x32.jpg">
 </head>
@@ -33,23 +35,23 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section projects">
-        <h2 class="section-title" data-aos="fade-up">My Projects</h2>
-        
-        <div class="projects-grid">
-            <div class="project-card" data-aos="fade-up">
-                <h3 class="section-subtitle">Physics Simulations</h3>
+<section id="projects" class="section projects">
+    <h2 class="section-title" data-aos="fade-up">My Projects</h2>
 
+    <div class="projects-grid">
+        <div class="project-card" data-aos="fade-up">
+            <h3 class="section-subtitle">Physics Simulations</h3>
+
+            <div class="simulation-items-container">
                 <div class="simulation-item">
-
                     <video class="project-video" width="800" height="462" autoplay loop muted playsinline>
                         <source src="media/bad engine.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-
                     <div class="project-content">
                         <h4><a href="engine.html" class="project-link">3D Physics Game Engine (WIP) </a></h4>
-                        <p>A real-time physics engine built with C++, OpenGL, and NVIDIA's PhysX SDK. Featuring real-time rigid body dynamics, collision detection.</p>
+                        <p>A real-time physics engine built with C++, OpenGL, and NVIDIA's PhysX SDK. 
+                            Featuring real-time rigid body dynamics, collision detection.</p>
                     </div>
                 </div>
 
@@ -60,8 +62,8 @@
                     </video>
                     <div class="project-content">
                         <h4><a href="blackhole.html" class="project-link">Black Hole Light Ray Simulation</a></h4>
-                        <p>2D simulation demonstrating the curved path of light rays near a black hole, 
-                           visualizing the effects of gravitational lensing predicted by general relativity.</p>
+                        <p>2D simulation demonstrating the curved path of light rays near a black hole, visualizing the 
+                            effects of gravitational lensing predicted by general relativity.</p>
                     </div>
                 </div>
 
@@ -69,27 +71,89 @@
                     <img src="media/hydrogen_orbital_rotation_numerical.gif" alt="Hydrogen Orbital Visualization" class="project-video" width="800" height="400">
                     <div class="project-content">
                         <h4><a href="Horbitals.html" class="project-link">Hydrogen Wavefunction Eigenstates</a></h4>
-                        <p>Visualization of quantum mechanical hydrogen atom eigenstates, showing 
-                           the probability distributions of electron orbitals in different energy levels.</p>
+                        <p>Visualization of quantum mechanical hydrogen atom eigenstates, showing the probability 
+                            distributions of electron orbitals in different energy levels.</p>
                     </div>
                 </div>
-
-            </div>
-
-            <div class="project-card" data-aos="fade-up">
-                <h3 class="section-subtitle">Web Development</h3>
                 
+                <!--
                 <div class="simulation-item">
-                    <img src="media/portfolio_preview.png" class="project-video" width="800" height="400" alt="Portfolio Website Preview">
-                    
+                    <img src="media/2DNbodySim.gif" alt="2D N body Simulation" class="project-video" width="800" height="400">
                     <div class="project-content">
-                        <h4><a href="webdev.html" class="project-link">Personal Portfolio Website</a></h4>
-                        <p>A responsive portfolio website built with modern HTML5, CSS3, and JavaScript, featuring smooth animations, project showcases, and mobile-friendly design. Implements best practices in web development and user experience design.</p>
+                        <h4><a href="2dNbody.html" class="project-link">2D N body Simulation</a></h4>
+                        <p>2D N-Body Gravitational Simulation uses Verlet integration for stable orbital mechanics and 
+                            continuous collision detection to model particle interactions.</p>
                     </div>
                 </div>
+                -->
+
+                <div class="simulation-item">
+                    <img src="media/poisson_processes_demo.png" alt="Poisson Process Visualization" class="project-img">
+                    <div class="project-content">
+                        <h4><a href="poisson.html" class="project-link">Poisson Process Simulation</a></h4>
+                        <p>Simulation visualizing different Poisson processes, including homogeneous and inhomogeneous 
+                            variants in both 1D and 2D spaces. It demonstrates Poisson distributions, event occurrence 
+                            over time, interarrival times, and intensity functions.</p>
+                    </div>
+                </div>
+
+                <div class="simulation-item">
+
+                    <div class="image-container">
+                        <img class="image-container-img" src="media/viscoelastic_responses.png" alt="Viscoelastic Responses">
+                        <img class="image-container-img" src="media/viscoelastic_2d.gif" alt="2D Viscoelastic Simulation">
+                    </div>
+
+                    <div class="project-content">
+                        <h4><a href="viscoelasticity.html" class="project-link">Viscoelastic Materials Simulation</a></h4>
+                        <p>Simulations of viscoelastic material behavior through linear models 
+                            (Maxwell, Kelvin-Voigt, Standard Linear Solid, and Burgers). Visualizing stress-strain 
+                            responses including hysteresis loops, stress relaxation, and creep behavior. The code also 
+                            implements a 2D mass-spring-dashpot lattice simulation showing how viscoelastic materials 
+                            deform over time under applied boundary conditions.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </section>
+    </div>
+
+    <h3 class="section-subtitle" data-aos="fade-up">Economics</h3>
+    <div class="projects-grid">
+        <div class="project-card" data-aos="fade-up">
+            
+            <div class="simulation-item">
+
+                <div class="image-container">
+                    <img class="image-container-img" src="media/economic_network.png" alt="Economic Network Visualization">
+                    <img class="image-container-img" src="media/emergent_behaviors.png" alt="Emergence Visualization">
+                </div>
+
+                <div class="project-content">
+                    <h4><a href="econsim.html" class="project-link">Complex Economic System Simulation</a></h4>
+                    <p>Simulation visualizing different Poisson processes, including homogeneous and inhomogeneous variants in both 1D and 2D spaces. It demonstrates Poisson distributions, event occurrence over time, interarrival times, and intensity functions with graphical representations using matplotlib and scipy.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <h3 class="section-subtitle" data-aos="fade-up">Web Development</h3>
+    <div class="projects-grid">
+        <div class="project-card" data-aos="fade-up">
+
+            <div class="simulation-item">
+                <img src="media/portfolio_preview.png" class="project-img"  alt="Portfolio Website Preview">
+                <div class="project-content">
+                    <h4><a href="webdev.html" class="project-link">Personal Portfolio Website</a></h4>
+                    <p>A responsive portfolio website built with modern HTML5, CSS3, and JavaScript, featuring smooth animations, project showcases, and mobile-friendly design. Implements best practices in web development and user experience design.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
     <!-- Research Section -->
     <section id="research" class="section research">

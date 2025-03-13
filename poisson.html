@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poisson Process Simulation - Project Details</title>
+    <link rel="stylesheet" href="css/styles.css">
+     <!-- Add MathJax -->
+     <script type="text/javascript" id="MathJax-script" async
+     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+     </script>
+</head>
+<body>
+    <div class="detail-container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+        <div class="project-header">
+            <h1>Poisson Process Simulation</h1>
+            <a href="https://github.com/" 
+               class="github-link" 
+               target="_blank">View on GitHub</a>
+        </div>
+
+        <img class="project-img" src="media/poisson_processes_demo.png" alt="Poisson Process Visualization">
+
+        <div class="detail-content">
+            <h2>Project Overview</h2>
+            <p>This simulation demonstrates various aspects of Poisson processes in one and two dimensions. The code generates visualizations of both homogeneous and inhomogeneous Poisson processes, showcasing their fundamental properties and applications in modeling random events.</p>
+
+            <h2>Key Features</h2>
+            <p>The simulation includes: </p>
+            <ul>
+                <li>Visualization of Poisson distribution probability mass function</li>
+                <li>Homogeneous Poisson process simulation in 1D (time) with counting process</li>
+                <li>Analysis of exponential interarrival times in Poisson processes</li>
+                <li>Homogeneous spatial Poisson process simulation in 2D</li>
+                <li>Inhomogeneous Poisson process with time-varying intensity function</li>
+                <li>Inhomogeneous spatial Poisson process with position-dependent intensity</li>
+            </ul>
+            
+            <h2>Mathematical Overview</h2>
+            
+            <h3>Poisson Distribution</h3>
+            <p>The Poisson distribution describes the probability of a given number of events occurring in a fixed interval, assuming events occur at a constant average rate and independently of each other.</p>
+            <p>Probability mass function (PMF):</p>
+            <p>\[ P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!} \]</p>
+            <p>where \(\lambda\) is the rate parameter (average number of events per interval) and \(k\) is the number of events.</p>
+            
+            <h3>Homogeneous Poisson Process</h3>
+            <p>A stochastic process \(\{N(t), t \geq 0\}\) where:</p>
+            <ul>
+                <li>\(N(0) = 0\)</li>
+                <li>The process has independent increments</li>
+                <li>The number of events in an interval of length \(t\) follows a Poisson distribution with mean \(\lambda t\):</li>
+            </ul>
+            <p>\[ P(N(t) = k) = \frac{(\lambda t)^k e^{-\lambda t}}{k!} \]</p>
+            
+            <h3>Exponential Interarrival Times</h3>
+            <p>In a Poisson process, the times between consecutive events (interarrival times) follow an exponential distribution:</p>
+            <p>Probability density function (PDF):</p>
+            <p>\[ f(t) = \lambda e^{-\lambda t} \]</p>
+            <p>Cumulative distribution function (CDF):</p>
+            <p>\[ F(t) = 1 - e^{-\lambda t} \]</p>
+            <p>Mean interarrival time: \(\mathbb{E}[T] = \frac{1}{\lambda}\)</p>
+            
+            <h3>Inhomogeneous Poisson Process</h3>
+            <p>A generalization where the rate parameter \(\lambda\) varies with time: \(\lambda(t)\).</p>
+            <p>The expected number of events in an interval \([a,b]\):</p>
+            <p>\[ \mathbb{E}[N(b) - N(a)] = \int_a^b \lambda(t) dt \]</p>
+            <p>The probability of \(k\) events in interval \([a,b]\):</p>
+            <p>\[ P(N(b) - N(a) = k) = \frac{\left(\int_a^b \lambda(t) dt\right)^k e^{-\int_a^b \lambda(t) dt}}{k!} \]</p>
+            
+            <h3>Spatial Poisson Process (2D)</h3>
+            <p>For a homogeneous spatial Poisson process with intensity \(\lambda\) (points per unit area), the number of points \(N(S)\) in a region \(S\) follows:</p>
+            <p>\[ P(N(S) = k) = \frac{(\lambda |S|)^k e^{-\lambda |S|}}{k!} \]</p>
+            <p>where \(|S|\) is the area of region \(S\).</p>
+            
+            <h3>Inhomogeneous Spatial Poisson Process</h3>
+            <p>The intensity varies with location: \(\lambda(x,y)\).</p>
+            <p>The expected number of points in region \(S\):</p>
+            <p>\[ \mathbb{E}[N(S)] = \int\int_{S} \lambda(x,y) dx dy \]</p>
+            <p>The probability of \(k\) points in region \(S\):</p>
+            <p>\[ P(N(S) = k) = \frac{\left(\int\int_{S} \lambda(x,y) dx dy\right)^k e^{-\int\int_{S} \lambda(x,y) dx dy}}{k!} \]</p>
+            
+            <h3>Simulation Methods</h3>
+            <p>In the code, two primary methods are used to simulate Poisson processes:</p>
+            <ol>
+                <li><strong>Direct method:</strong> For homogeneous processes, generate the total number of points from a Poisson distribution, then uniformly distribute these points.</li>
+                <li><strong>Thinning/Rejection method:</strong> For inhomogeneous processes, generate points according to a homogeneous process with intensity equal to the maximum of the inhomogeneous intensity function, then randomly reject points with probability \(1 - \frac{\lambda(t)}{\lambda_{max}}\) or \(1 - \frac{\lambda(x,y)}{\lambda_{max}}\).</li>
+            </ol>
+            
+            <h2>Applications</h2>
+            <p>Poisson processes model many real-world phenomena including:</p>
+            <ul>
+                <li>Arrivals of customers at a service point</li>
+                <li>Number of calls to a call center</li>
+                <li>Decay events in radioactive materials</li>
+                <li>Network packet arrivals</li>
+                <li>Spatial distribution of trees, stars, or other natural phenomena</li>
+                <li>Occurrence of rare diseases or accidents</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

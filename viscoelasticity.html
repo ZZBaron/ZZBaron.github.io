@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viscoelastic Materials Simulation - Project Details</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Load MathJax -->
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <script type="text/javascript">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            "HTML-CSS": {
+                availableFonts: ["TeX"], // Forces MathJax to use the TeX font
+            }
+        });
+    </script>
+
+</head>
+<body>
+    <div class="detail-container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+        <div class="project-header">
+            <h1>Viscoelastic Materials Simulation</h1>
+            <a href="https://github.com/" 
+               class="github-link" 
+               target="_blank">View on GitHub</a>
+        </div>
+
+        <div class="image-container">
+            <img class="image-container-img" src="media/viscoelastic_responses.png" alt="Viscoelastic Responses">
+            <img class="image-container-img" src="media/viscoelastic_2d.gif" alt="2D Viscoelastic Simulation">
+        </div>
+
+        <div class="detail-content">
+            <h2>Project Overview</h2>
+            <p>Simulations of viscoelastic material behavior through linear models 
+                (Maxwell, Kelvin-Voigt, Standard Linear Solid, and Burgers). Visualizing stress-strain 
+                responses including hysteresis loops, stress relaxation, and creep behavior. The code also 
+                implements a 2D mass-spring-dashpot lattice simulation showing how viscoelastic materials 
+                deform over time under applied boundary conditions.</p>
+
+            <h2>Key Features</h2>
+            <p>The simulation includes: </p>
+            <ul>
+                <li>Implementation of four linear viscoelastic models (Maxwell, Kelvin-Voigt, 
+                    Standard Linear Solid, and Burgers)</li>
+                <li>Visualization of stress relaxation and creep responses</li>
+                <li>Animation of stress-strain hysteresis loops</li>
+                <li>2D viscoelastic material simulation using a mass-spring-dashpot lattice</li>
+            </ul>
+
+            <h2>Mathematical Overview</h2>
+            
+            <h3>Viscoelasticity Fundamentals</h3>
+            <p>Viscoelastic materials exhibit both viscous and elastic behavior when subjected to deformation. 
+                Unlike purely elastic materials that return to their original shape immediately after removing stress, 
+                viscoelastic materials show time-dependent strain response. There are both linear and non-linear models. Here, 
+                only linear models are examined.</p>
+
+            <h3>Linear vs. Nonlinear Viscoelasticity</h3>
+            <p><strong>Linear viscoelasticity</strong> is when the function is separable in both creep response and load. All linear viscoelastic models can be represented by a Volterra equation connecting stress and strain:</p>
+            <p>\[ \varepsilon(t) = \frac{\sigma(t)}{E_{\text{inst,creep}}} + \int_0^t K(t-t') \dot{\sigma}(t') dt' \]</p>
+            <p>or</p>
+            <p>\[ \sigma(t) = E_{\text{inst,relax}} \varepsilon(t) + \int_0^t F(t-t') \dot{\varepsilon}(t') dt' \]</p>
+            <p>where</p>
+            <ul>
+                <li>\(t\) is time</li>
+                <li>\(\sigma(t)\) is stress</li>
+                <li>\(\varepsilon(t)\) is strain</li>
+                <li>\(E_{\text{inst,creep}}\) and \(E_{\text{inst,relax}}\) are instantaneous elastic moduli for creep and relaxation</li>
+                <li>\(K(t)\) is the creep function</li>
+                <li>\(F(t)\) is the relaxation function</li>
+            </ul>
+            <p>Linear viscoelasticity is usually applicable only for small deformations.</p>
+            
+            <p><strong>Nonlinear viscoelasticity</strong> is when the function is not separable. It usually happens when the deformations are large or if the material changes its properties under deformations. Nonlinear viscoelasticity also elucidates observed phenomena such as normal stresses, shear thinning, and extensional thickening in viscoelastic fluids.</p>
+            
+            <p>An <strong>anelastic</strong> material is a special case of a viscoelastic material: an anelastic material will fully recover to its original state on the removal of load.</p>
+            
+            <p>When distinguishing between elastic, viscous, and forms of viscoelastic behavior, it is helpful to reference the time scale of the measurement relative to the relaxation times of the material being observed, known as the Deborah number (D) where:</p>
+            <p>\[ D = \frac{\lambda}{t} \]</p>
+            <p>where</p>
+            <ul>
+                <li>\(\lambda\) is the relaxation time of the material</li>
+                <li>\(t\) is time</li>
+            </ul>
+            
+            <h3>Maxwell Model</h3>
+            <p>The Maxwell model represents a viscoelastic material as a spring and dashpot in series. It is 
+                characterized by:</p>
+            <ul>
+                <li>Stress relaxation under constant strain:</li>
+            </ul>
+            <p>\[ \sigma(t) = \sigma_{0} \; e^{-\frac{E}{\eta} t} \]</p>
+            <p>where \(\sigma_0\) is the initial stress, \(E\) is the elastic modulus, \(\eta\) is the viscosity, and \(t\) is time.</p>
+            <p>The constitutive equation is:</p>
+            <p>\[ \frac{d\varepsilon}{dt} = \frac{1}{E}\frac{d\sigma}{dt} + \frac{\sigma}{\eta} \]</p>
+            
+            <h3>Kelvin-Voigt Model</h3>
+            <p>The Kelvin-Voigt model represents a viscoelastic material as a spring and dashpot in parallel. It is 
+                characterized by:</p>
+            <ul>
+                <li>Creep under constant stress:</li>
+            </ul>
+            <p>\[ \varepsilon(t) = \frac{\sigma_0}{E}(1 - e^{-\frac{E}{\eta}t}) \]</p>
+            <p>where \(\varepsilon\) is the strain.</p>
+            <p>The constitutive equation is:</p>
+            <p>\[ \sigma = E\varepsilon + \eta\frac{d\varepsilon}{dt} \]</p>
+            
+            <h3>Standard Linear Solid (Zener) Model</h3>
+            <p>The Standard Linear Solid model combines features of both Maxwell and Kelvin-Voigt models. It is 
+                characterized by:</p>
+            <ul>
+                <li>Stress relaxation under constant strain:</li>
+            </ul>
+            <p>\[ \sigma(t) = \sigma_0 \left( \frac{E_2}{E_1 + E_2} + \frac{E_1}{E_1 + E_2}e^{-\frac{E_1 + E_2}{\eta}t} \right) \]</p>
+            <p>where \(E_1\) and \(E_2\) are the elastic moduli of the two springs.</p>
+            <p>The constitutive equation is:</p>
+            <p>\[ \sigma + \frac{\eta}{E_1 + E_2}\frac{d\sigma}{dt} = \frac{E_1 E_2}{E_1 + E_2}\varepsilon + \frac{\eta E_2}{E_1 + E_2}\frac{d\varepsilon}{dt} \]</p>
+            
+            <h3>Burgers Model</h3>
+            <p>The Burgers model combines a Maxwell element and a Kelvin-Voigt element in series. It is characterized by:</p>
+            <ul>
+                <li>Creep under constant stress:</li>
+            </ul>
+            <p>\[ \varepsilon(t) = \sigma_0 \left( \frac{1}{E_1} + \frac{t}{\eta_1} + \frac{1}{E_2}(1 - e^{-\frac{E_2}{\eta_2}t}) \right) \]</p>
+            <p>where \(E_1\) and \(E_2\) are elastic moduli, and \(\eta_1\) and \(\eta_2\) are viscosities.</p>
+            
+            <h3>Hysteresis Loop</h3>
+            <p>When viscoelastic materials are subjected to cyclic loading, they exhibit hysteresis loops in the 
+                stress-strain curve. For a sinusoidal strain input:</p>
+            <p>\[ \varepsilon(t) = \varepsilon_0 \sin(\omega t) \]</p>
+            <p>The stress response for the Kelvin-Voigt model is:</p>
+            <p>\[ \sigma(t) = E\varepsilon_0 \sin(\omega t) + \eta\omega\varepsilon_0 \cos(\omega t) = \sigma_0 \sin(\omega t + \delta) \]</p>
+            <p>where \(\delta\) is the phase angle between stress and strain, representing energy dissipation.</p>
+            
+            <h3>2D Viscoelastic Material Simulation</h3>
+            <p>The 2D simulation uses a mass-spring-dashpot lattice model where:</p>
+            <ul>
+                <li>Grid size: 10×10 nodes</li>
+                <li>Adjacent nodes are connected by springs with stiffness \(k = 10.0\)</li>
+                <li>Dashpots with damping coefficient \(\eta = 2.0\) act in parallel with springs</li>
+                <li>Time step \(dt = 0.01\) for numerical integration</li>
+                <li>Fixed boundary conditions on left, right, and bottom edges</li>
+                <li>Applied deformation of 2.0 units to the right on top boundary</li>
+            </ul>
+            <p>The equation of motion for each node is:</p>
+            <p>\[ m \ddot{\mathbf{x}} = \mathbf{F}_{spring} + \mathbf{F}_{dashpot} \]</p>
+            <p>where:</p>
+            <p>\[ 
+                \mathbf{F}_{spring} = k(r - r_0) \mathbf{\hat{r}} 
+            \]</p>
+            
+            <p>\[ \mathbf{F}_{dashpot} = \eta(\mathbf{v}_j - \mathbf{v}_i) \cdot \hat{\mathbf{r}} \]</p>
+            <p>with \(r\) being the current distance between nodes, \(r_0\) the equilibrium distance, and \(\hat{\mathbf{r}}\) the unit vector in the direction of the spring.</p>
+            <p>The simulation uses explicit time integration:</p>
+            <p>\[ \mathbf{a} = \frac{\mathbf{F}}{\rho} \]</p>
+            <p>\[ \mathbf{v}(t+dt) = \mathbf{v}(t) + \mathbf{a}dt \]</p>
+            <p>\[ \mathbf{x}(t+dt) = \mathbf{x}(t) + \mathbf{v}(t+dt)dt \]</p>
+
+
+            <h2>Applications</h2>
+            <p>Understanding viscoelastic behavior is crucial for many fields including:</p>
+            <ul>
+                <li>Polymer science and engineering</li>
+                <li>Biomechanics (tissues, tendons, and muscles exhibit viscoelastic behavior)</li>
+                <li>Geophysics (Earth's mantle exhibits viscoelastic properties)</li>
+                <li>Materials science (designing materials with specific time-dependent properties)</li>
+                <li>Civil engineering (asphalt, concrete, and structural damping)</li>
+                <li>Medical devices (implants, prosthetics)</li>
+            </ul>
+            
+        </div>
+    </div>
+</body>
+</html>

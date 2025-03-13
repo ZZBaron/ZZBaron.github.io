@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Economic System Simulation - Project Details</title>
+    <link rel="stylesheet" href="css/styles.css">
+     <!-- Add MathJax -->
+    <script type="text/javascript">
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                macros: {
+                    href: '{}'
+                }
+            },
+            options: {
+                skipHtmlTags: ['noscript', 'style', 'textarea', 'pre', 'code'],
+                messageStyle: "none"
+            },
+            startup: {
+                ready: function () {
+                    MathJax.startup.defaultReady();
+                }
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+    <div class="detail-container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+        <div class="project-header">
+            <h1>Complex Economic System Simulation</h1>
+            <a href="https://github.com/ZZBaron/economic-complexity-sim" 
+               class="github-link" 
+               target="_blank">View on GitHub</a>
+        </div>
+
+        <div class="image-container">
+            <img class="image-container-img" src="media/economic_network.png" alt="Economic Network Visualization">
+            <img class="image-container-img" src="media/emergent_behaviors.png" alt="Emergence Visualization">
+        </div>
+
+        <div class="detail-content">
+            <h2>Project Overview</h2>
+            <p>This simulation demonstrates a complex economic system with interacting agents, market dynamics, 
+                and emergent behaviors. The code models various economic agents with different strategies in a 
+                network structure, simulating market transactions and wealth evolution over time.</p>
+
+            <h2>Key Features</h2>
+            <p>The simulation includes: </p>
+            <ul>
+                <li>Multi-agent economic system with different agent types (consumers, producers, investors)</li>
+                <li>Scale-free network structure mimicking real economic relationships</li>
+                <li>Three distinct agent strategies (random, trend follower, contrarian)</li>
+                <li>Dynamic price formation based on supply and demand</li>
+                <li>Path dependence and sensitivity to initial conditions</li>
+                <li>Demonstration of positive and negative feedback loops</li>
+                <li>Analysis of wealth distribution and inequality (Gini coefficient)</li>
+                <li>Visualization of emergent market behaviors</li>
+            </ul>
+            
+            <h2>Mathematical Overview</h2>
+            
+            <h3>Agent Decision Making</h3>
+            <p>Agents make decisions based on price expectations and their strategy:</p>
+            <p>\[ E_i(t+1) = E_i(t) + \alpha \cdot (P(t) - E_i(t)) \]</p>
+            <p>where \(E_i(t)\) is agent \(i\)'s price expectation at time \(t\), \(P(t)\) is the market price, 
+                and \(\alpha\) is the learning rate.</p>
+            
+            <h3>Network Effects</h3>
+            <p>Agents update their expectations based partly on connected agents:</p>
+            <p>\[ E_i(t+1) = \beta \cdot E_i(t) + (1-\beta) \cdot \frac{1}{|N_i|} \sum_{j \in N_i} E_j(t) \]</p>
+            <p>where \(N_i\) is the set of agents connected to agent \(i\), and \(\beta\) is a weighting parameter.</p>
+            
+            <h3>Price Formation</h3>
+            <p>Market price updates based on supply and demand dynamics:</p>
+            <p>\[ P(t+1) = P(t) + \gamma \cdot (B(t) - S(t)) \]</p>
+            <p>where \(B(t)\) is the number of buy orders, \(S(t)\) is the number of sell orders, and \(\gamma\) 
+                is a price sensitivity parameter.</p>
+            
+            <h3>Scale-Free Network</h3>
+            <p>The network follows a power-law degree distribution:</p>
+            <p>\[ P(k) \propto k^{-\alpha} \]</p>
+            <p>where \(P(k)\) is the probability of a node having \(k\) connections, and \(\alpha\) is the scaling 
+                parameter.</p>
+            
+            <h3>Wealth Dynamics</h3>
+            <p>Agent wealth evolves through market transactions:</p>
+            <p>\[ W_i(t+1) = W_i(t) + \Delta W_i(t) \]</p>
+            <p>where \(\Delta W_i(t)\) is the change in wealth based on the agent's action and the market price.</p>
+            
+            <h3>Gini Coefficient</h3>
+            <p>Wealth inequality is measured using the Gini coefficient:</p>
+            <p>\[ G = \frac{1}{n} \left( n + 1 - 2 \cdot \frac{\sum_{i=1}^{n} (n+1-i) \cdot x_i}{\sum_{i=1}^{n} x_i} \right) \]</p>
+            <p>where \(x_i\) are the sorted wealth values and \(n\) is the number of agents.</p>
+            
+            <h3>Simulation Methods</h3>
+            <p>The simulation uses several methods to model complex economic behavior:</p>
+            <ol>
+                <li><strong>Agent-based modeling:</strong> Individual agents make autonomous decisions based on local 
+                    information and strategies.</li>
+                <li><strong>Preferential attachment:</strong> Network connections form with probability proportional to 
+                    existing connections, creating hubs.</li>
+                <li><strong>Random shocks:</strong> Occasional exogenous shocks demonstrate non-linear responses in the 
+                    system.</li>
+                <li><strong>Time series analysis:</strong> Tracking price and wealth evolution to identify patterns and 
+                    cycles.</li>
+            </ol>
+            
+            <h2>Applications</h2>
+            <p>This economic simulation can be applied to study various phenomena including:</p>
+            <ul>
+                <li>Market dynamics and price formation processes</li>
+                <li>Effectiveness of different trading strategies under various conditions</li>
+                <li>Wealth inequality development and factors affecting distribution</li>
+                <li>Network effects on information diffusion and decision making</li>
+                <li>Robustness of markets to exogenous shocks</li>
+                <li>Path dependence and sensitivity to initial conditions</li>
+                <li>Emergence of market cycles and bubbles</li>
+                <li>Impact of agent diversity on system stability</li>
+            </ul>
+            
+            <h2>Visualization Examples</h2>
+            <h3>Network Structure</h3>
+            <p>The scale-free network structure with preferential attachment:</p>
+            <div class="image-container">
+                <img class="image-container-img" src="media/economic_network.png" alt="Economic Network by Agent Type">
+                <img class="image-container-img" src="media/economic_network_by_strategy.png" alt="Economic Network by Agent Strategy">
+            </div>
+
+
+            <h3>Price Evolution</h3>
+            <p>The market price evolution over time shows patterns of stability, trends, and volatility:</p>
+            <img src="media/price_evolution.png" alt="Price Evolution" style="max-width: 100%; margin: 20px 0;">
+            
+            <h3>Wealth Distribution</h3>
+            <p>The final wealth distribution demonstrates emergent inequality:</p>
+            <img src="media/wealth_distribution.png" alt="Wealth Distribution" style="max-width: 100%; margin: 20px 0;">
+            
+            <h3>Path Dependence</h3>
+            <p>Multiple simulations with slightly different initial conditions demonstrate sensitivity and path dependence:</p>
+            <img src="media/path_dependence.png" alt="Path Dependence" style="max-width: 100%; margin: 20px 0;">
+            
+            <h3>Strategy Comparison</h3>
+            <p>Performance comparison of different agent strategies across multiple simulations:</p>
+            <img src="media/strategy_comparison.png" alt="Strategy Comparison" style="max-width: 100%; margin: 20px 0;">
+
+            <h3>Emergence</h3>
+            <p>Emergent behaviors in the network structure and market dynamics:</p>
+            <img src="media/emergent_behaviors.png" alt="Emergent Behaviors" style="max-width: 100%; margin: 20px 0;">
+
+            <h3>Feedback Loops</h3>
+            <p>Positive and negative feedback loops in the economic system:</p>
+            <img src="media/feedback_loops.png" alt="Feedback Loops" style="max-width: 100%; margin: 20px 0;">
+        </div>
+    </div>
+</body>
+</html>
