@@ -243,6 +243,8 @@ body {
     max-width: 1200px;
     margin: 0 auto 20px;
     overflow: hidden;
+    border-radius: 15px;
+    
 }
 
 .image-container-img {
