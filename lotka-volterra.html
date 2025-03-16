@@ -39,93 +39,96 @@
 
         <div class="detail-content">
             <h2>Project Overview</h2>
-            <p>This project implements and visualizes the Lotka-Volterra predator-prey model 
-                and its enhanced variants. It shows the cyclical dynamics between predator and prey populations over 
-                time.</p>
+            <p>This project models and visualizes the Lotka-Volterra predator-prey system and its enhanced variants, highlighting predator-prey population cycles over time.</p>
 
             <h2>Key Features</h2>
-            <p>The simulation includes:</p>
             <ul>
-                <li>Basic Lotka-Volterra predator-prey model implementation</li>
-                <li>A more biologically realistic model with additional ecological factors</li>
-                <li>Population dynamics visualization over time</li>
-                <li>Analysis of functional response curves with predator interference</li>
-                <li>Population ratio dynamics</li>
+                <li>Basic Lotka-Volterra model with predator-prey interactions</li>
+                <li>Enhanced model with additional ecological factors for realism</li>
+                <li>Visualizations of population dynamics and functional responses</li>
                 <li>Animated phase space visualization</li>
             </ul>
-            
-            
+
             <h2>Lotka-Volterra Model</h2>
-            <p>The Lotka-Volterra model consists of a pair of first-order, non-linear differential equations that 
-                describe the dynamics of biological systems with predator-prey interactions:</p>
+            <p>The Lotka-Volterra model describes predator-prey interactions through a system of non-linear differential equations:</p>
             <p>\[ \frac{dx}{dt} = \alpha x - \beta xy \]</p>
             <p>\[ \frac{dy}{dt} = \delta xy - \gamma y \]</p>
-            <p>where:</p>
+            <p>Where:</p>
             <ul>
-                <li>\(x\) is the Prey population</li>
-                <li>\(y\) is the Predator population</li>
-                <li>\(\alpha\) is the Prey growth rate</li>
-                <li>\(\beta\) is the Predation rate</li>
-                <li>\(\gamma\) is the Predator death rate</li>
-                <li>\(\delta\) is the Predator growth rate due to consuming prey</li>
+                <li>\(x\) = Prey population</li>
+                <li>\(y\) = Predator population</li>
+                <li>\(\alpha\) = Prey growth rate</li>
+                <li>\(\beta\) = Predation rate</li>
+                <li>\(\gamma\) = Predator death rate</li>
+                <li>\(\delta\) = Predator growth rate due to consuming prey</li>
             </ul>
-            
-            <h2>A More Realistic Model</h2>
-            <p>We can modify the Lotka-Volterra model to incorporate several ecological factors that make the 
-                simulation more biologically realistic:</p>
 
-            <h4>Seasonal Variations</h4>
-            <p>We can vary parameters seasonally according to a :</p>
-            <p>\[ S = 1 + A \cdot \sin(2\pi t/12) \]</p>
-            <p>where \(S\) is the seasonal factor and \(A\) is the seasonal amplitude.</p>
+            <h3>Model Limitations</h3>
+            <p>The basic model has several key limitations:</p>
+            <ul>
+                <li><strong>Unlimited Prey Growth:</strong> Assumes exponential prey growth without resource limits.</li>
+                <li><strong>Linear Predation Response:</strong> Ignores predator satiation and handling time.</li>
+                <li><strong>Absence of Competition:</strong> No consideration of inter- or intra-species competition.</li>
+                <li><strong>No Time Delays:</strong> Immediate population responses, though natural systems show delays.</li>
+                <li><strong>Constant Parameters:</strong> Ignores seasonal/environmental changes.</li>
+                <li><strong>Perfect Cycles:</strong> The model predicts ideal cycles, which rarely occur in nature.</li>
+                <li><strong>Deterministic Dynamics:</strong> No stochastic factors, which affect real populations.</li>
+            </ul>
+
+            <h2>Modified Lotka-Volterra Model</h2>
+            <p>The modified Lotka-Volterra model consists of two differential equations, one for the prey population (\(x\)) and one for the predator population (\(y\)). These equations describe the dynamic changes in both populations over time.</p>
+
+            <h3>Prey Population Dynamics:</h3>
+            <p>The first equation represents the rate of change of the prey population:</p>
+            <p>\[ \frac{dx}{dt} = r x \left( 1 - \frac{x}{K} \right) - S y f(x,y) \]</p>
             
-            <h4>Prey Logistic Growth</h4>
-            <p>Instead of unlimited exponential growth, prey follows logistic growth constrained by carrying capacity \(K\):</p>
-            <p>\[ \frac{dx}{dt} = rx(1-\frac{x}{K}) - S y f(x,y) \]</p>
-            <p>where \(r\) is the intrinsic growth rate and \(f(x,y)\) is the functional response.</p>
+            <h4>Breaking Down the Terms:</h4>
+            <ul>
+                <li><strong>Intrinsic Prey Growth (\(r x\)):</strong> This term represents the natural growth of the prey population in the absence of predators. It follows logistic growth, where \(r\) is the intrinsic growth rate, and the factor \(\left( 1 - \frac{x}{K} \right)\) introduces a carrying capacity \(K\), limiting growth as resources become scarce.</li>
+                <li><strong>Carrying Capacity (\(K\)):</strong> This is the maximum sustainable population size that the environment can support, taking resource limitations into account. It prevents the prey population from growing indefinitely.</li>
+                <li><strong>Predation (\(- S y f(x,y)\)):</strong> This term represents the negative effect of predators on the prey population. \(S\) is a seasonal factor that influences the predation rate over time, and \(f(x,y)\) is the functional response of predators to prey availability, capturing how predator hunting efficiency changes with prey density. The term \(-S y f(x,y)\) reduces the prey population as predators consume them.</li>
+            </ul>
+
+            <h3>Predator Population Dynamics:</h3>
+            <p>The second equation describes the rate of change of the predator population:</p>
+            <p>\[ \frac{dy}{dt}(t) = c S y f(x(t-\tau),y(t)) - m y(t) \]</p>
             
-            <h4>Holling Type II Functional Response</h4>
-            <p>Models predator satiation, where predation rate doesn't increase linearly with prey density:</p>
+            <h4>Breaking Down the Terms:</h4>
+            <ul>
+                <li><strong>Predator Growth (\(c S y f(x(t-\tau), y(t))\)):</strong> This term represents predator growth due to the consumption of prey. \(c\) is the conversion efficiency, representing how much of the consumed prey's biomass contributes to the predator's growth. The term \(S\) accounts for seasonal effects, and \(f(x(t-\tau), y(t))\) is the functional response with a time lag (\(\tau\)) indicating that predator response to prey density occurs with a delay.</li>
+                <li><strong>Predator Mortality (\(- m y\)):</strong> This term represents the natural death rate of the predator population, where \(m\) is the mortality rate of predators. It decreases the predator population over time, regardless of prey availability.</li>
+            </ul>
+
+            <h2>Model Justifications</h2>
+            <h3>Prey Logistic Growth</h3>
+            <p>Incorporating logistic growth for the prey population ensures that growth is self-limiting, preventing unrealistic exponential growth. This reflects ecological principles where natural populations are constrained by available resources. The carrying capacity \(K\) sets an upper limit for the prey population in the absence of predators.</p>
+
+            <h3>Holling Type II Functional Response with Predator Interference</h3>
+            <p>The functional response \(f(x,y)\) is modeled using a Holling Type II function with predator interference:</p>
             <p>\[ f(x,y) = \frac{ax}{1 + ahx + qy} \]</p>
-            <p>where:</p>
-            <ul>
-                <li>\(a\): Attack rate</li>
-                <li>\(h\): Handling time per prey</li>
-                <li>\(q\): Predator interference coefficient</li>
-            </ul>
-            
-            <h4>Predator Dynamics</h4>
-            <p>With conversion efficiency and mortality:</p>
-            <p>\[ \frac{dy}{dt} = c S y f(x,y) - my \]</p>
-            <p>where \(c\) is the conversion efficiency and \(m\) is the mortality rate.</p>
-            
-            
-            <h4>Time Lag</h4>
-            <p>The model incorporates a time lag in predator response, reflecting realistic delays in population dynamics.</p>
-            
-            <h3>System Properties</h3>
-            <p>The Lotka-Volterra system exhibits several important properties:</p>
-            <ul>
-                <li><strong>Oscillatory behavior:</strong> Predator and prey populations cycle continuously in the basic model</li>
-                <li><strong>Phase space orbits:</strong> Closed loops in the phase space representing periodic solutions</li>
-                <li><strong>Conservation principle:</strong> The basic model conserves a quantity related to the total energy of the system</li>
-                <li><strong>Stability:</strong> The enhanced model can exhibit stable equilibria under certain parameter regimes</li>
-            </ul>
-            
-            <img class="project-img" src="media/lotka_volterra_mod_plot.png" alt="Enhanced Lotka-Volterra Predator-Prey Model">
-            
-            <h2>Applications</h2>
-            <p>Lotka-Volterra models and their extensions have widespread applications in:</p>
-            <ul>
-                <li>Ecological population dynamics</li>
-                <li>Fisheries management and sustainable harvesting</li>
-                <li>Wildlife conservation and endangered species protection</li>
-                <li>Disease spread modeling with hosts and pathogens</li>
-                <li>Biological control of pest species</li>
-                <li>Economic systems with competing products</li>
-            </ul>
+            <p>This accounts for the fact that as prey density increases, the rate at which predators can consume prey starts to saturate due to handling time and predator interference. \(a\) is the attack rate, \(h\) is the handling time, and \(q\) is the predator interference coefficient, which accounts for the reduction in hunting efficiency as predator density increases.</p>
 
-            
+            <h3>Seasonal Variations</h3>
+            <p>Seasonal fluctuations are modeled with a sinusoidal function for the seasonal factor \(S\), which affects both predation and predator growth rates:</p>
+            <p>\[ S = 1 + A \cdot \sin(2\pi t/12) \]</p>
+            <p>This introduces periodic variations in the model, reflecting how environmental conditions (such as temperature and resource availability) change throughout the year, impacting predator and prey populations.</p>
+
+            <h3>Time Lag in Predator Response</h3>
+            <p>A time lag \(\tau\) is introduced to account for the delayed response of the predator population to changes in prey abundance. This reflects the fact that reproduction in predators lags behind changes in prey availability. The time lag is incorporated in the equation for predator growth, where the prey density at a previous time \(x(t-\tau)\) is used to determine predator growth.</p>
+
+            <img class="project-img" src="media/lotka_volterra_mod_plot.png" alt="Enhanced Lotka-Volterra Predator-Prey Model">
+
+            <h2>Remaining Limitations</h2>
+            <p>Despite improvements, the enhanced model still faces limitations:</p>
+            <ul>
+                <li><strong>Spatial Homogeneity:</strong> Assumes well-mixed populations without spatial structures.</li>
+                <li><strong>Age/Size Structure:</strong> Ignores differences in age/size within species.</li>
+                <li><strong>Species Interactions:</strong> Only two species are modeled, while real ecosystems involve more interactions.</li>
+                <li><strong>Evolutionary Dynamics:</strong> Doesn't account for evolutionary changes over time.</li>
+                <li><strong>Environmental Stochasticity:</strong> Random environmental factors are excluded.</li>
+                <li><strong>Demographic Stochasticity:</strong> Birth and death rates are treated deterministically.</li>
+                <li><strong>Parameter Sensitivity:</strong> The model is sensitive to parameter values that are difficult to measure.</li>
+            </ul>
         </div>
     </div>
 </body>
