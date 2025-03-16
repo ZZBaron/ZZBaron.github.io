@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Black Hole Light Ray Simulation - Project Details</title>
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Load MathJax -->
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <script type="text/javascript">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            "HTML-CSS": {
+                availableFonts: ["TeX"], // Forces MathJax to use the TeX font
+            }
+        });
+    </script>
+
 </head>
 <body>
     <div class="detail-container">
@@ -24,29 +42,61 @@
 
         <div class="detail-content">
             <h2>Project Overview</h2>
-            <p>This simulation explores the fascinating behavior of light rays near a black hole. 
-            Using principles from general relativity, it demonstrates how strong gravitational 
-            fields bend the path of light, creating unique visual phenomena.</p>
+            <p>This simulation demonstrates the gravitational lensing effect of a black hole on light rays 
+                in a two-dimensional space. The visualization shows how light paths bend around a massive object 
+                according to Einstein's theory of general relativity, creating visual phenomena such as gravitational 
+                lensing and photon spheres.</p>
 
             <h2>Key Features</h2>
-            <p>The simulation allows users to visualize: </p>
+            <p>The simulation includes: </p>
             <ul>
-                <li>Light ray trajectories near the event horizon </li>
-                <li> Formation of Einstein rings </li>
-                <li> Effects of gravitational lensing on light paths </li>
-                <li> Real-time manipulation of black hole parameters </li>
+                <li>Visualization of light ray trajectories in Schwarzschild geometry</li>
+                <li>Animation of light propagation around a black hole</li>
+                <li>Accurate simulation of null geodesics using relativistic equations</li>
+                <li>Visualization of the black hole's event horizon</li>
+                <li>Demonstration of gravitational lensing effects</li>
+                <li>Interactive visualization with customizable parameters</li>
             </ul>
-
-            <h2>Technical Implementation</h2>
-            <p>Built using Python with NumPy for calculations and Matplotlib for visualization. 
-            The simulation solves the geodesic equations in curved spacetime to accurately 
-            model light behavior in strong gravitational fields.</p>
-
-            <h2>Mathematical Background</h2>
-            <p>The simulation is based on the mathematical framework of general relativity, 
-            specifically focusing on null geodesics in Schwarzschild spacetime. This allows 
-            for accurate representation of how light behaves in the extreme gravitational 
-            conditions near a black hole.</p>
+            
+            <h2>Schwarzschild Geometry</h2>
+            <p>The simulation uses the Schwarzschild metric, which describes the geometry of spacetime around a non-rotating, spherically symmetric mass:</p>
+            <p>\[ ds^2 = -\left(1-\frac{r_s}{r}\right)c^2dt^2 + \left(1-\frac{r_s}{r}\right)^{-1}dr^2 + r^2d\Omega^2 \]</p>
+            <p>where \(r_s = \frac{2GM}{c^2}\) is the Schwarzschild radius, \(M\) is the mass of the black hole, \(G\) is the gravitational constant, and \(c\) is the speed of light.</p>
+            
+            <h2>Schwarzschild Radius</h2>
+            <p>The Schwarzschild radius defines the event horizon of a black hole:</p>
+            <p>\[ r_s = \frac{2GM}{c^2} \]</p>
+            <p>In the simulation, we use normalized units where \(G = c = 1\), so the Schwarzschild radius becomes \(r_s = 2M\).</p>
+            
+            <h2>Null Geodesics</h2>
+            <p>Light rays follow null geodesics, which are paths where the spacetime interval is zero (\(ds^2 = 0\)). The equations of motion for these geodesics can be derived from the Lagrangian:</p>
+            <p>\[ \mathcal{L} = \frac{1}{2}g_{\mu\nu}\frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda} \]</p>
+            <p>where \(\lambda\) is an affine parameter along the geodesic.</p>
+            
+            <h2>Geodesic Equations</h2>
+            <p>For motion in the equatorial plane (\(\theta = \pi/2\)), the geodesic equations reduce to:</p>
+            <p>\[ \frac{dr}{d\lambda} = f(r) \cdot p_r \]</p>
+            <p>\[ \frac{d\phi}{d\lambda} = \frac{L}{r^2} \]</p>
+            <p>\[ \frac{dp_r}{d\lambda} = \frac{L^2}{r^3}f(r) - \frac{r_s}{2r^2}f(r) \]</p>
+            <p>\[ \frac{dL}{d\lambda} = 0 \]</p>
+            <p>where \(f(r) = 1 - \frac{r_s}{r}\), \(p_r\) is the radial momentum component, and \(L\) is the angular momentum (conserved).</p>
+            
+            <h2>Effective Potential</h2>
+            <p>The motion of light rays can be understood through an effective potential:</p>
+            <p>\[ V_{eff}(r) = \frac{L^2}{2r^2}\left(1 - \frac{r_s}{r}\right) \]</p>
+            <p>The closest approach of a light ray to the black hole is determined by the impact parameter \(b = \frac{L}{E}\), where \(E\) is the energy of the photon.</p>
+            
+            <h2>Critical Radius</h2>
+            <p>For a non-rotating black hole (Schwarzschild black hole), the photon sphere occurs at \(r = \frac{3r_s}{2}\), where light rays can orbit the black hole in unstable circular orbits.</p>
+            <p>Light rays with impact parameters less than the critical value \(b_{crit} = \frac{3\sqrt{3}r_s}{2}\) will be captured by the black hole.</p>
+            
+            <h2>Simulation Methods</h2>
+            <p>In the code, the following methods are used to simulate light propagation:</p>
+            <ol>
+                <li><strong>Coordinate transformation:</strong> Converting between Cartesian and polar coordinates with proper metric components</li>
+                <li><strong>Numerical integration:</strong> Using the RK45 algorithm with adaptive step size to solve the geodesic equations</li>
+                <li><strong>Animation technique:</strong> Progressively revealing light ray paths to visualize their propagation over time</li>
+            </ol>
         </div>
     </div>
 </body>

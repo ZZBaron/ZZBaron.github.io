@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotka-Volterra Predator-Prey Simulation - Project Details</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Load MathJax -->
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <script type="text/javascript">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            "HTML-CSS": {
+                availableFonts: ["TeX"], // Forces MathJax to use the TeX font
+            }
+        });
+    </script>
+
+</head>
+<body>
+    <div class="detail-container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+        <div class="project-header">
+            <h1>Lotka-Volterra Predator-Prey Simulation</h1>
+            <a href="https://github.com/" 
+               class="github-link" 
+               target="_blank">View on GitHub</a>
+        </div>
+
+        <img class="project-img" src="media/lotka_volterra_plot.png" alt="Lotka-Volterra Predator-Prey Model">
+
+        <div class="detail-content">
+            <h2>Project Overview</h2>
+            <p>This project implements and visualizes the Lotka-Volterra predator-prey model 
+                and its enhanced variants. It shows the cyclical dynamics between predator and prey populations over 
+                time.</p>
+
+            <h2>Key Features</h2>
+            <p>The simulation includes:</p>
+            <ul>
+                <li>Basic Lotka-Volterra predator-prey model implementation</li>
+                <li>A more biologically realistic model with additional ecological factors</li>
+                <li>Population dynamics visualization over time</li>
+                <li>Analysis of functional response curves with predator interference</li>
+                <li>Population ratio dynamics</li>
+                <li>Animated phase space visualization</li>
+            </ul>
+            
+            
+            <h2>Lotka-Volterra Model</h2>
+            <p>The Lotka-Volterra model consists of a pair of first-order, non-linear differential equations that 
+                describe the dynamics of biological systems with predator-prey interactions:</p>
+            <p>\[ \frac{dx}{dt} = \alpha x - \beta xy \]</p>
+            <p>\[ \frac{dy}{dt} = \delta xy - \gamma y \]</p>
+            <p>where:</p>
+            <ul>
+                <li>\(x\) is the Prey population</li>
+                <li>\(y\) is the Predator population</li>
+                <li>\(\alpha\) is the Prey growth rate</li>
+                <li>\(\beta\) is the Predation rate</li>
+                <li>\(\gamma\) is the Predator death rate</li>
+                <li>\(\delta\) is the Predator growth rate due to consuming prey</li>
+            </ul>
+            
+            <h2>A More Realistic Model</h2>
+            <p>We can modify the Lotka-Volterra model to incorporate several ecological factors that make the 
+                simulation more biologically realistic:</p>
+
+            <h4>Seasonal Variations</h4>
+            <p>We can vary parameters seasonally according to a :</p>
+            <p>\[ S = 1 + A \cdot \sin(2\pi t/12) \]</p>
+            <p>where \(S\) is the seasonal factor and \(A\) is the seasonal amplitude.</p>
+            
+            <h4>Prey Logistic Growth</h4>
+            <p>Instead of unlimited exponential growth, prey follows logistic growth constrained by carrying capacity \(K\):</p>
+            <p>\[ \frac{dx}{dt} = rx(1-\frac{x}{K}) - S y f(x,y) \]</p>
+            <p>where \(r\) is the intrinsic growth rate and \(f(x,y)\) is the functional response.</p>
+            
+            <h4>Holling Type II Functional Response</h4>
+            <p>Models predator satiation, where predation rate doesn't increase linearly with prey density:</p>
+            <p>\[ f(x,y) = \frac{ax}{1 + ahx + qy} \]</p>
+            <p>where:</p>
+            <ul>
+                <li>\(a\): Attack rate</li>
+                <li>\(h\): Handling time per prey</li>
+                <li>\(q\): Predator interference coefficient</li>
+            </ul>
+            
+            <h4>Predator Dynamics</h4>
+            <p>With conversion efficiency and mortality:</p>
+            <p>\[ \frac{dy}{dt} = c S y f(x,y) - my \]</p>
+            <p>where \(c\) is the conversion efficiency and \(m\) is the mortality rate.</p>
+            
+            
+            <h4>Time Lag</h4>
+            <p>The model incorporates a time lag in predator response, reflecting realistic delays in population dynamics.</p>
+            
+            <h3>System Properties</h3>
+            <p>The Lotka-Volterra system exhibits several important properties:</p>
+            <ul>
+                <li><strong>Oscillatory behavior:</strong> Predator and prey populations cycle continuously in the basic model</li>
+                <li><strong>Phase space orbits:</strong> Closed loops in the phase space representing periodic solutions</li>
+                <li><strong>Conservation principle:</strong> The basic model conserves a quantity related to the total energy of the system</li>
+                <li><strong>Stability:</strong> The enhanced model can exhibit stable equilibria under certain parameter regimes</li>
+            </ul>
+            
+            <img class="project-img" src="media/lotka_volterra_mod_plot.png" alt="Enhanced Lotka-Volterra Predator-Prey Model">
+            
+            <h2>Applications</h2>
+            <p>Lotka-Volterra models and their extensions have widespread applications in:</p>
+            <ul>
+                <li>Ecological population dynamics</li>
+                <li>Fisheries management and sustainable harvesting</li>
+                <li>Wildlife conservation and endangered species protection</li>
+                <li>Disease spread modeling with hosts and pathogens</li>
+                <li>Biological control of pest species</li>
+                <li>Economic systems with competing products</li>
+            </ul>
+
+            
+        </div>
+    </div>
+</body>
+</html>
