@@ -30,7 +30,7 @@
 
         <div class="project-header">
             <h1>Lotka-Volterra Predator-Prey Simulation</h1>
-            <a href="https://github.com/" 
+            <a href="https://github.com/ZZBaron/Lotka-Volterra-Enhanced" 
                class="github-link" 
                target="_blank">View on GitHub</a>
         </div>
@@ -64,25 +64,21 @@
             </ul>
 
             <h3>Model Limitations</h3>
-            <p>The basic model has several key limitations:</p>
+            <p>The basic model has several limitations:</p>
             <ul>
                 <li><strong>Unlimited Prey Growth:</strong> Assumes exponential prey growth without resource limits.</li>
                 <li><strong>Linear Predation Response:</strong> Ignores predator satiation and handling time.</li>
-                <li><strong>Absence of Competition:</strong> No consideration of inter- or intra-species competition.</li>
                 <li><strong>No Time Delays:</strong> Immediate population responses, though natural systems show delays.</li>
                 <li><strong>Constant Parameters:</strong> Ignores seasonal/environmental changes.</li>
                 <li><strong>Perfect Cycles:</strong> The model predicts ideal cycles, which rarely occur in nature.</li>
-                <li><strong>Deterministic Dynamics:</strong> No stochastic factors, which affect real populations.</li>
             </ul>
 
-            <h2>Modified Lotka-Volterra Model</h2>
-            <p>The modified Lotka-Volterra model consists of two differential equations, one for the prey population (\(x\)) and one for the predator population (\(y\)). These equations describe the dynamic changes in both populations over time.</p>
+            <h2>A Modified Lotka-Volterra Model</h2>
 
             <h3>Prey Population Dynamics:</h3>
             <p>The first equation represents the rate of change of the prey population:</p>
             <p>\[ \frac{dx}{dt} = r x \left( 1 - \frac{x}{K} \right) - S y f(x,y) \]</p>
             
-            <h4>Breaking Down the Terms:</h4>
             <ul>
                 <li><strong>Intrinsic Prey Growth (\(r x\)):</strong> This term represents the natural growth of the prey population in the absence of predators. It follows logistic growth, where \(r\) is the intrinsic growth rate, and the factor \(\left( 1 - \frac{x}{K} \right)\) introduces a carrying capacity \(K\), limiting growth as resources become scarce.</li>
                 <li><strong>Carrying Capacity (\(K\)):</strong> This is the maximum sustainable population size that the environment can support, taking resource limitations into account. It prevents the prey population from growing indefinitely.</li>
@@ -93,7 +89,6 @@
             <p>The second equation describes the rate of change of the predator population:</p>
             <p>\[ \frac{dy}{dt}(t) = c S y f(x(t-\tau),y(t)) - m y(t) \]</p>
             
-            <h4>Breaking Down the Terms:</h4>
             <ul>
                 <li><strong>Predator Growth (\(c S y f(x(t-\tau), y(t))\)):</strong> This term represents predator growth due to the consumption of prey. \(c\) is the conversion efficiency, representing how much of the consumed prey's biomass contributes to the predator's growth. The term \(S\) accounts for seasonal effects, and \(f(x(t-\tau), y(t))\) is the functional response with a time lag (\(\tau\)) indicating that predator response to prey density occurs with a delay.</li>
                 <li><strong>Predator Mortality (\(- m y\)):</strong> This term represents the natural death rate of the predator population, where \(m\) is the mortality rate of predators. It decreases the predator population over time, regardless of prey availability.</li>

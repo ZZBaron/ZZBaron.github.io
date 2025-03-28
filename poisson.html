@@ -30,7 +30,7 @@
 
         <div class="project-header">
             <h1>Poisson Process Simulation</h1>
-            <a href="https://github.com/" 
+            <a href="https://github.com/ZZBaron/Poisson-Point-Process" 
                class="github-link" 
                target="_blank">View on GitHub</a>
         </div>
@@ -52,16 +52,15 @@
                 <li>Inhomogeneous spatial Poisson process with position-dependent intensity</li>
             </ul>
             
-            <h2>Mathematical Overview</h2>
             
-            <h3>Poisson Distribution</h3>
+            <h2>Poisson Distribution</h2>
             <p>The Poisson distribution describes the probability of a given number of events occurring in a fixed interval, assuming events occur at a constant average rate and independently of each other.</p>
             <p>Probability mass function (PMF):</p>
             <p>\[ P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!} \]</p>
             <p>where \(\lambda\) is the rate parameter (average number of events per interval) and \(k\) is the number of events.</p>
             
-            <h3>Homogeneous Poisson Process</h3>
-            <p>A stochastic process \(\{N(t), t \geq 0\}\) where:</p>
+            <h2>Homogeneous Poisson Process</h2>
+            <p>A homogeneous poisson process is a stochastic process \(\{N(t), t \geq 0\}\) where:</p>
             <ul>
                 <li>\(N(0) = 0\)</li>
                 <li>The process has independent increments</li>
@@ -69,7 +68,7 @@
             </ul>
             <p>\[ P(N(t) = k) = \frac{(\lambda t)^k e^{-\lambda t}}{k!} \]</p>
             
-            <h3>Exponential Interarrival Times</h3>
+            <h2>Exponential Interarrival Times</h2>
             <p>In a Poisson process, the times between consecutive events (interarrival times) follow an exponential distribution:</p>
             <p>Probability density function (PDF):</p>
             <p>\[ f(t) = \lambda e^{-\lambda t} \]</p>
@@ -77,26 +76,26 @@
             <p>\[ F(t) = 1 - e^{-\lambda t} \]</p>
             <p>Mean interarrival time: \(\mathbb{E}[T] = \frac{1}{\lambda}\)</p>
             
-            <h3>Inhomogeneous Poisson Process</h3>
-            <p>A generalization where the rate parameter \(\lambda\) varies with time: \(\lambda(t)\).</p>
+            <h2>Inhomogeneous Poisson Process</h2>
+            <p>An inhomogeneous poisson process is a  generalization where the rate parameter \(\lambda\) varies with time: \(\lambda(t)\).</p>
             <p>The expected number of events in an interval \([a,b]\):</p>
             <p>\[ \mathbb{E}[N(b) - N(a)] = \int_a^b \lambda(t) dt \]</p>
             <p>The probability of \(k\) events in interval \([a,b]\):</p>
             <p>\[ P(N(b) - N(a) = k) = \frac{\left(\int_a^b \lambda(t) dt\right)^k e^{-\int_a^b \lambda(t) dt}}{k!} \]</p>
             
-            <h3>Spatial Poisson Process (2D)</h3>
+            <h2>Spatial Poisson Process (2D)</h2>
             <p>For a homogeneous spatial Poisson process with intensity \(\lambda\) (points per unit area), the number of points \(N(S)\) in a region \(S\) follows:</p>
             <p>\[ P(N(S) = k) = \frac{(\lambda |S|)^k e^{-\lambda |S|}}{k!} \]</p>
             <p>where \(|S|\) is the area of region \(S\).</p>
             
-            <h3>Inhomogeneous Spatial Poisson Process</h3>
+            <h2>Inhomogeneous Spatial Poisson Process</h2>
             <p>The intensity varies with location: \(\lambda(x,y)\).</p>
             <p>The expected number of points in region \(S\):</p>
             <p>\[ \mathbb{E}[N(S)] = \int\int_{S} \lambda(x,y) dx dy \]</p>
             <p>The probability of \(k\) points in region \(S\):</p>
             <p>\[ P(N(S) = k) = \frac{\left(\int\int_{S} \lambda(x,y) dx dy\right)^k e^{-\int\int_{S} \lambda(x,y) dx dy}}{k!} \]</p>
             
-            <h3>Simulation Methods</h3>
+            <h2>Simulation Methods</h2>
             <p>In the code, two primary methods are used to simulate Poisson processes:</p>
             <ol>
                 <li><strong>Direct method:</strong> For homogeneous processes, generate the total number of points from a Poisson distribution, then uniformly distribute these points.</li>
