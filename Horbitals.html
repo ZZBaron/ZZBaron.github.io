@@ -5,58 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hydrogen Wavefunction Eigenstates - Project Details</title>
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Load MathJax -->
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <script type="text/javascript">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            "HTML-CSS": {
+                availableFonts: ["TeX"], // Forces MathJax to use the TeX font
+            }
+        });
+    </script>
+
 </head>
 <body>
     <div class="detail-container">
         <a href="index.html" class="back-link">← Back to Portfolio</a>
-        
+
         <div class="project-header">
-            <h1>Hydrogen Wavefunction Eigenstates</h1>
+            <h1>Hydrogen Atomic Orbitals Simulation</h1>
             <a href="https://github.com/ZZBaron/Hydrogen-Eigenstates" 
                class="github-link" 
                target="_blank">View on GitHub</a>
         </div>
 
-        <img src="media/hydrogen_orbital_rotation_numerical.gif" alt="Hydrogen Orbital Visualization" class="project-video">
-
+        <img class="project-img" src="media/hydrogen_orbital_rotation_numerical.gif" alt="Hydrogen Atomic Orbital 3D Visualization">
 
         <div class="detail-content">
             <h2>Project Overview</h2>
-            <p>This project provides a comprehensive visualization of hydrogen atom quantum states by solving both analytical and numerical forms of the 
-                Schrödinger equation. It demonstrates the complex probability distributions of electron orbitals through interactive 3D visualizations 
-                and animated rotations of probability density planes.</p>
-    
+            <p>This project models and visualizes hydrogen atomic orbitals using both analytical solutions and numerical methods to solve the Schrödinger equation. It demonstrates quantum mechanical principles and allows for interactive exploration of wavefunctions with different quantum numbers.</p>
+
             <h2>Key Features</h2>
-            <p>The simulation provides:</p>
             <ul>
-                <li>Comparative visualization of analytical and numerical solutions to the radial Schrödinger equation</li>
-                <li>Real-time 3D visualization of probability density distributions in rotatable planes</li>
-                <li>Interactive controls for rotation angles (θ and φ) to explore orbital geometry</li>
-                <li>Support for any valid combination of quantum numbers (n, l, m)</li>
-                <li>Animated orbital visualization showing both φ and θ rotations</li>
-                <li>Normalized probability density calculations with color-coded visualization</li>
+                <li>Analytical and numerical solutions for hydrogen wavefunctions</li>
+                <li>Interactive 3D visualization of probability density distributions</li>
+                <li>Data export functionality for further analysis</li>
             </ul>
-    
-            <h2>Technical Implementation</h2>
-            <p>Built using Python with several specialized scientific computing libraries:</p>
+
+            <h2>Quantum Mechanical Background</h2>
+            <p>The hydrogen atom is one of the few quantum systems with an exact analytical solution to the Schrödinger equation. Each orbital is characterized by three quantum numbers:</p>
             <ul>
-                <li>NumPy and SciPy for quantum mechanical calculations and differential equation solving</li>
-                <li>Matplotlib for 3D visualization and interactive plotting</li>
-                <li>Custom implementation of both analytical and numerical solutions for radial wavefunctions</li>
-                <li>Vectorized calculations for improved performance</li>
-                <li>Integration with spherical harmonics for angular components</li>
+                <li><strong>Principal quantum number (n):</strong> Determines the energy level and overall size of the orbital</li>
+                <li><strong>Angular momentum quantum number (l):</strong> Determines the shape of the orbital</li>
+                <li><strong>Magnetic quantum number (m):</strong> Determines the orientation of the orbital</li>
             </ul>
-    
-            <h2>Mathematical Foundation</h2>
-            <p>The simulation solves the quantum mechanical hydrogen atom using multiple approaches:</p>
+
+            <h2>The Schrödinger Equation for Hydrogen</h2>
+            <p>The time-independent Schrödinger equation for the hydrogen atom in atomic units is:</p>
+            <p>\[ \left[-\frac{1}{2}\nabla^2 - \frac{1}{r}\right]\psi(r,\theta,\phi) = E\psi(r,\theta,\phi) \]</p>
+            <p>Where:</p>
             <ul>
-                <li>Analytical solution using generalized Laguerre polynomials and spherical harmonics</li>
-                <li>Numerical solution of the radial Schrödinger equation using solve_ivp</li>
-                <li>Proper normalization of wavefunctions through numerical integration</li>
-                <li>Transformation between spherical and Cartesian coordinates for visualization</li>
-                <li>Complete treatment of quantum numbers n, l, and m with appropriate constraints</li>
+                <li>\(\nabla^2\) is the Laplacian operator</li>
+                <li>\(r\) is the distance from the nucleus</li>
+                <li>\(\theta\) and \(\phi\) are spherical coordinates</li>
+                <li>\(E\) is the energy, equal to \(-\frac{1}{2n^2}\) for the hydrogen atom</li>
             </ul>
-        </div>    
+
+            <h2>Analytical Solution</h2>
+            <p>The wavefunction can be separated into radial and angular parts:</p>
+            <p>\[ \psi_{nlm}(r,\theta,\phi) = R_{nl}(r) \cdot Y_l^m(\theta,\phi) \]</p>
+
+            <h3>Radial Wavefunction</h3>
+            <p>The analytical radial wavefunction is given by:</p>
+            <p>\[ R_{nl}(r) = \sqrt{\left(\frac{2}{n}\right)^3 \frac{(n-l-1)!}{2n[(n+l)!]}} \cdot e^{-\rho/2} \cdot \rho^l \cdot L_{n-l-1}^{2l+1}(\rho) \]</p>
+            <p>Where:</p>
+            <ul>
+                <li>\(\rho = \frac{2r}{n}\) is a scaled radial coordinate</li>
+                <li>\(L_{n-l-1}^{2l+1}(\rho)\) is an associated Laguerre polynomial</li>
+            </ul>
+
+            <h3>Angular Wavefunction</h3>
+            <p>The angular part is given by spherical harmonics:</p>
+            <p>\[ Y_l^m(\theta,\phi) = \sqrt{\frac{(2l+1)}{4\pi}\frac{(l-|m|)!}{(l+|m|)!}} \cdot P_l^{|m|}(\cos\theta) \cdot e^{im\phi} \]</p>
+            <p>Where:</p>
+            <ul>
+                <li>\(P_l^{m}(x) \) is an associated Legendre polynomial</li>
+            </ul>
+
+            <h2>Numerical Solution Methods</h2>
+            <p>This project implements numerical solutions to both the radial and angular parts of the Schrödinger equation:</p>
+
+            <h3>Numerical Radial Solution</h3>
+            <p>For the radial equation, we solve:</p>
+            <p>\[ \frac{d^2u}{dr^2} = \left[2(V(r) - E) + \frac{l(l+1)}{r^2}\right]u(r) \]</p>
+            <p>Where \(u(r) = r \cdot R(r)\) and \(V(r) = -\frac{1}{r}\).</p>
+            <p>The solution is found using the Runge-Kutta method (RK45) implemented through SciPy's solve_ivp function, with appropriate initial conditions and normalization.</p>
+
+            <h3>Numerical Angular Solution</h3>
+            <p>For the angular equation, we solve the associated Legendre equation:</p>
+            <p>\[ \frac{d^2P}{d\theta^2} + \cot\theta \frac{dP}{d\theta} + \left[l(l+1) - \frac{m^2}{\sin^2\theta}\right]P = 0 \]</p>
+            <p>Combined with the azimuthal part \(e^{im\phi}\), we obtain the spherical harmonics numerically.</p>
+
+
+            <h2>Project Limitations</h2>
+            <ul>
+                <li><strong>Numerical Stability:</strong> Numerical solutions can be unstable for very high quantum numbers</li>
+                <li><strong>Computational Efficiency:</strong> Generating high-resolution animations is computationally intensive</li>
+                <li><strong>Single-Electron Model:</strong> Limited to hydrogen-like atoms with a single electron</li>
+                <li><strong>No Relativistic Effects:</strong> Does not account for relativistic corrections needed for heavy atoms</li>
+            </ul>
+
+            <h2>Mathematical Implementation Details</h2>
+            <h3>Boundary Conditions</h3>
+            <p>Proper boundary conditions are crucial for solving the differential equations:</p>
+            <ul>
+                <li><strong>Radial Boundary Conditions:</strong> \(u(0) = 0\) and \(u(r) \to 0\) as \(r \to \infty\)</li>
+                <li><strong>Angular Boundary Conditions:</strong> Solutions must be single-valued and well-behaved at the poles (\(\theta = 0\) and \(\theta = \pi\))</li>
+            </ul>
+
+            <h3>Normalization</h3>
+            <p>Both analytical and numerical solutions are normalized to ensure:</p>
+            <p>\[ \int_0^\infty |R_{nl}(r)|^2 r^2 dr = 1 \]</p>
+            <p>\[ \int_0^\pi \int_0^{2\pi} |Y_l^m(\theta,\phi)|^2 \sin\theta d\theta d\phi = 1 \]</p>
+        </div>
     </div>
 </body>
 </html>
