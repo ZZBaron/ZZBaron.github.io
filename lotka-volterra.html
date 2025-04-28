@@ -51,8 +51,8 @@
 
             <h2>Lotka-Volterra Model</h2>
             <p>The Lotka-Volterra model describes predator-prey interactions through a system of non-linear differential equations:</p>
-            <p>\[ \frac{dx}{dt} = \alpha x - \beta xy \]</p>
-            <p>\[ \frac{dy}{dt} = \delta xy - \gamma y \]</p>
+            <p>\[ \frac{dx}{dt} = \alpha x - \beta xy  \; \; \text{[Prey dynamics]} \]</p>
+            <p>\[ \frac{dy}{dt} = \delta xy - \gamma y  \; \; \text{[Predator dynamics]} \]</p>
             <p>Where:</p>
             <ul>
                 <li>\(x\) = Prey population</li>
@@ -74,24 +74,19 @@
             </ul>
 
             <h2>A Modified Lotka-Volterra Model</h2>
+            <p>To address the limitations of the basic model, I introduce an enhanced version that incorporates logistic growth for prey, seasonal variations, and a Holling Type II functional response with predator interference. The modified equations are as follows:</p>
 
-            <h3>Prey Population Dynamics:</h3>
-            <p>The first equation represents the rate of change of the prey population:</p>
-            <p>\[ \frac{dx}{dt} = r x \left( 1 - \frac{x}{K} \right) - S y f(x,y) \]</p>
+            <p>\[ \frac{dx}{dt} = r x \left( 1 - \frac{x}{K} \right) - y S f(x,y) \; \; \text{[Prey dynamics]} \]</p>
+            <p>\[ \frac{dy}{dt}(t) = c y S(t) f\left(x(t-\tau),y(t) \right) - m y(t) \; \; \text{[Predator dynamics]} \]</p>
             
             <ul>
-                <li><strong>Intrinsic Prey Growth (\(r x\)):</strong> This term represents the natural growth of the prey population in the absence of predators. It follows logistic growth, where \(r\) is the intrinsic growth rate, and the factor \(\left( 1 - \frac{x}{K} \right)\) introduces a carrying capacity \(K\), limiting growth as resources become scarce.</li>
+                <li><strong>Prey Growth Rate (\(r\)):</strong> This is the maximum growth rate of the prey population in the absence of predators. It reflects the reproductive potential of the prey species.</li>
                 <li><strong>Carrying Capacity (\(K\)):</strong> This is the maximum sustainable population size that the environment can support, taking resource limitations into account. It prevents the prey population from growing indefinitely.</li>
-                <li><strong>Predation (\(- S y f(x,y)\)):</strong> This term represents the negative effect of predators on the prey population. \(S\) is a seasonal factor that influences the predation rate over time, and \(f(x,y)\) is the functional response of predators to prey availability, capturing how predator hunting efficiency changes with prey density. The term \(-S y f(x,y)\) reduces the prey population as predators consume them.</li>
-            </ul>
-
-            <h3>Predator Population Dynamics:</h3>
-            <p>The second equation describes the rate of change of the predator population:</p>
-            <p>\[ \frac{dy}{dt}(t) = c S y f(x(t-\tau),y(t)) - m y(t) \]</p>
-            
-            <ul>
-                <li><strong>Predator Growth (\(c S y f(x(t-\tau), y(t))\)):</strong> This term represents predator growth due to the consumption of prey. \(c\) is the conversion efficiency, representing how much of the consumed prey's biomass contributes to the predator's growth. The term \(S\) accounts for seasonal effects, and \(f(x(t-\tau), y(t))\) is the functional response with a time lag (\(\tau\)) indicating that predator response to prey density occurs with a delay.</li>
-                <li><strong>Predator Mortality (\(- m y\)):</strong> This term represents the natural death rate of the predator population, where \(m\) is the mortality rate of predators. It decreases the predator population over time, regardless of prey availability.</li>
+                <li><strong>Seasonal Factor (\(S (t)\)):</strong> This term introduces seasonal variations in the model, affecting both predation and predator growth rates. It is modeled as a sinusoidal function that varies over time, reflecting how environmental conditions (such as temperature and resource availability) change throughout the year.</li>
+                <li><strong>Functional Response (\(f(x,y)\)):</strong> This term describes the relationship between prey density and the rate at which predators consume prey. It captures the non-linear dynamics of predator-prey interactions, accounting for factors like prey availability and predator efficiency.</li>
+                <li><strong>Time Lag (\(\tau\)):</strong> This term accounts for the delayed response of the predator population to changes in prey abundance. It reflects the fact that reproduction in predators lags behind changes in prey availability.</li>
+                <li><strong>Predator Mortality (\(m\)):</strong> This term represents the natural death rate of the predator population, where \(m\) is the mortality rate of predators. It decreases the predator population over time, regardless of prey availability.</li>
+                <li><strong>Conversion Efficiency (\(c\)):</strong> This term represents how efficiently predators convert consumed prey into their own biomass. It reflects the energy transfer from prey to predator in the food web.</li>
             </ul>
 
             <h2>Model Justifications</h2>
