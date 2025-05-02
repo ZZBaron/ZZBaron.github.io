@@ -8,6 +8,31 @@
     <!-- AOS CSS for scroll animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- Style for arrows in scroll down animation-->
+    <style>
+        :root {
+            --bounce-time: 0.6s; /* time for one bounce */
+            --pause-time: 1.2s;  /* time to pause after bouncing */
+        }
+    
+        .arrow {
+            width: 50px;
+            height: 50px;
+            fill: var(--background);
+            margin-top: 20px;
+            position: relative;
+            animation: bounce-twice-loop calc(2 * var(--bounce-time) + var(--pause-time)) infinite;
+        }
+
+        @keyframes bounce-twice-loop {
+            0% { transform: translateY(0); }
+            25% { transform: translateY(-10px); }
+            50% { transform: translateY(0); }
+            75% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+      </style>
     <!-- Can use \( \) to wrap inline math with mathjax, like in \( E = mc^2 \)-->>
     <!-- Favicon -->
     <link rel="icon" type="image/jpg" href="media/favicon-32x32.jpg">
@@ -29,8 +54,12 @@
     <!-- Hero Section -->
     <section id="home" class="section hero">
         <div class="hero-content">
-            <h1>Hello! I'm Zack Frensilli. <br> Welcome to My Portfolio!</h1>
+            <h1>Hello! I'm Zack Frensilli. <br> Welcome to My Portfolio</h1>
             <p>Exploring ideas through projects and research</p>
+             <!-- SVG Stylized Arrow -->
+            <svg class="arrow" viewBox="0 0 24 24">
+              <path d="M12 16.5l-8-8 1.41-1.41L12 13.67l6.59-6.58L20 8.5z" transform="rotate(0 12 12)" />
+            </svg>
         </div>
     </section>
 
