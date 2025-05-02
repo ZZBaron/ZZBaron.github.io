@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometric Brownian Motion Stock Price Simulation - Project Details</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .chart-container {
+            width: 100%;
+            height: 500px;
+            margin: 30px 0;
+            border: 1px solid #ddd;
+        }
+        .controls {
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .control-group {
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    
+    <!-- Load MathJax -->
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <script type="text/javascript">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            "HTML-CSS": {
+                availableFonts: ["TeX"]
+            }
+        });
+    </script>
+    
+    <!-- Load Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    
+    <!-- Load our GBM simulation script -->
+    <script src="js/GBM.js"></script>
+</head>
+<body>
+    <div class="detail-container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+        <div class="project-header">
+            <h1>Geometric Brownian Motion Stock Price Simulation</h1>
+            <a href="https://github.com" 
+               class="github-link" 
+               target="_blank">View on GitHub</a>
+        </div>
+
+        <div class="detail-content">
+            <h2>Project Overview</h2>
+            <p>This project models and visualizes stock price movements using Geometric Brownian Motion (GBM), one of the most fundamental stochastic processes in financial mathematics. GBM serves as the foundation for the Black-Scholes option pricing model and is widely used for simulating asset price paths in finance.</p>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li>Interactive GBM simulation with adjustable parameters</li>
+                <li>Multiple price path simulations displayed simultaneously</li>
+                <li>Real-time visualization using Chart.js</li>
+                <li>Mathematical foundations based on stochastic calculus</li>
+            </ul>
+            
+            <h2>Interactive Simulation</h2>
+            <p>Adjust the parameters below to see how they affect the stock price simulations:</p>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <label for="S0">Initial stock price \( S_{0} \) :</label>
+                    <input type="number" id="S0" value="100">
+                </div>
+                <div class="control-group">
+                    <label for="mu">Expected return/drift \( \mu \):</label>
+                    <input type="number" id="mu" value="0.05" step="0.01">
+                </div>
+                <div class="control-group">
+                    <label for="sigma">Volatility \( \sigma \):</label>
+                    <input type="number" id="sigma" value="0.2" step="0.01">
+                </div>
+                <div class="control-group">
+                    <label for="T">Time period \( T \) [years]:</label>
+                    <input type="number" id="T" value="1" step="0.1">
+                </div>
+                <div class="control-group">
+                    <label for="M">Number of simulations:</label>
+                    <input type="number" id="M" value="10" min="1" max="50">
+                </div>
+                <div class="control-group">
+                    <label for="N">Number of time steps:</label>
+                    <input type="number" id="N" value="252" min="10" max="1000">
+
+                    <p>(There are 252 trading days in a year.)</p>
+                </div>
+            </div>
+            
+            <button onclick="runSimulation()">Run Simulation</button>
+            
+            <div class="chart-container">
+                <canvas id="stockChart"></canvas>
+            </div>
+
+            <h2>Geometric Brownian Motion Model</h2>
+            <p>Geometric Brownian Motion (GBM) is a continuous-time stochastic process where the logarithm of the randomly varying quantity follows a Brownian motion with drift (Hull, 2017). The stochastic differential equation (SDE) for GBM is:</p>
+            <p>\[ dS_t = \mu S_t dt + \sigma S_t dW_t \]</p>
+            <p>Where:</p>
+            <ul>
+                <li>\(S_t\) = Stock price at time \(t\)</li>
+                <li>\(\mu\) = Drift coefficient (expected return)</li>
+                <li>\(\sigma\) = Volatility coefficient</li>
+                <li>\(dW_t\) = Increment of a Wiener process (standard Brownian motion)</li>
+            </ul>
+            
+            <h3>Discretization for Simulation</h3>
+            <p>For computational purposes, we discretize the GBM equation. The discrete-time version used in the simulation is:</p>
+            <p>\[ S_{t+\Delta t} = S_t \exp\left(\left(\mu - \frac{\sigma^2}{2}\right)\Delta t + \sigma \sqrt{\Delta t} Z_t \right) \]</p>
+            <p>Or equivalently for implementation:</p>
+            <p>\[ S_{t+\Delta t} = S_t \left(1 + \mu \Delta t + \sigma \sqrt{\Delta t} Z_t \right) \]</p>
+            <p>Where \(Z_t\) is a standard normal random variable and \(\Delta t\) is the time step.</p>
+            
+            <h3>Properties of GBM</h3>
+            <ul>
+                <li><strong>Log-normality:</strong> The future stock price \(S_t\) has a log-normal distribution.</li>
+                <li><strong>Multiplicative nature:</strong> Percentage changes rather than absolute changes are modeled.</li>
+                <li><strong>No negative values:</strong> Stock prices remain positive, consistent with limited liability.</li>
+                <li><strong>Markov property:</strong> Future price movements depend only on the current price, not the past trajectory.</li>
+                <li><strong>Independent increments:</strong> Price changes over non-overlapping time intervals are independent.</li>
+            </ul>
+
+            <h2>Model Limitations</h2>
+            <p>Despite its widespread use, GBM has several limitations as discussed by various researchers (Cont, 2001; Mandelbrot, 1963):</p>
+            <ul>
+                <li><strong>Constant Parameters:</strong> Assumes constant drift and volatility, though these may vary over time.</li>
+                <li><strong>Normal Distribution of Returns:</strong> Real market returns often exhibit "fat tails" with more extreme events than predicted by normal distributions.</li>
+                <li><strong>Continuous Price Paths:</strong> Real markets can have gaps and jumps, especially overnight or during news events.</li>
+                <li><strong>No Mean Reversion:</strong> Some assets show tendencies to revert to long-term averages.</li>
+                <li><strong>No Volatility Clustering:</strong> Real markets often show periods of high volatility followed by periods of calm.</li>
+                <li><strong>Perfect Liquidity:</strong> Assumes assets can be traded continuously with no impact on price.</li>
+            </ul>
+
+            <h2>Extensions and Alternatives</h2>
+            <p>To address the limitations of the basic GBM model, several extensions have been proposed:</p>
+            <ul>
+                <li><strong>Stochastic Volatility Models:</strong> Allow volatility to evolve stochastically (Heston, 1993).</li>
+                <li><strong>Jump-Diffusion Models:</strong> Incorporate discrete jumps to account for sudden price movements (Merton, 1976).</li>
+                <li><strong>Regime-Switching Models:</strong> Allow parameters to change based on market regimes (Hamilton, 1989).</li>
+                <li><strong>GARCH Models:</strong> Capture volatility clustering in discrete time (Bollerslev, 1986).</li>
+                <li><strong>Fractional Brownian Motion:</strong> Incorporate long-memory dependencies (Mandelbrot & van Ness, 1968).</li>
+            </ul>
+
+            <h2>References</h2>
+            <ul>
+                <li>Black, F., & Scholes, M. (1973). The pricing of options and corporate liabilities. <em>Journal of Political Economy, 81</em>(3), 637-654.</li>
+                <li>Bollerslev, T. (1986). Generalized autoregressive conditional heteroskedasticity. <em>Journal of Econometrics, 31</em>(3), 307-327.</li>
+                <li>Cont, R. (2001). Empirical properties of asset returns: stylized facts and statistical issues. <em>Quantitative Finance, 1</em>, 223-236.</li>
+                <li>Hamilton, J. D. (1989). A new approach to the economic analysis of nonstationary time series and the business cycle. <em>Econometrica, 57</em>(2), 357-384.</li>
+                <li>Heston, S. L. (1993). A closed-form solution for options with stochastic volatility with applications to bond and currency options. <em>The Review of Financial Studies, 6</em>(2), 327-343.</li>
+                <li>Hull, J. C. (2017). <em>Options, futures, and other derivatives</em> (10th ed.). Pearson.</li>
+                <li>Mandelbrot, B. (1963). The variation of certain speculative prices. <em>The Journal of Business, 36</em>(4), 394-419.</li>
+                <li>Mandelbrot, B., & van Ness, J. W. (1968). Fractional Brownian motions, fractional noises and applications. <em>SIAM Review, 10</em>(4), 422-437.</li>
+                <li>Merton, R. C. (1976). Option pricing when underlying stock returns are discontinuous. <em>Journal of Financial Economics, 3</em>(1-2), 125-144.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
