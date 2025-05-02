@@ -11,8 +11,7 @@
     <!-- Style for arrows in scroll down animation-->
     <style>
         :root {
-            --bounce-time: 0.6s; /* time for one bounce */
-            --pause-time: 1.2s;  /* time to pause after bouncing */
+            --bounce-time: 2.0s; /* time for two bounces */
         }
     
         .arrow {
@@ -21,7 +20,7 @@
             fill: var(--background);
             margin-top: 20px;
             position: relative;
-            animation: bounce-twice-loop calc(2 * var(--bounce-time) + var(--pause-time)) infinite;
+            animation: bounce-twice-loop var(--bounce-time) ease-in-out infinite;
         }
 
         @keyframes bounce-twice-loop {
@@ -31,6 +30,8 @@
             75% { transform: translateY(-10px); }
             100% { transform: translateY(0); }
         }
+
+
 
       </style>
     <!-- Can use \( \) to wrap inline math with mathjax, like in \( E = mc^2 \)-->>
