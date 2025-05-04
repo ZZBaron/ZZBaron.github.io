@@ -100,6 +100,8 @@ function runSimulation() {
                     display: false
                 },
                 tooltip: {
+                    // only show the tooltip of number of simulations is small
+                    enabled: M <= 10,
                     mode: 'index',
                     intersect: false
                 }
