@@ -56,6 +56,12 @@
                 displayMath: [['$$', '$$'], ['\\[', '\\]']],
                 processEscapes: true
             },
+            TeX: {
+              extensions: ["AMSmath.js", "AMSsymbols.js"],
+              equationNumbers: {
+                autoNumber: "AMS"  // Enables automatic numbering for equations using \begin{equation}
+              }
+            },
             "HTML-CSS": {
                 availableFonts: ["TeX"]
             }
@@ -65,8 +71,10 @@
     <!-- Load Chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     
-    <!-- Load our GBM simulation script -->
+    <!-- Load GBM simulation script -->
     <script src="js/GBM.js"></script>
+    <!-- Load Merton Jump Diffusion Model-->
+    <script src="js/merton.js"></script>
 </head>
 <body>
     <div class="detail-container">
@@ -91,7 +99,8 @@
                 <li>Mathematical foundations based on stochastic calculus</li>
             </ul>
             
-            <h2>Interactive Simulation</h2>
+            <div class="detail-content">
+            <h2>Geometric Brownian Motion Simulation</h2>
             <p>Adjust the parameters below to see how they affect the stock price simulations:</p>
             
             <div class="controls">
@@ -129,9 +138,11 @@
                 <canvas id="stockChart"></canvas>
             </div>
 
+        </div>
+
             <h2>Geometric Brownian Motion Model</h2>
             <p>Geometric Brownian Motion (GBM) is a continuous-time stochastic process where the logarithm of the randomly varying quantity follows a Brownian motion with drift (Hull, 2017). The stochastic differential equation (SDE) for GBM is:</p>
-            <p>\[ dS_t = \mu S_t dt + \sigma S_t dW_t \]</p>
+            <p>\begin{equation} dS_t = \mu S_t dt + \sigma S_t dW_t \end{equation}</p>
             <p>Where:</p>
             <ul>
                 <li>\(S_t\) = Stock price at time \(t\)</li>
@@ -139,13 +150,16 @@
                 <li>\(\sigma\) = Volatility coefficient</li>
                 <li>\(dW_t\) = Increment of a Wiener process (standard Brownian motion)</li>
             </ul>
+
+            <p>The solution to this SDE can be expressed in closed form, (Hull, 2017), as:</p>
+            <p>\begin{equation} S_t = S_0 \exp\left(\left(\mu - \frac{\sigma^2}{2}\right)t + \sigma W_t\right) \end{equation}</p>
+
+
             
             <h3>Discretization for Simulation</h3>
-            <p>For computational purposes, we discretize the GBM equation. The discrete-time version used in the simulation is:</p>
-            <p>\[ S_{t+\Delta t} = S_t \exp\left(\left(\mu - \frac{\sigma^2}{2}\right)\Delta t + \sigma \sqrt{\Delta t} Z_t \right) \]</p>
-            <p>Or equivalently for implementation:</p>
-            <p>\[ S_{t+\Delta t} = S_t \left(1 + \mu \Delta t + \sigma \sqrt{\Delta t} Z_t \right) \]</p>
-            <p>Where \(Z_t\) is a standard normal random variable and \(\Delta t\) is the time step.</p>
+            <p>For computational purposes, we discretize the GBM equation. Using the continuous-time closed form solution: </p>
+            <p>\begin{equation} S_{t + \Delta t} = S_t \exp \left( \left(\mu - \frac{\sigma^2}{2}\right) \Delta t + \sigma \sqrt{\Delta t} Z \right) \end{equation}</p>
+            <p>Where \(Z \sim \mathcal{N}(0,1)\).</p>
             
             <h3>Properties of GBM</h3>
             <ul>
@@ -170,12 +184,106 @@
             <h2>Extensions and Alternatives</h2>
             <p>To address the limitations of the basic GBM model, several extensions have been proposed:</p>
             <ul>
+                <li><strong>Jump-Diffusion Models:</strong> Incorporate discrete jumps to account for sudden price movements (Merton, 1976). This model is discussed and simulated below.</li>
                 <li><strong>Stochastic Volatility Models:</strong> Allow volatility to evolve stochastically (Heston, 1993).</li>
-                <li><strong>Jump-Diffusion Models:</strong> Incorporate discrete jumps to account for sudden price movements (Merton, 1976).</li>
                 <li><strong>Regime-Switching Models:</strong> Allow parameters to change based on market regimes (Hamilton, 1989).</li>
                 <li><strong>GARCH Models:</strong> Capture volatility clustering in discrete time (Bollerslev, 1986).</li>
                 <li><strong>Fractional Brownian Motion:</strong> Incorporate long-memory dependencies (Mandelbrot & van Ness, 1968).</li>
             </ul>
+            
+
+            <div class="detail-content">
+                <h2>Merton Jump Diffusion Model Simulation</h2>
+                <p>Below is an interactive simulation using the Merton Jump Diffusion model, which extends the GBM by adding random jumps to better capture sudden market movements:</p>
+                
+                <div class="controls">
+                    <!-- GBM Parameters -->
+                    <div class="control-group">
+                        <label for="merton_S0">Initial stock price \( S_{0} \) :</label>
+                        <input type="number" id="merton_S0" value="100">
+                    </div>
+                    <div class="control-group">
+                        <label for="merton_mu">Expected return/drift \( \mu \):</label>
+                        <input type="number" id="merton_mu" value="0.05" step="0.01">
+                    </div>
+                    <div class="control-group">
+                        <label for="merton_sigma">Volatility \( \sigma \):</label>
+                        <input type="number" id="merton_sigma" value="0.2" step="0.01">
+                    </div>
+                    <div class="control-group">
+                        <label for="merton_T">Time period \( T \) [years]:</label>
+                        <input type="number" id="merton_T" value="1" step="0.1">
+                    </div>
+                    <div class="control-group">
+                        <label for="merton_M">Number of simulations:</label>
+                        <input type="number" id="merton_M" value="10" min="1" max="50">
+                    </div>
+                    <div class="control-group">
+                        <label for="merton_N">Number of time steps:</label>
+                        <input type="number" id="merton_N" value="252" min="10" max="1000">
+                    </div>
+                    
+                    <!-- Jump Diffusion Parameters -->
+                    <div class="control-group">
+                        <label for="merton_lambda">Jump intensity \( \lambda \):</label>
+                        <input type="number" id="merton_lambda" value="1" min="0" step="0.1">
+                        <p>(Average number of jumps per year)</p>
+                    </div>
+                    <div class="control-group">
+                        <label for="merton_muJ">Mean jump size \( \mu_J \):</label>
+                        <input type="number" id="merton_muJ" value="-0.1" step="0.01">
+                        <p>(Negative for downward jumps)</p>
+                    </div>
+                    <div class="control-group">
+                        <label for="merton_sigmaJ">Jump volatility \( \sigma_J \):</label>
+                        <input type="number" id="merton_sigmaJ" value="0.1" min="0.01" step="0.01">
+                    </div>
+                </div>
+                
+                <button onclick="runMertonSimulation()">Run Merton Simulation</button>
+                
+                <div class="chart-container">
+                    <canvas id="mertonChart"></canvas>
+                </div>
+
+                </div>
+
+                <h2>Merton Jump Diffusion Model</h2>
+                <p>The Merton Jump Diffusion model (Merton, 1976) extends the Geometric Brownian Motion by adding a jump component to account for sudden, discontinuous changes in asset prices often observed during market shocks or news events. The stochastic differential equation for this model is:</p>
+                
+                <p>\begin{equation} dS_t = (\mu - \lambda k)S_t dt + \sigma S_t dW_t + S_t dJ_t \end{equation}</p>
+                
+                <p>Where:</p>
+                <ul>
+                    <li>\(S_t\) = Stock price at time \(t\)</li>
+                    <li>\(\mu\) = Drift coefficient (expected return)</li>
+                    <li>\(\sigma\) = Diffusion volatility coefficient</li>
+                    <li>\(W_t\) = Wiener process</li>
+                    <li>\(\lambda\) = Jump intensity (average number of jumps per year)</li>
+                    <li>\(k = E[J_t-1]\) = Expected jump size</li>
+                    <li>\(J_t\) = Jump process (compound Poisson process)</li>
+                </ul>
+    
+                <p>There is also a closed form solution to this SDE can be expressed in closed form, (Merton, 1976), as:</p>
+                <p>\begin{align} 
+                    S_t &= S_0 \exp\left(\left(\mu - \frac{\sigma^2}{2} - \lambda k\right)t + \sigma W_t \right) \prod_{i = 1}^{N_t}{Y_i} \\
+                        &= S_0 \exp\left(\left(\mu - \frac{\sigma^2}{2} - \lambda k\right)t + \sigma W_t + \sum_{i = 1}^{N_t}{y_i} \right)
+                    \end{align}</p>
+    
+                <p>Where \(N_t \sim \text{Pois}(\lambda t)\) is a possion process and gives the number of jumps in time interval \([0, t]\). \(Y_i\) are the jump sizes, with \(y_i = \ln(Y_i) \sim N(\mu_J, \sigma_J^2)\).</p>
+                
+                <h3>Discretization for Simulation</h3>
+                <p>For computational implementation, we discretize the Merton Jump Diffusion equation:</p>
+                
+                <p>\begin{equation} S_{t+\Delta t} = S_t \exp \left( \left(\mu - \frac{1}{2} \sigma^2 - \lambda k \right)\Delta t + \sigma\sqrt{\Delta t} Z + Y N \right) \end{equation}</p>
+    
+                <p>Where:</p>
+                <ul>
+                    <li>\(Z \sim N(0, 1)\) is a standard normal random variable</li>
+                    <li>\(N \sim \text{Pois}(\lambda \Delta t) \)</li>
+                    <li>\(Y \sim \mathcal{N}(\mu_J, \sigma_J^2)\)</li>
+                    <li>\(k = E[J_t-1] = e^{\mu_J + \frac{\sigma_J^2}{2}} - 1\)</li>
+                </ul>
 
             <h2>References</h2>
             <ul>
