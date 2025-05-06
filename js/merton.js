@@ -14,7 +14,7 @@ let mertonChart;
  * - dW_t is the increment of a Wiener process
  * - λ is the jump intensity (average number of jumps per year)
  * - k is the expected jump size (E[Y-1] where Y is the jump size)
- * - dJ_t is the jump process (compound Poisson process)
+
  */
 function runMertonSimulation() {
     // Get GBM parameters from inputs
