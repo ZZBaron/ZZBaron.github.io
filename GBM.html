@@ -91,13 +91,6 @@
             <h2>Project Overview</h2>
             <p>This project models and visualizes stock price movements using Geometric Brownian Motion (GBM), one of the most fundamental stochastic processes in financial mathematics. GBM serves as the foundation for the Black-Scholes option pricing model and is widely used for simulating asset price paths in finance.</p>
 
-            <h2>Key Features</h2>
-            <ul>
-                <li>Interactive GBM simulation with adjustable parameters</li>
-                <li>Multiple price path simulations displayed simultaneously</li>
-                <li>Real-time visualization using Chart.js</li>
-                <li>Mathematical foundations based on stochastic calculus</li>
-            </ul>
             
             <div class="detail-content">
             <h2>Geometric Brownian Motion Simulation</h2>
@@ -240,7 +233,7 @@
                     </div>
                 </div>
                 
-                <button onclick="runMertonSimulation()">Run Merton Simulation</button>
+                <button onclick="runMertonSimulation()">Run Simulation</button>
                 
                 <div class="chart-container">
                     <canvas id="mertonChart"></canvas>
@@ -251,7 +244,7 @@
                 <h2>Merton Jump Diffusion Model</h2>
                 <p>The Merton Jump Diffusion model (Merton, 1976) extends the Geometric Brownian Motion by adding a jump component to account for sudden, discontinuous changes in asset prices often observed during market shocks or news events. The stochastic differential equation for this model is:</p>
                 
-                <p>\begin{equation} dS_t = (\mu - \lambda k)S_t dt + \sigma S_t dW_t + S_t dJ_t \end{equation}</p>
+                <p>\begin{equation} dS_t = (\mu - \lambda k)S_t dt + \sigma S_t dW_t + S_t \left(J_t - 1 \right) dN_t \end{equation}</p>
                 
                 <p>Where:</p>
                 <ul>
@@ -260,8 +253,9 @@
                     <li>\(\sigma\) = Diffusion volatility coefficient</li>
                     <li>\(W_t\) = Wiener process</li>
                     <li>\(\lambda\) = Jump intensity (average number of jumps per year)</li>
-                    <li>\(k = E[J_t-1]\) = Expected jump size</li>
-                    <li>\(J_t\) = Jump process (compound Poisson process)</li>
+                    <li>\(J_t\) = Jump size satisfying \( \ln{J_t} \sim \mathcal{N}(\mu_J, \sigma_J^2) \)</li>
+                    <li>\(k = E[J_t-1] = e^{\mu_J + \frac{\sigma_J^2}{2}} - 1 \) = Expected jump size</li>
+                    <li>\(N_t\) = Poisson process representing the number of jumps in time interval \([0, t]\)</li>
                 </ul>
     
                 <p>There is also a closed form solution to this SDE can be expressed in closed form, (Merton, 1976), as:</p>
@@ -270,7 +264,7 @@
                         &= S_0 \exp\left(\left(\mu - \frac{\sigma^2}{2} - \lambda k\right)t + \sigma W_t + \sum_{i = 1}^{N_t}{y_i} \right)
                     \end{align}</p>
     
-                <p>Where \(N_t \sim \text{Pois}(\lambda t)\) is a possion process and gives the number of jumps in time interval \([0, t]\). \(Y_i\) are the jump sizes, with \(y_i = \ln(Y_i) \sim N(\mu_J, \sigma_J^2)\).</p>
+                <p>Where \(Y_i\) are the jump sizes, with \(y_i = \ln(Y_i) \sim N(\mu_J, \sigma_J^2)\). Notice that \(\ln{J_t} = \sum_{i=1}^{N_t}{y_i} \) is a compound poisson process.</p>
                 
                 <h3>Discretization for Simulation</h3>
                 <p>For computational implementation, we discretize the Merton Jump Diffusion equation:</p>
@@ -282,7 +276,6 @@
                     <li>\(Z \sim N(0, 1)\) is a standard normal random variable</li>
                     <li>\(N \sim \text{Pois}(\lambda \Delta t) \)</li>
                     <li>\(Y \sim \mathcal{N}(\mu_J, \sigma_J^2)\)</li>
-                    <li>\(k = E[J_t-1] = e^{\mu_J + \frac{\sigma_J^2}{2}} - 1\)</li>
                 </ul>
 
             <h2>References</h2>
@@ -296,6 +289,7 @@
                 <li>Mandelbrot, B. (1963). The variation of certain speculative prices. <em>The Journal of Business, 36</em>(4), 394-419.</li>
                 <li>Mandelbrot, B., & van Ness, J. W. (1968). Fractional Brownian motions, fractional noises and applications. <em>SIAM Review, 10</em>(4), 422-437.</li>
                 <li>Merton, R. C. (1976). Option pricing when underlying stock returns are discontinuous. <em>Journal of Financial Economics, 3</em>(1-2), 125-144.</li>
+                
             </ul>
         </div>
     </div>
