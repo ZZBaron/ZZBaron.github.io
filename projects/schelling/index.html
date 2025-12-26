@@ -211,7 +211,7 @@
 
         <!-- Content appended here --><div class="franklin-content">
 <h1 id="schellings_segregation_model"><a href="#schellings_segregation_model" class="header-anchor">Schelling&#39;s Segregation Model</a></h1>
-<div class="franklin-toc"><ol><li><a href="#about">About</a></li><li><a href="#model_description">Model Description</a></li><li><a href="#parameters">Parameters</a><ol><li><a href="#behavioral_threshold">Behavioral Threshold</a></li></ol></li><li><a href="#algorithm">Algorithm</a></li><li><a href="#discussion">Discussion</a><ol><li><a href="#inaccuracies">Inaccuracies</a></li></ol></li><li><a href="#implementation_notes">Implementation Notes</a><ol><li><a href="#neighborhood_definition">Neighborhood Definition</a></li><li><a href="#movement_strategy">Movement Strategy</a></li><li><a href="#computational_complexity">Computational Complexity</a></li></ol></li><li><a href="#extensions">Extensions</a></li><li><a href="#a_2d_spectrum_segregation_model">A 2D Spectrum Segregation Model</a><ol><li><a href="#model_description__2">Model Description</a></li><li><a href="#modified_similarity_metric">Modified Similarity Metric</a></li><li><a href="#algorithm_modifications">Algorithm Modifications</a></li><li><a href="#visualization">Visualization</a></li><li><a href="#emergent_behavior">Emergent Behavior</a></li></ol></li><li><a href="#references">References</a></li></ol></div>
+<div class="franklin-toc"><ol><li><a href="#about">About</a></li><li><a href="#model_description">Model Description</a></li><li><a href="#parameters">Parameters</a><ol><li><a href="#behavioral_threshold">Behavioral Threshold</a></li></ol></li><li><a href="#algorithm">Algorithm</a></li><li><a href="#discussion">Discussion</a><ol><li><a href="#inaccuracies">Inaccuracies</a></li><li><a href="#neighborhood_definition">Neighborhood Definition</a></li><li><a href="#movement_strategy">Movement Strategy</a></li><li><a href="#computational_complexity">Computational Complexity</a></li><li><a href="#extensions">Extensions</a></li></ol></li><li><a href="#a_2d_spectrum_segregation_model">A 2D Spectrum Segregation Model</a><ol><li><a href="#model_description__2">Model Description</a></li><li><a href="#modified_similarity_metric">Modified Similarity Metric</a></li><li><a href="#algorithm_modifications">Algorithm Modifications</a></li><li><a href="#visualization">Visualization</a></li><li><a href="#emergent_behavior">Emergent Behavior</a></li></ol></li><li><a href="#references">References</a></li></ol></div>
 <div class="row"><div class="container"><div class="center"><img src="/assets/schelling_segregation.gif" alt="" /></div></div>
 
 <div style="clear: both"></div></div>
@@ -301,7 +301,6 @@ s_{i,j} = \frac{1}{|N(i,j)|}\sum_{(k,l) \in N(i,j)} [\text{type}(k,l) = \text{ty
 <li><p>Group identities may change and even be influenced by neighbors or other factors such as social media</p>
 </li>
 </ol>
-<h2 id="implementation_notes"><a href="#implementation_notes" class="header-anchor">Implementation Notes</a></h2>
 <h3 id="neighborhood_definition"><a href="#neighborhood_definition" class="header-anchor">Neighborhood Definition</a></h3>
 <p>Uses Moore neighborhood &#40;8-neighborhood&#41; including diagonal neighbors. Von Neumann neighborhood &#40;4-neighborhood&#41; is an alternative that produces different dynamics.</p>
 <h3 id="movement_strategy"><a href="#movement_strategy" class="header-anchor">Movement Strategy</a></h3>
@@ -321,7 +320,7 @@ s_{i,j} = \frac{1}{|N(i,j)|}\sum_{(k,l) \in N(i,j)} [\text{type}(k,l) = \text{ty
 <li><p>Space complexity: \(O(N^2)\) for grid storage</p>
 </li>
 </ul>
-<h2 id="extensions"><a href="#extensions" class="header-anchor">Extensions</a></h2>
+<h3 id="extensions"><a href="#extensions" class="header-anchor">Extensions</a></h3>
 <p>Possible model enhancements:</p>
 <ul>
 <li><p>Multiple group types &#40;\(k > 2\)&#41;</p>
