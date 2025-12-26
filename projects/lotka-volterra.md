@@ -96,7 +96,17 @@ $$
 S(t) = 1 + A \sin(2  \pi  t / 12)
 $$
 
-where $A$ is the amplitude of seasonal variation.
+and the [Holling Type II](https://en.wikipedia.org/wiki/Functional_response#Type_II) functional response was chosen
+
+$$
+f(x,y) = \frac{ax}{1 + a h x + q y}
+$$
+
+where:
+- $A$ = Amplitude of seasonal variation.
+- $q$ = Interference coefficient
+- $a$ = Attack rate
+- $h$ = Handling time
 
 ## Limitations
 The new model still faces limitations as identified in ecological modeling literature (Gurney & Nisbet, 1998):
