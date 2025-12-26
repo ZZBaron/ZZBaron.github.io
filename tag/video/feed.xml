@@ -9,14 +9,14 @@
 
   <channel>
     <title>
-      <![CDATA[  Franklin Template  ]]>
+      <![CDATA[  ZZBaron&#39;s Portfolio  ]]>
     </title>
-    <link> https://tlienart.github.io/FranklinTemplates.jl/ </link>
+    <link> https://zzbaron.github.io/ </link>
     <description>
-      <![CDATA[  Example website using Franklin  ]]>
+      <![CDATA[  Portfolio and projects by ZZBaron  ]]>
     </description>
     <atom:link
-      href="https://tlienart.github.io/FranklinTemplates.jl/feed.xml"
+      href="https://zzbaron.github.io/feed.xml"
       rel="self"
       type="application/rss+xml" />
 
@@ -25,8 +25,8 @@
   <title>
     <![CDATA[  Home  ]]>
   </title>
-  <link> https://tlienart.github.io/FranklinTemplates.jl/index.html </link>
-  <guid> https://tlienart.github.io/FranklinTemplates.jl/index.html </guid>
+  <link> https://zzbaron.github.io/index.html </link>
+  <guid> https://zzbaron.github.io/index.html </guid>
   <description>
     <![CDATA[  Home Page.  ]]>
   </description>  
@@ -44,8 +44,8 @@
   <title>
     <![CDATA[  Black Hole Light Ray Simulation  ]]>
   </title>
-  <link> https://tlienart.github.io/FranklinTemplates.jl/projects/index.html </link>
-  <guid> https://tlienart.github.io/FranklinTemplates.jl/projects/index.html </guid>
+  <link> https://zzbaron.github.io/projects/index.html </link>
+  <guid> https://zzbaron.github.io/projects/index.html </guid>
   <description>
     <![CDATA[  2d black hole sim.  ]]>
   </description>  

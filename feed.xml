@@ -9,14 +9,14 @@
 
   <channel>
     <title>
-      <![CDATA[  Franklin Template  ]]>
+      <![CDATA[  ZZBaron&#39;s Portfolio  ]]>
     </title>
-    <link> https://tlienart.github.io/FranklinTemplates.jl/ </link>
+    <link> https://zzbaron.github.io/ </link>
     <description>
-      <![CDATA[  Example website using Franklin  ]]>
+      <![CDATA[  Portfolio and projects by ZZBaron  ]]>
     </description>
     <atom:link
-      href="https://tlienart.github.io/FranklinTemplates.jl/feed.xml"
+      href="https://zzbaron.github.io/feed.xml"
       rel="self"
       type="application/rss+xml" />
 
@@ -25,8 +25,8 @@
   <title>
     <![CDATA[  Schelling&#39;s Segregation Model  ]]>
   </title>
-  <link> https://tlienart.github.io/FranklinTemplates.jl/projects/schelling/index.html </link>
-  <guid> https://tlienart.github.io/FranklinTemplates.jl/projects/schelling/index.html </guid>
+  <link> https://zzbaron.github.io/projects/schelling/index.html </link>
+  <guid> https://zzbaron.github.io/projects/schelling/index.html </guid>
   <description>
     <![CDATA[  An interactive simulation of Schelling&#39;s Segregation Model demonstrating how individual preferences for similar neighbors can lead to large-scale segregation patterns in society.  ]]>
   </description>  
@@ -44,8 +44,8 @@
   <title>
     <![CDATA[  Vortex  ]]>
   </title>
-  <link> https://tlienart.github.io/FranklinTemplates.jl/vortex/docs/index.html </link>
-  <guid> https://tlienart.github.io/FranklinTemplates.jl/vortex/docs/index.html </guid>
+  <link> https://zzbaron.github.io/vortex/docs/index.html </link>
+  <guid> https://zzbaron.github.io/vortex/docs/index.html </guid>
   <description>
     <![CDATA[  A short description of the page which would serve as <strong>blurb</strong> in a <code>RSS</code> feed; you can use basic markdown here but the whole description string must be a single line &#40;not a multiline string&#41;. Like this one for instance. Keep in mind that styling is minimal in RSS so for instance don&#39;t expect maths or fancy styling to work; images should be ok though: <img src="https://upload.wikimedia.org/wikipedia/en/3/32/Rick_and_Morty_opening_credits.jpeg" alt="" />  ]]>
   </description>  
@@ -63,8 +63,8 @@
   <title>
     <![CDATA[  RF/Quantum Device Engineering Research  ]]>
   </title>
-  <link> https://tlienart.github.io/FranklinTemplates.jl/research/index.html </link>
-  <guid> https://tlienart.github.io/FranklinTemplates.jl/research/index.html </guid>
+  <link> https://zzbaron.github.io/research/index.html </link>
+  <guid> https://zzbaron.github.io/research/index.html </guid>
   <description>
     <![CDATA[  RF/quantum device engineering research.  ]]>
   </description>  
@@ -82,8 +82,8 @@
   <title>
     <![CDATA[  Web Development  ]]>
   </title>
-  <link> https://tlienart.github.io/FranklinTemplates.jl/projects/website/index.html </link>
-  <guid> https://tlienart.github.io/FranklinTemplates.jl/projects/website/index.html </guid>
+  <link> https://zzbaron.github.io/projects/website/index.html </link>
+  <guid> https://zzbaron.github.io/projects/website/index.html </guid>
   <description>
     <![CDATA[  About this website.  ]]>
   </description>  
@@ -101,8 +101,8 @@
   <title>
     <![CDATA[  Home  ]]>
   </title>
-  <link> https://tlienart.github.io/FranklinTemplates.jl/index.html </link>
-  <guid> https://tlienart.github.io/FranklinTemplates.jl/index.html </guid>
+  <link> https://zzbaron.github.io/index.html </link>
+  <guid> https://zzbaron.github.io/index.html </guid>
   <description>
     <![CDATA[  Home Page.  ]]>
   </description>  
@@ -120,8 +120,8 @@
   <title>
     <![CDATA[  Black Hole Light Ray Simulation  ]]>
   </title>
-  <link> https://tlienart.github.io/FranklinTemplates.jl/projects/index.html </link>
-  <guid> https://tlienart.github.io/FranklinTemplates.jl/projects/index.html </guid>
+  <link> https://zzbaron.github.io/projects/index.html </link>
+  <guid> https://zzbaron.github.io/projects/index.html </guid>
   <description>
     <![CDATA[  2d black hole sim.  ]]>
   </description>  
@@ -139,8 +139,8 @@
   <title>
     <![CDATA[  Lotka-Volterra Predator-Prey Simulation  ]]>
   </title>
-  <link> https://tlienart.github.io/FranklinTemplates.jl/projects/lotka-volterra/index.html </link>
-  <guid> https://tlienart.github.io/FranklinTemplates.jl/projects/lotka-volterra/index.html </guid>
+  <link> https://zzbaron.github.io/projects/lotka-volterra/index.html </link>
+  <guid> https://zzbaron.github.io/projects/lotka-volterra/index.html </guid>
   <description>
     <![CDATA[  A short description of the page which would serve as <strong>blurb</strong> in a <code>RSS</code> feed; you can use basic markdown here but the whole description string must be a single line &#40;not a multiline string&#41;. Like this one for instance. Keep in mind that styling is minimal in RSS so for instance don&#39;t expect maths or fancy styling to work; images should be ok though: <img src="https://upload.wikimedia.org/wikipedia/en/3/32/Rick_and_Morty_opening_credits.jpeg" alt="" />  ]]>
   </description>  
@@ -158,8 +158,8 @@
   <title>
     <![CDATA[  Geometric Brownian Motion Stock Price Simulation  ]]>
   </title>
-  <link> https://tlienart.github.io/FranklinTemplates.jl/projects/stock_sim/index.html </link>
-  <guid> https://tlienart.github.io/FranklinTemplates.jl/projects/stock_sim/index.html </guid>
+  <link> https://zzbaron.github.io/projects/stock_sim/index.html </link>
+  <guid> https://zzbaron.github.io/projects/stock_sim/index.html </guid>
   <description>
     <![CDATA[  Interactive simulation of stock prices using Geometric Brownian Motion  ]]>
   </description>  
@@ -196,8 +196,8 @@
   <title>
     <![CDATA[  Code blocks  ]]>
   </title>
-  <link> https://tlienart.github.io/FranklinTemplates.jl/menu1/index.html </link>
-  <guid> https://tlienart.github.io/FranklinTemplates.jl/menu1/index.html </guid>
+  <link> https://zzbaron.github.io/menu1/index.html </link>
+  <guid> https://zzbaron.github.io/menu1/index.html </guid>
   <description>
     <![CDATA[  A short description of the page which would serve as <strong>blurb</strong> in a <code>RSS</code> feed; you can use basic markdown here but the whole description string must be a single line &#40;not a multiline string&#41;. Like this one for instance. Keep in mind that styling is minimal in RSS so for instance don&#39;t expect maths or fancy styling to work; images should be ok though: <img src="https://upload.wikimedia.org/wikipedia/en/3/32/Rick_and_Morty_opening_credits.jpeg" alt="" />  ]]>
   </description>  
