@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:media="http://search.yahoo.com/mrss/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:georss="http://www.georss.org/georss">
+
+  <channel>
+    <title>
+      <![CDATA[  Franklin Template  ]]>
+    </title>
+    <link> https://tlienart.github.io/FranklinTemplates.jl/ </link>
+    <description>
+      <![CDATA[  Example website using Franklin  ]]>
+    </description>
+    <atom:link
+      href="https://tlienart.github.io/FranklinTemplates.jl/feed.xml"
+      rel="self"
+      type="application/rss+xml" />
+
+
+<item>
+  <title>
+    <![CDATA[  Schelling&#39;s Segregation Model  ]]>
+  </title>
+  <link> https://tlienart.github.io/FranklinTemplates.jl/projects/schelling/index.html </link>
+  <guid> https://tlienart.github.io/FranklinTemplates.jl/projects/schelling/index.html </guid>
+  <description>
+    <![CDATA[  An interactive simulation of Schelling&#39;s Segregation Model demonstrating how individual preferences for similar neighbors can lead to large-scale segregation patterns in society.  ]]>
+  </description>  
+    
+  <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>ZZBaron</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Vortex  ]]>
+  </title>
+  <link> https://tlienart.github.io/FranklinTemplates.jl/vortex/docs/index.html </link>
+  <guid> https://tlienart.github.io/FranklinTemplates.jl/vortex/docs/index.html </guid>
+  <description>
+    <![CDATA[  A short description of the page which would serve as <strong>blurb</strong> in a <code>RSS</code> feed; you can use basic markdown here but the whole description string must be a single line &#40;not a multiline string&#41;. Like this one for instance. Keep in mind that styling is minimal in RSS so for instance don&#39;t expect maths or fancy styling to work; images should be ok though: <img src="https://upload.wikimedia.org/wikipedia/en/3/32/Rick_and_Morty_opening_credits.jpeg" alt="" />  ]]>
+  </description>  
+    
+  <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>ZZBaron</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  RF/Quantum Device Engineering Research  ]]>
+  </title>
+  <link> https://tlienart.github.io/FranklinTemplates.jl/research/index.html </link>
+  <guid> https://tlienart.github.io/FranklinTemplates.jl/research/index.html </guid>
+  <description>
+    <![CDATA[  RF/quantum device engineering research.  ]]>
+  </description>  
+    
+  <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>ZZBaron</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Web Development  ]]>
+  </title>
+  <link> https://tlienart.github.io/FranklinTemplates.jl/projects/website/index.html </link>
+  <guid> https://tlienart.github.io/FranklinTemplates.jl/projects/website/index.html </guid>
+  <description>
+    <![CDATA[  About this website.  ]]>
+  </description>  
+    
+  <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>ZZBaron</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Home  ]]>
+  </title>
+  <link> https://tlienart.github.io/FranklinTemplates.jl/index.html </link>
+  <guid> https://tlienart.github.io/FranklinTemplates.jl/index.html </guid>
+  <description>
+    <![CDATA[  Home Page.  ]]>
+  </description>  
+    
+  <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>ZZBaron</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Black Hole Light Ray Simulation  ]]>
+  </title>
+  <link> https://tlienart.github.io/FranklinTemplates.jl/projects/index.html </link>
+  <guid> https://tlienart.github.io/FranklinTemplates.jl/projects/index.html </guid>
+  <description>
+    <![CDATA[  2d black hole sim.  ]]>
+  </description>  
+    
+  <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>ZZBaron</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  Lotka-Volterra Predator-Prey Simulation  ]]>
+  </title>
+  <link> https://tlienart.github.io/FranklinTemplates.jl/projects/lotka-volterra/index.html </link>
+  <guid> https://tlienart.github.io/FranklinTemplates.jl/projects/lotka-volterra/index.html </guid>
+  <description>
+    <![CDATA[  A short description of the page which would serve as <strong>blurb</strong> in a <code>RSS</code> feed; you can use basic markdown here but the whole description string must be a single line &#40;not a multiline string&#41;. Like this one for instance. Keep in mind that styling is minimal in RSS so for instance don&#39;t expect maths or fancy styling to work; images should be ok though: <img src="https://upload.wikimedia.org/wikipedia/en/3/32/Rick_and_Morty_opening_credits.jpeg" alt="" />  ]]>
+  </description>  
+    
+  <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>ZZBaron</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
+    <![CDATA[  More goodies  ]]>
+  </title>
+  <link>  </link>
+  <guid>  </guid>
+  <description>
+    <![CDATA[  A short description of the page which would serve as <strong>blurb</strong> in a <code>RSS</code> feed; you can use basic markdown here but the whole description string must be a single line &#40;not a multiline string&#41;. Like this one for instance. Keep in mind that styling is minimal in RSS so for instance don&#39;t expect maths or fancy styling to work; images should be ok though: <img src="https://upload.wikimedia.org/wikipedia/en/b/b0/Rick_and_Morty_characters.jpg" alt="" />  ]]>
+  </description>  
+    
+  <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>ZZBaron</atom:name>
+  </atom:author>
+        
+</item>
+</channel></rss>
