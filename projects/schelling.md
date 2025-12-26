@@ -77,10 +77,10 @@ where $P$ is a logical proposition.
 
 ### Inaccuracies
 If the model is interpreted as people or households on a spatial grid, it suffers some short-comings:
-1. Some people are more biased towards a similar group identity than others
-2. There are other concerns in a persons life other than their immediate neighbors' group identities
-3. The group identities of an agent's neighbors are not always known to the agent immediately if ever
-4. Group identities may change and even be influenced by neighbors or other factors such as social media
+- Some people are more biased towards a similar group identity than others
+- There are other concerns in a persons life other than their immediate neighbors' group identities
+- The group identities of an agent's neighbors are not always known to the agent immediately if ever
+- Group identities may change and even be influenced by neighbors or other factors such as social media
 
 ### Neighborhood Definition
 Uses Moore neighborhood (8-neighborhood) including diagonal neighbors. Von Neumann neighborhood (4-neighborhood) is an alternative that produces different dynamics.
@@ -157,14 +157,6 @@ The algorithm remains largely identical to the original Schelling model, with th
 [3.](#algorithm)
 - Replace discrete type matching with continuous distance calculation
 - Agent $(i,j)$ is satisfied if $\frac{1}{|N(i,j)|}\sum_{(k,l) \in N(i,j)} \| \mathbf{v}_{i,j} - \mathbf{v}_{k,l} \|_2 \cdot \frac{1}{\sqrt{2}} \leq B_a$
-
-### Visualization
-
-Two ways of visualizing the spectrum model are given here:
-
-1. **RGB Composite**: Map spectrum dimensions to color channels (e.g., red channel = $v_x$, blue channel = $v_y$, green = 0), revealing spatial clustering of similar spectrum positions
-
-2. **Separate Heatmaps**: Display each dimension independently using diverging colormaps to show how different characteristics segregate spatially
 
 ### Emergent Behavior
 
