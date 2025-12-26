@@ -82,8 +82,6 @@ If the model is interpreted as people or households on a spatial grid, it suffer
 3. The group identities of an agent's neighbors are not always known to the agent immediately if ever
 4. Group identities may change and even be influenced by neighbors or other factors such as social media
 
-## Implementation Notes
-
 ### Neighborhood Definition
 Uses Moore neighborhood (8-neighborhood) including diagonal neighbors. Von Neumann neighborhood (4-neighborhood) is an alternative that produces different dynamics.
 
@@ -97,7 +95,7 @@ Agents relocate to random empty cells. Alternative strategies include:
 - Time per iteration: $O(N^2)$ for grid traversal
 - Space complexity: $O(N^2)$ for grid storage
 
-## Extensions
+### Extensions
 Possible model enhancements:
 - Multiple group types ($k > 2$)
 - Heterogeneous thresholds across agents
