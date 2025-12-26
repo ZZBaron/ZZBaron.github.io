@@ -19,7 +19,7 @@ ignore = ["node_modules/"]
 generate_rss = true
 website_title = "ZZBaron's Portfolio"
 website_descr = "Portfolio and projects by ZZBaron"
-website_url   = "https://zzbaaron.github.io/"
+website_url   = "https://zzbaron.github.io/"
 +++
 
 <!--
