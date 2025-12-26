@@ -1,2 +1,4 @@
-# ignore all files in Ommited Content directory
-Omitted\ Content/
+__site/
+.DS_Store
+node_modules/
+package-lock.json
