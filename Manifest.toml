@@ -77,6 +77,8 @@ version = "1.11.0"
 [[deps.Franklin]]
 deps = ["Dates", "DelimitedFiles", "DocStringExtensions", "ExprTools", "FranklinTemplates", "HTTP", "Literate", "LiveServer", "Logging", "Markdown", "NodeJS", "OrderedCollections", "Pkg", "REPL", "Random", "TOML"]
 git-tree-sha1 = "717c8b1bfc0278870ab82fbe69119ee8449290c6"
+repo-rev = "master"
+repo-url = "https://github.com/JuliaDocs/Franklin.jl.git"
 uuid = "713c75ef-9fc9-4b05-94a9-213340da978e"
 version = "0.10.97"
 
