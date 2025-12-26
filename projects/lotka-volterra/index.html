@@ -280,20 +280,25 @@
 <ul>
 <li><p>\(r\) &#61; Prey growth rate</p>
 </li>
-<li><p>\(K\) &#61; Carrying capacity &#40;maximum sustainable population size that the environment can support, taking resource limitations into account. It prevents the prey population from growing indefinitely.&#41;</p>
+<li><p>\(K\) &#61; Carrying capacity</p>
 </li>
-<li><p>\(S(t)\) &#61; Seasonal factor &#40;This term introduces seasonal variations in the model, affecting both predation and predator growth rates. It is modeled as a sinusoidal function that varies over time, reflecting how el conditions &#40;such as temperature and resource availability&#41; change throughout the year.</p>
+<li><p>\(S(t)\) &#61; Seasonal factor</p>
 </li>
-<li><p>\(f(x,y)\) &#61; Functional response This term describes the relationship between prey density and the rate at which predators consume prey. It captures the non-linear dynamics of predator-prey interactions, accounting for f prey availability and predator efficiency</p>
+<li><p>\(f(x,y)\) &#61; Functional response</p>
 </li>
 <li><p>\(\tau\) &#61; Time delay</p>
 </li>
-<li><p>\(m\) &#61; Predator mortality. This term represents the natural death rate of the predator population, where &#40;m&#41; is the mortality rate of predators. It decreases the predator population over time, regardless of prey a.</p>
+<li><p>\(m\) &#61; Predator mortality</p>
 </li>
-<li><p>\(c\) &#61; Conversion Efficiency. This term represents how efficiently predators convert consumed prey into their own biomass. It reflects the energy transfer from prey to predator in the food web.</p>
+<li><p>\(c\) &#61; Conversion efficiency</p>
 </li>
 </ul>
-<p>The prey growth rate \(r\), is the maximum growth rate of the prey population in the absence of predators; it reflects the reproductive potential of the prey species. The carrying capacity \(K\) is the maximum sustainable population size that the environment can support. The functional response \(f(x,y)\) describes the relationship between prey density and the rate at which predators consume prey; it captures the non-linear dynamics of predator-prey interactions, accounting for prey availability and predator efficiency. \(\tau\) is the delay for the response of the predator population to changes in the quantity of prey. \(m\), the predator mortality, represents the natural death rate of the predator population; it decreases the predator population over time, regardless of prey population.</p>
+<p>The prey growth rate \(r\), is the maximum growth rate of the prey population in the absence of predators; it reflects the reproductive potential of the prey species. The carrying capacity \(K\) is the maximum sustainable population size that the environment can support, taking resource limitations into account. The functional response \(f(x,y)\) describes the relationship between prey density and the rate at which predators consume prey; it captures the non-linear dynamics of predator-prey interactions, accounting for prey availability and predator efficiency. \(\tau\) is the delay for the response of the predator population to changes in the quantity of prey. \(m\), the predator mortality, represents the natural death rate of the predator population; it decreases the predator population over time, regardless of prey population. The conversion efficiency \(c\) is how efficiently predators convert consumed prey into their own biomass; it reflects the energy transfer from prey to predator in the food web. The seasonal factor \(S(t)\) reflects how seasonal variations &#40;like temperature and resource availability&#41; can affect predation and predator growth rates.</p>
+<p>In this model, the following seasonal factor was chosen:</p>
+\[
+S(t) = 1 + A \sin(2  \pi  t / 12)
+\]
+<p>where \(A\) is the amplitude of seasonal variation.</p>
 <h2 id="limitations__2"><a href="#limitations__2" class="header-anchor">Limitations</a></h2>
 <p>The new model still faces limitations as identified in ecological modeling literature &#40;Gurney &amp; Nisbet, 1998&#41;:</p>
 <ul>
