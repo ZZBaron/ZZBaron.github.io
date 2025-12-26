@@ -80,6 +80,7 @@ If the model is interpreted as people or households on a spatial grid, it suffer
 1. Some people are more biased towards a similar group identity than others
 2. There are other concerns in a persons life other than their immediate neighbors' group identities
 3. The group identities of an agent's neighbors are not always known to the agent immediately if ever
+4. Group identities may change and even be influenced by neighbors or other factors such as social media
 
 ## Implementation Notes
 
