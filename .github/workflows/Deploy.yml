@@ -49,4 +49,3 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         branch: main
         folder: __site
-        target-folder: .
