@@ -31,5 +31,5 @@ Add here global latex commands to use throughout your pages.
 <!--
 repository, required for github pages
 -->
-@def prepath = "zzbaron"
+@def prepath = "ZZBaron.github.io"
 
