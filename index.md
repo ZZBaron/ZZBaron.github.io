@@ -128,7 +128,7 @@ repo_url = "https://github.com/ZZBaron"
 # Welcome to My Portfolio
 
 @@portfolio-subtitle
-**Explore my projects**
+**Explore My Projects**
 @@
 @@
 
