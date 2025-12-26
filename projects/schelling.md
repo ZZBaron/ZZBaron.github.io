@@ -102,6 +102,7 @@ Possible model enhancements:
 - Weighted preferences (e.g., preference strength varies)
 - Network topologies beyond regular grids
 - Economic constraints on movement
+- Continuous groups instead of discrete (discussed below)
 
 ## A 2D Spectrum Segregation Model
 
