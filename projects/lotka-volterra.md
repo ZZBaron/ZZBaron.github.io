@@ -11,14 +11,14 @@ repo_url = "https://github.com/ZZBaron/2D-Black-Hole-Sim"
 
 # Lotka-Volterra Predator-Prey Simulation
 
-\toc
+<!-- \toc -->
 
 @@row
 @@container
 @@center ![](/assets/lotka_volterra_plot.png) @@
 @@
 ~~~
-<div style="clear: both"></div>
+<div style="clear: both; mix-blend-mode: multiply;"></div>
 ~~~
 @@
 
@@ -96,7 +96,7 @@ $$
 S(t) = 1 + A \sin(2  \pi  t / 12)
 $$
 
-and the [Holling Type II](https://en.wikipedia.org/wiki/Functional_response#Type_II) functional response was chosen
+and the [Beddington–DeAngelis](https://en.wikipedia.org/wiki/Functional_response#Type_II) functional response was chosen
 
 $$
 f(x,y) = \frac{ax}{1 + a h x + q y}
@@ -120,9 +120,10 @@ The new model still faces limitations as identified in ecological modeling liter
 
 ## References
 
-* Yeakel, J. D., Stiefs, D., Novak, M., & Gross, T. (2011). Generalized modeling of ecological population dynamics. *Theoretical Ecology*, 4, 179–194. Springer. [https://link.springer.com/article/10.1007/s12080-011-0112-6](https://link.springer.com/article/10.1007/s12080-011-0112-6)
-
-* Gurney, W. S. C., & Nisbet, R. M. (1998). Ecological dynamics. *Oxford University Press*
-* Holling, C. S. (1959). The components of predation as revealed by a study of small mammal predation of the European pine sawfly. *The Canadian Entomologist, 91*(5), 293-320. <!-- https://doi.org/10.4039/Ent91293-5 -->
-* Lotka, A. J. (1920). Analytical note on certain rhythmic relations in organic systems. *Proceedings of the National Academy of Sciences, 6*(7), 410-415. <!-- https://doi.org/10.1073/pnas.6.7.410 -->
-* Volterra, V. (1926). Fluctuations in the abundance of a species considered mathematically. *Nature, 118*(2972), 558-560. <!-- https://doi.org/10.1038/118558a0 -->
+{{references
+Generalized_mod_Yeakel_2011
+Ecological_dyna_Gurney_1998
+The_Components_Hollin_1959
+Analytical_Note_Lotka_1920
+Fluctuations_in_VOLTER_1926
+}}

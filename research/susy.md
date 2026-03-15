@@ -22,7 +22,7 @@ University of Maryland | Summer 2021 - Present
       alt="Adinkra graph of chiral multiplet"
       style="width: 100%; height: auto;"
     >
-    <figcaption style="margin-top: 0.5rem; font-style: italic; font-size: 0.95rem; color: #555;">
+    <figcaption style="margin-top: 0.5rem; font-style: italic; font-size: 0.95rem; color: var(--heading-color);">
       Adinkra graph of chiral multiplet.
     </figcaption>
   </figure>
@@ -91,8 +91,14 @@ I worked with Dr. Sylvester Gates' research team on supersymmetry theory, focusi
 
 ## References
 
-* Gates, S. J. Jr., Gonzales, J., MacGregor, B., Parker, J., Polo‑Sherk, R., Rodgers, V. G. J., & Wassink, L. (2009). *4D, N = 1 Supersymmetry Genomics (I)*. *Journal of High Energy Physics*, **2009**(12), 008. [https://arxiv.org/abs/0902.3830](https://arxiv.org/abs/0902.3830)
+<!-- * Gates, S. J. Jr., Gonzales, J., MacGregor, B., Parker, J., Polo‑Sherk, R., Rodgers, V. G. J., & Wassink, L. (2009). *4D, N = 1 Supersymmetry Genomics (I)*. *Journal of High Energy Physics*, **2009**(12), 008. [https://arxiv.org/abs/0902.3830](https://arxiv.org/abs/0902.3830) -->
 
-* Buchbinder, I. L., Gates, S. J. Jr., & Koutrolikos, K. (2018). *Interaction of supersymmetric nonlinear sigma models with external higher spin superfields via higher spin supercurrents*. arXiv preprint **arXiv:1804.08539**. [https://arxiv.org/abs/1804.08539](https://arxiv.org/abs/1804.08539)
+{{references 
+4D_N_1_Super_Gates_2009
+Interaction_of_Buchbi_2018
+4D_N_2_Super_1999
+}}
 
-* Gates, S. J. Jr. & Kuzenko, S. M. (1999). *4D, N = 2 Supersymmetric Off‑shell Sigma‑Models on the Cotangent Bundles of Kähler Manifolds*. *arXiv preprint* **arXiv:hep-th/9903013**. [https://arxiv.org/abs/hep-th/9903013](https://arxiv.org/abs/hep-th/9903013)
+<!-- * Buchbinder, I. L., Gates, S. J. Jr., & Koutrolikos, K. (2018). *Interaction of supersymmetric nonlinear sigma models with external higher spin superfields via higher spin supercurrents*. arXiv preprint **arXiv:1804.08539**. [https://arxiv.org/abs/1804.08539](https://arxiv.org/abs/1804.08539) -->
+
+<!-- * Gates, S. J. Jr. & Kuzenko, S. M. (1999). *4D, N = 2 Supersymmetric Off‑shell Sigma‑Models on the Cotangent Bundles of Kähler Manifolds*. *arXiv preprint* **arXiv:hep-th/9903013**. [https://arxiv.org/abs/hep-th/9903013](https://arxiv.org/abs/hep-th/9903013) -->

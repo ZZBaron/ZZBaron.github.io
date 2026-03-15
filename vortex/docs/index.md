@@ -10,10 +10,7 @@ repo_url = "https://github.com/ZZBaron/Vortex"
 
 # Vortex Engine
 
-@@row
-@@container
-@@left ![](/assets/engine.mp4) @@
-@@
+@@center
 ~~~
 <video width="100%" autoplay loop muted playsinline>
   <source src="/assets/engine.mp4" type="video/mp4">

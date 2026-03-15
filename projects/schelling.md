@@ -11,15 +11,10 @@ tags = ["syntax", "code", "image"]
 
 # Schelling's Segregation Model
 
-\toc
+<!-- \toc -->
 
-@@row
-@@container
-@@center ![](/assets/schelling_segregation.gif) @@
-@@
-~~~
-<div style="clear: both"></div>
-~~~
+@@center
+![](/assets/schelling_segregation.gif)
 @@
 
 ## About
@@ -137,13 +132,13 @@ where each dimension represents an independent spectrum of characteristics.
 
 The similarity threshold now operates on distance in spectrum space rather than discrete group membership. Agent satisfaction is determined by:
 $$
-d_{avg} = \frac{1}{|N(i,j)|}\sum_{(k,l) \in N(i,j)} \|\mathbf{v}_{i,j} - \mathbf{v}_{k,l}\|_2
+d_{i, j} = \frac{1}{|N(i,j)|}\sum_{(k,l) \in N(i,j)} \|\mathbf{v}_{i,j} - \mathbf{v}_{k,l}\|_2
 $$
 where $\|\cdot\|_2$ denotes the Euclidean distance between spectrum positions.
 
 An agent at position $(i,j)$ is satisfied when:
 $$
-\frac{d_{avg}}{\sqrt{D}} \leq B_a
+s_{i, j} = \frac{d_{i, j}}{\sqrt{D}} \leq B_a
 $$
 where $D$ is the number of dimensions (here $D=2$) and the normalization factor $\sqrt{D}$ accounts for the maximum possible distance in $D$-dimensional unit hypercube space.
 
@@ -166,5 +161,7 @@ The continuous spectrum model exhibits similar segregation dynamics to the binar
 - The same critical threshold $B_a \approx \frac{1}{3}$ produces segregation, despite the infinite possible "group" identities
 
 ## References
-* Schelling, T. C. (1969). Models of Segregation. *American Economic Review*, **59**(2), 488-493.
-
+<!-- * Schelling, T. C. (1969). Models of Segregation. *American Economic Review*, **59**(2), 488-493. -->
+{{references
+Models_of_Segre_Schell_1969
+}}

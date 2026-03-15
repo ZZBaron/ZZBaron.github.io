@@ -11,14 +11,11 @@ repo_url = "https://github.com/ZZBaron/2D-Black-Hole-Sim"
 
 # Black Hole Light Ray Simulation
 
-\toc
+<!-- \toc -->
 
-@@row
-@@container
-@@left ![](/assets/BlackHoleSim.mp4) @@
-@@
+@@center
 ~~~
-<video width="70%" autoplay loop muted playsinline>
+<video width="50%" autoplay loop muted playsinline>
   <source src="/assets/BlackHoleSim.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>

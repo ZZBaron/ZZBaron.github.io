@@ -214,6 +214,19 @@ Where:
 
 ## References
 
+{{references
+The_Pricing_of_Black_1973
+Generalized_aut_Boller_1986
+Empirical_prope_Cont_2001
+A_New_Approach_Hamilt_1989
+A_Closed_Form_S_Heston_1993
+Options_Future_Hull_2017
+The_Variation_o_Mandel_1963
+Fractional_Brow_Mandel_1968
+Option_pricing_Merton_1976
+}}
+
+<!-- 
 * Black, F., & Scholes, M. (1973). The pricing of options and corporate liabilities. *Journal of Political Economy, 81*(3), 637-654.
 * Bollerslev, T. (1986). Generalized autoregressive conditional heteroskedasticity. *Journal of Econometrics, 31*(3), 307-327.
 * Cont, R. (2001). Empirical properties of asset returns: stylized facts and statistical issues. *Quantitative Finance, 1*, 223-236.
@@ -222,4 +235,4 @@ Where:
 * Hull, J. C. (2017). *Options, futures, and other derivatives* (10th ed.). Pearson.
 * Mandelbrot, B. (1963). The variation of certain speculative prices. *The Journal of Business, 36*(4), 394-419.
 * Mandelbrot, B., & van Ness, J. W. (1968). Fractional Brownian motions, fractional noises and applications. *SIAM Review, 10*(4), 422-437.
-* Merton, R. C. (1976). Option pricing when underlying stock returns are discontinuous. *Journal of Financial Economics, 3*(1-2), 125-144.
+* Merton, R. C. (1976). Option pricing when underlying stock returns are discontinuous. *Journal of Financial Economics, 3*(1-2), 125-144. -->

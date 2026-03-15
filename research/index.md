@@ -5,7 +5,7 @@ date = Date(2025, 11, 13)
 rss = "RF/quantum device engineering research."
 
 tags = ["syntax", "code", "image"]
-
+refs = ["Probing_quantum_Vignea_2022", "4D_N_1_Super_Gates_2009"]
 +++
 
 # RF/Quantum Device Engineering Research
@@ -84,4 +84,6 @@ The research has implications for scalable quantum computing architectures and t
 - RF circuit design and testing
 
 ## References
-* Vigneau, F., Fedele, F., Chatterjee, A., Reilly, D., Kuemmeth, F., Gonzalez-Zalba, F., Laird, E., & Ares, N. (2023). *Probing quantum devices with radio-frequency reflectometry*. *Applied Physics Reviews*, 10, 021305. [https://arxiv.org/abs/2202.10516](https://arxiv.org/abs/2202.10516)
+<!-- * Vigneau, F., Fedele, F., Chatterjee, A., Reilly, D., Kuemmeth, F., Gonzalez-Zalba, F., Laird, E., & Ares, N. (2023). *Probing quantum devices with radio-frequency reflectometry*. *Applied Physics Reviews*, 10, 021305. [https://arxiv.org/abs/2202.10516](https://arxiv.org/abs/2202.10516) -->
+
+{{references Probing_quantum_Vignea_2022}}
