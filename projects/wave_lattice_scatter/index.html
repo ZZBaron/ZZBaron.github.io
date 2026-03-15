@@ -22,7 +22,7 @@
 <link rel="shortcut icon" href="/assets/favicon.ico">
 <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/apple-touch-icon.png"> -->
 
-   <title>Schelling's Segregation Model</title> 
+   <title>Quantum Wavepacket Scattering Through a 2D Lattice</title> 
 
   <!-- GBM simulation scripts -->
   <script src="/assets/js/GBM.js"></script>
@@ -94,7 +94,7 @@
             <ul class="menu-list-child-list ">
               <li class="menu-list-item "><a href="/projects/"
                   class="menu-list-link">2D Black Hole Sim</a>
-              <li class="menu-list-item active"><a href="/projects/schelling/"
+              <li class="menu-list-item "><a href="/projects/schelling/"
                   class="menu-list-link">Schelling Segregation Model</a>
               <li class="menu-list-item "><a href="/projects/stock_sim/"
                   class="menu-list-link">Stock Sim</a>
@@ -202,13 +202,13 @@
 
         <!-- Title -->
         
-          <span class="header-title">Schelling's Segregation Model</span>
+          <span class="header-title">Quantum Wavepacket Scattering Through a 2D Lattice</span>
         <!-- {{end}} -->
 
         
           <div class="header-right">
             <span class="header-divider">|</span>
-            <a id="github" href="https://github.com/ZZBaron/Schelling" target="_blank" rel="noopener noreferrer">
+            <a id="github" href="https://github.com/ZZBaron/WF-scatter" target="_blank" rel="noopener noreferrer">
               <img src="/assets/github-mark-white.svg" alt="GitHub Logo" width="24" height="24" />
             </a>
           </div>
@@ -220,185 +220,75 @@
 
 
         <!-- Content appended here --><div class="franklin-content">
-<h1 id="schellings_segregation_model"><a href="#schellings_segregation_model" class="header-anchor">Schelling&#39;s Segregation Model</a></h1>
-<div class="center"><img src="/assets/schelling_segregation.gif" alt="" /></div>
-<h2 id="about"><a href="#about" class="header-anchor">About</a></h2>
-<p>Developed by economist Thomas Schelling in 1971, the Schelling model is an agent-based model that demonstrates how individual preferences for similar neighbors can lead to large-scale segregation patterns.</p>
-<h2 id="model_description"><a href="#model_description" class="header-anchor">Model Description</a></h2>
-<p>Schelling&#39;s model consists of a grid populated by two types of agents &#40;represented as blue and red&#41; and empty spaces. Each agent evaluates their neighborhood and moves if they are dissatisfied with the proportion of similar neighbors.</p>
-<h2 id="parameters"><a href="#parameters" class="header-anchor">Parameters</a></h2>
-<ul>
-<li><p>\(N\): Grid size &#40;\(N \times N\) lattice&#41; </p>
-</li>
-<li><p>\(\rho_{empty}\): Proportion of unoccupied cells </p>
-</li>
-<li><p>\(B_a\): Similarity threshold. Agents want at least this fraction of similar neighbors</p>
-</li>
-<li><p>Initial agent distribution: Two groups are distributed across occupied cells</p>
-</li>
-<li><p>Max iterations</p>
-</li>
-</ul>
-<h3 id="behavioral_threshold"><a href="#behavioral_threshold" class="header-anchor">Behavioral Threshold</a></h3>
-<p>The similarity threshold \(B_a\) determines agent satisfaction:</p>
-\[
-s = \frac{n_{similar}}{n_{total}} \geq B_a
-\]
-<p>where \(n_{similar}\) is the number of similar neighbors and \(n_{total}\) is the total number of neighbors &#40;excluding empty cells&#41;.</p>
-<p>Schelling noticed that a threshold of \(B_a \geq B_{\text{seg}} \approx \frac{1}{3}\) causes groups to segregate.</p>
-<h2 id="algorithm"><a href="#algorithm" class="header-anchor">Algorithm</a></h2>
-<ol>
-<li><p>Create \(N \times N\) grid</p>
-</li>
-<li><p>Randomly assign cells as:</p>
-<ul>
-<li><p>Group A &#40;blue&#41;: \((1-\rho_{empty})/2\) of cells</p>
-</li>
-<li><p>Group B &#40;red&#41;: \((1-\rho_{empty})/2\) of cells  </p>
-</li>
-<li><p>Empty: \(\rho_{empty}\) of cells</p>
-</li>
-</ul>
-</li>
-<li><p>For each iteration &#40;simulation step&#41;:</p>
-</li>
-</ol>
-<ul>
-<li><p>Evaluate Satisfaction: For each agent at position \((i,j)\), calculate: </p>
-</li>
-</ul>
-\[
-s_{i,j} = \frac{1}{|N(i,j)|}\sum_{(k,l) \in N(i,j)} [\text{type}(k,l) = \text{type}(i,j)] 
-\]
-<p>where \(N(i,j)\) &#61; Moore neighborhood &#40;8 adjacent cells&#41;, and the <a href="https://en.wikipedia.org/wiki/Iverson_bracket">Iverson bracket</a> is defined, </p>
-\[
-[P] = 
-\begin{cases}
-1 & \text{if } P \text{ is true}\\
-0 & \text{otherwise}
-\end{cases}
-\]
-<p>where \(P\) is a logical proposition.</p>
-<ul>
-<li><p>Relocate unsatisfied agents: If \(s_{i,j} < B_a\), move agent to a random empty cell</p>
-</li>
-<li><p>Update metrics: Calculate global satisfaction rate: \( S = \frac{1}{n_{agents}}\sum_{i,j} [s_{i,j} \geq B_a] \)</p>
-</li>
-</ul>
-<ol start="4">
-<li><p>Repeat until:</p>
-<ul>
-<li><p>No agents move in an iteration, or</p>
-</li>
-<li><p>Maximum iterations reached &#40;default: 100&#41;</p>
-</li>
-</ul>
-</li>
-</ol>
+<h1 id="quantum_wavepacket_scattering_through_a_2d_lattice"><a href="#quantum_wavepacket_scattering_through_a_2d_lattice" class="header-anchor">Quantum Wavepacket Scattering Through a 2D Lattice</a></h1>
+<div class="center"><img src="/assets/wavepacket_scattering.gif" alt="" /></div>
+<hr />
+<h2 id="overview"><a href="#overview" class="header-anchor">Overview</a></h2>
+<p>This simulation demonstrates the quantum mechanical scattering of a Gaussian wavepacket through a two-dimensional periodic lattice potential. The wavepacket, initially localized with momentum directed toward the lattice, exhibits quantum phenomena such as diffraction, interference, and partial transmission/reflection. The computational domain is truncated using a Perfectly Matched Layer &#40;PML&#41;, which absorbs outgoing probability flux without artificial reflections.</p>
+<h2 id="physical_system"><a href="#physical_system" class="header-anchor">Physical System</a></h2>
+<h3 id="the_schrödinger_equation"><a href="#the_schrödinger_equation" class="header-anchor">The Schrödinger Equation</a></h3>
+<p>The time evolution of the quantum wavefunction \(\psi(x, y, t)\) is governed by the time-dependent Schrödinger equation:</p>
+\[i\hbar \frac{\partial \psi}{\partial t} = \hat{H} \psi\]
+<h3 id="hamiltonian"><a href="#hamiltonian" class="header-anchor">Hamiltonian</a></h3>
+<p>The Hamiltonian consists of kinetic and potential energy terms:</p>
+\[\hat{H} = \hat{T}_x + \hat{T}_y + \hat{V}(x, y)\]
+\[\hat{T}_x = \frac{\hat{p}_x^2}{2m}, \quad \hat{T}_y = \frac{\hat{p}_y^2}{2m}\]
+<p>The lattice potential is a periodic array of Gaussian barriers:</p>
+\[V_{\text{lattice}}(x, y) = \sum_{i,j} V_0 \exp\left[-\frac{(x - x_{ij})^2 + (y - y_{ij})^2}{2\sigma_{\text{gauss}}^2}\right]\]
+<p>where \(x_{ij} = x_{\text{center}} + i \cdot a\) and \(y_{ij} = j \cdot a\).</p>
+<h3 id="initial_wavepacket"><a href="#initial_wavepacket" class="header-anchor">Initial Wavepacket</a></h3>
+<p>The initial state is a separable Gaussian wavepacket:</p>
+\[\psi(x, y, 0) = \psi_x(x, 0) \cdot \psi_y(y, 0)\]
+\[\psi_x(x, 0) = \left(\frac{1}{2\pi\sigma^2}\right)^{1/4} \exp\left[-\frac{(x-x_0)^2}{4\sigma^2} + i p_{0x} x\right], \quad \psi_y(y, 0) = \left(\frac{1}{2\pi\sigma^2}\right)^{1/4} \exp\left[-\frac{(y-y_0)^2}{4\sigma^2} + i p_{0y} y\right]\]
+<p>The Gaussian form saturates the Heisenberg uncertainty bound: \(\Delta x \, \Delta p = \hbar/2\).</p>
+<h2 id="numerical_implementation"><a href="#numerical_implementation" class="header-anchor">Numerical Implementation</a></h2>
+<h3 id="absorbing_boundary_conditions_perfectly_matched_layer"><a href="#absorbing_boundary_conditions_perfectly_matched_layer" class="header-anchor">Absorbing Boundary Conditions &#40;Perfectly Matched Layer&#41;</a></h3>
+<h4 id="motivation"><a href="#motivation" class="header-anchor">Motivation</a></h4>
+<p>A finite computational grid truncates what should be an infinite domain. A hard boundary reflects outgoing probability flux back into the simulation, producing unphysical interference. The PML surrounds the physical domain with an absorbing region that removes all outgoing waves without any reflection at the interface, regardless of angle or frequency of incidence.</p>
+<h4 id="complex_coordinate_stretching"><a href="#complex_coordinate_stretching" class="header-anchor">Complex Coordinate Stretching</a></h4>
+<p>The PML is derived from analytic continuation of the spatial coordinates into the complex plane. Inside the PML region, spatial derivatives are replaced by:</p>
+\[\frac{\partial}{\partial x} \rightarrow \frac{1}{1 + i\sigma(x)/\omega} \frac{\partial}{\partial x}\]
+<p>where \(\omega\) is the angular frequency and \(\sigma(x) \geq 0\) is the absorption profile. A plane wave \(e^{ikx}\) propagating in the \(+x\) direction transforms as:</p>
+\[e^{ikx} \rightarrow e^{ikx} \cdot \exp\!\left(-\frac{k}{\omega}\int^x \sigma(x')\,dx'\right)\]
+<p>The second factor is a real exponential decay for \(k > 0\). Since \(\sigma = 0\) at the interior boundary, the transformation is continuous at the PML interface and produces no reflection in the exact continuous case.</p>
+<h4 id="quantum_cap_form"><a href="#quantum_cap_form" class="header-anchor">Quantum CAP Form</a></h4>
+<p>For the Schrödinger equation the PML reduces to augmenting the potential with a purely imaginary absorbing term:</p>
+\[V(x, y) = V_{\text{lattice}}(x, y) - i\,\sigma(x) - i\,\sigma(y)\]
+<p>The imaginary terms act as local sinks removing probability amplitude. The norm evolves as:</p>
+\[\frac{d}{dt}\|\psi\|^2 = -2\int \sigma(\mathbf{r})\,|\psi(\mathbf{r}, t)|^2\,d^2r \leq 0\]
+<p>so probability is strictly removed, never created, by the PML.</p>
+<h4 id="absorption_profile"><a href="#absorption_profile" class="header-anchor">Absorption Profile</a></h4>
+<p>The absorption strength ramps polynomially from zero at the interior PML boundary to \(\sigma_{\max}\) at the grid edge:</p>
+\[\sigma(x) = \sigma_{\max} \left(\frac{d(x)}{L_{\text{PML}}}\right)^n\]
+<p>where \(d(x)\) is the distance from the interior PML edge. The gradual turn-on is essential: a sudden jump in \(\sigma\) produces discretization-induced reflections even though the continuous PML is exactly reflectionless. The same profile is applied independently in \(y\) and symmetrically at both edges in each direction.</p>
+<h3 id="split-operator_method"><a href="#split-operator_method" class="header-anchor">Split-Operator Method</a></h3>
+<p>Time evolution uses the split-operator method. The kinetic operators \(\hat{T}_x\), \(\hat{T}_y\) are diagonal in momentum space; the potential \(\hat{V}\) is diagonal in position space. FFT-based lazy evaluation implements:</p>
+\[\hat{T}_{\text{FFT}} = \hat{T}_{xp} \cdot \hat{T}_{\text{mom}} \cdot \hat{T}_{px}\]
+<p>converting efficiently between representations for accurate long-time integration. In the physical interior the evolution is unitary; norm decay occurs only in the PML region.</p>
+<h3 id="simulation_parameters"><a href="#simulation_parameters" class="header-anchor">Simulation Parameters</a></h3>
+<table><tr><th align="right">Parameter</th><th align="right">Value</th></tr><tr><td align="right">Grid points \(N_x,\ N_y\)</td><td align="right">180, 150</td></tr><tr><td align="right">Domain \(x\)</td><td align="right">\([-30,\ 50]\)</td></tr><tr><td align="right">Domain \(y\)</td><td align="right">\([-30,\ 30]\)</td></tr><tr><td align="right">Grid spacing \(\Delta x,\ \Delta y\)</td><td align="right">\(0.44,\ 0.40\)</td></tr><tr><td align="right">Particle mass \(m\)</td><td align="right">\(1.0\)</td></tr><tr><td align="right">Initial position \((x_0, y_0)\)</td><td align="right">\((-8.0,\ 0.0)\)</td></tr><tr><td align="right">Initial momentum \((p_{0x}, p_{0y})\)</td><td align="right">\((2.5,\ 0.0)\)</td></tr><tr><td align="right">Wavepacket width \(\sigma\)</td><td align="right">\(1.5\)</td></tr><tr><td align="right">Lattice spacing \(a\)</td><td align="right">\(3.5\)</td></tr><tr><td align="right">Lattice center \(x_{\text{center}}\)</td><td align="right">\(20.0\)</td></tr><tr><td align="right">Lattice sites</td><td align="right">\(13 \times 13\)</td></tr><tr><td align="right">Potential height \(V_0\)</td><td align="right">\(12.0\)</td></tr><tr><td align="right">Gaussian site width \(\sigma_{\text{gauss}}\)</td><td align="right">\(0.4\)</td></tr><tr><td align="right">Simulation time \(T\)</td><td align="right">\([0,\ 15.0]\)</td></tr><tr><td align="right">Time step \(\Delta t\)</td><td align="right">\(0.15\)</td></tr><tr><td align="right">PML thickness \(L_{\text{PML}}\)</td><td align="right">\(12.0\)</td></tr><tr><td align="right">PML peak absorption \(\sigma_{\max}\)</td><td align="right">\(20.0\)</td></tr><tr><td align="right">PML ramp exponent \(n\)</td><td align="right">\(2\)</td></tr><tr><td align="right">Physical region \(x\)</td><td align="right">\([-18,\ 38]\)</td></tr><tr><td align="right">Physical region \(y\)</td><td align="right">\([-18,\ 18]\)</td></tr></table>
 <h2 id="discussion"><a href="#discussion" class="header-anchor">Discussion</a></h2>
-<h3 id="inaccuracies"><a href="#inaccuracies" class="header-anchor">Inaccuracies</a></h3>
-<p>If the model is interpreted as people or households on a spatial grid, it suffers some short-comings:</p>
-<ul>
-<li><p>Some people are more biased towards a similar group identity than others</p>
+<h3 id="assumptions"><a href="#assumptions" class="header-anchor">Assumptions</a></h3>
+<ol>
+<li><p><strong>Non-relativistic limit:</strong> \(v \ll c\), so the Schrödinger equation is valid</p>
 </li>
-<li><p>There are other concerns in a persons life other than their immediate neighbors&#39; group identities</p>
+<li><p><strong>Single-particle system:</strong> No particle-particle interactions</p>
 </li>
-<li><p>The group identities of an agent&#39;s neighbors are not always known to the agent immediately if ever</p>
+<li><p><strong>Time-independent potential:</strong> The lattice does not change during the simulation</p>
 </li>
-<li><p>Group identities may change and even be influenced by neighbors or other factors such as social media</p>
+<li><p><strong>Two-dimensional system:</strong> Dynamics confined to the \(xy\)-plane</p>
 </li>
-</ul>
-<h3 id="neighborhood_definition"><a href="#neighborhood_definition" class="header-anchor">Neighborhood Definition</a></h3>
-<p>Uses Moore neighborhood &#40;8-neighborhood&#41; including diagonal neighbors. Von Neumann neighborhood &#40;4-neighborhood&#41; is an alternative that produces different dynamics.</p>
-<h3 id="movement_strategy"><a href="#movement_strategy" class="header-anchor">Movement Strategy</a></h3>
-<p>Agents relocate to random empty cells. Alternative strategies include:</p>
-<ul>
-<li><p>Nearest empty cell</p>
+<li><p><strong>Atomic units:</strong> \(\hbar = m = 1\)</p>
 </li>
-<li><p>Best available location &#40;most similar neighbors&#41;</p>
+<li><p><strong>Born-Oppenheimer approximation:</strong> Lattice sites are assumed fixed</p>
 </li>
-<li><p>Probabilistic movement based on dissatisfaction level</p>
-</li>
-</ul>
-<h3 id="computational_complexity"><a href="#computational_complexity" class="header-anchor">Computational Complexity</a></h3>
-<ul>
-<li><p>Time per iteration: \(O(N^2)\) for grid traversal</p>
-</li>
-<li><p>Space complexity: \(O(N^2)\) for grid storage</p>
-</li>
-</ul>
-<h3 id="extensions"><a href="#extensions" class="header-anchor">Extensions</a></h3>
-<p>Possible model enhancements:</p>
-<ul>
-<li><p>Multiple group types &#40;\(k > 2\)&#41;</p>
-</li>
-<li><p>Heterogeneous thresholds across agents</p>
-</li>
-<li><p>Weighted preferences &#40;e.g., preference strength varies&#41;</p>
-</li>
-<li><p>Network topologies beyond regular grids</p>
-</li>
-<li><p>Economic constraints on movement</p>
-</li>
-<li><p>Continuous groups instead of discrete &#40;discussed below&#41;</p>
-</li>
-</ul>
-<h2 id="a_2d_spectrum_segregation_model"><a href="#a_2d_spectrum_segregation_model" class="header-anchor">A 2D Spectrum Segregation Model</a></h2>
-<div class="row"><div class="container"></div>
-
-<div style="display: flex; gap: 1em; align-items: center;">
-  <img src="/assets/schelling_spectrum.gif" alt="Schelling spectrum"
-       style="max-width: 100%; height: auto;" />
-  <img src="/assets/schelling_spectrum_legend.png" alt="Schelling spectrum legend"
-       style="max-width: 45%; height: auto; transform: translateX(-30%)" /> 
-</div></div>
-
-<div style="clear: both;"></div>
-
-<h3 id="model_description__2"><a href="#model_description__2" class="header-anchor">Model Description</a></h3>
-<p>Drawing inspiration from the <a href="https://en.wikipedia.org/wiki/Political_spectrum">2D political spectrum</a>, we extend Schelling&#39;s model from discrete binary groups to continuous two-dimensional spectrums that describe an agent&#39;s group identity.</p>
-<p>Instead of discrete group membership &#40;red or blue&#41;, each agent is characterized by a position in continuous 2D space:</p>
-\[
-\mathbf{v}_a = (v_{x}, v_{y}) \in [0,1]^2
-\]
-<p>where each dimension represents an independent spectrum of characteristics.</p>
-<h3 id="modified_similarity_metric"><a href="#modified_similarity_metric" class="header-anchor">Modified Similarity Metric</a></h3>
-<p>The similarity threshold now operates on distance in spectrum space rather than discrete group membership. Agent satisfaction is determined by:</p>
-\[
-d_{i, j} = \frac{1}{|N(i,j)|}\sum_{(k,l) \in N(i,j)} \|\mathbf{v}_{i,j} - \mathbf{v}_{k,l}\|_2
-\]
-<p>where \(\|\cdot\|_2\) denotes the Euclidean distance between spectrum positions.</p>
-<p>An agent at position \((i,j)\) is satisfied when:</p>
-\[
-s_{i, j} = \frac{d_{i, j}}{\sqrt{D}} \leq B_a
-\]
-<p>where \(D\) is the number of dimensions &#40;here \(D=2\)&#41; and the normalization factor \(\sqrt{D}\) accounts for the maximum possible distance in \(D\)-dimensional unit hypercube space.</p>
-<h3 id="algorithm_modifications"><a href="#algorithm_modifications" class="header-anchor">Algorithm Modifications</a></h3>
-<p>The algorithm remains largely identical to the original Schelling model, with these changes:</p>
-<p><a href="#algorithm">2.</a></p>
-<ul>
-<li><p>Group assignment replaced by: For each occupied cell, sample \(\mathbf{v} \sim \text{Uniform}([0,1]^2)\)</p>
-</li>
-</ul>
-<p><a href="#algorithm">3.</a></p>
-<ul>
-<li><p>Replace discrete type matching with continuous distance calculation</p>
-</li>
-<li><p>Agent \((i,j)\) is satisfied if \(\frac{1}{|N(i,j)|}\sum_{(k,l) \in N(i,j)} \| \mathbf{v}_{i,j} - \mathbf{v}_{k,l} \|_2 \cdot \frac{1}{\sqrt{2}} \leq B_a\)</p>
-</li>
-</ul>
-<h3 id="emergent_behavior"><a href="#emergent_behavior" class="header-anchor">Emergent Behavior</a></h3>
-<p>The continuous spectrum model exhibits similar segregation dynamics to the binary model but with additional nuances:</p>
-<ul>
-<li><p>Agents form gradient-like clusters rather than sharp boundaries</p>
-</li>
-<li><p>Segregation occurs along both dimensions simultaneously, creating multi-modal spatial patterns</p>
-</li>
-<li><p>The same critical threshold \(B_a \approx \frac{1}{3}\) produces segregation, despite the infinite possible &quot;group&quot; identities</p>
-</li>
-</ul>
+</ol>
+<h3 id="applications"><a href="#applications" class="header-anchor">Applications</a></h3>
+<p>This simulation is directly relevant to <strong>ultracold atoms in optical lattices</strong> &#91;1&#93;, where laser interference patterns create periodic potentials for neutral atoms and enable quantum simulation of condensed matter phenomena; to <strong>electron diffraction</strong> in crystal lattices &#91;2&#93;; and to <strong>quantum dot arrays</strong> and other engineered semiconductor potential landscapes &#91;3&#93;. Natural extensions include adding lattice disorder to study Anderson localization, incorporating interactions via the Gross-Pitaevskii equation, and investigating Bloch oscillations and band structure effects.</p>
 <h2 id="references"><a href="#references" class="header-anchor">References</a></h2>
-<div class="reference-list"><p id="ref-Models_of_Segre_Schell_1969"><span class="ref-num">[1]</span> Schelling, T. C. (1969). Models of Segregation. <em>American Economic Review</em>, <em>59</em>(2), 488-493.</p></div>
+<div class="reference-list"><p id="ref-Many_Body_Physi_Bloch_2007"><span class="ref-num">[1]</span> Bloch, I., Dalibard, J., & Zwerger, W. (2007). Many-Body Physics with Ultracold Gases. <em>Rev. Mod. Phys. 80, 885 (2008)</em>. <a href="https://doi.org/10.1103/RevModPhys.80.885" target="_blank">https://doi.org/10.1103/RevModPhys.80.885</a></p><p id="ref-Diffraction_of_Daviss_1927"><span class="ref-num">[2]</span> Davisson, C., & Germer, L. H. (1927). Diffraction of Electrons by a Crystal of Nickel. <em>Physical Review</em>, <em>30</em>, 705--740. <a href="https://doi.org/10.1103/physrev.30.705" target="_blank">https://doi.org/10.1103/physrev.30.705</a></p><p id="ref-Transport_in_Na_Ferry_2010"><span class="ref-num">[3]</span> Ferry, D., & Goodnick, S. M. (2010). Transport in Nanostructures.</p><p id="ref-A_perfectly_mat_Bereng_1994"><span class="ref-num">[4]</span> Berenger, J. (1994). A perfectly matched layer for the absorption of electromagnetic waves. <em>Journal of Computational Physics</em>, <em>114</em>, 185--200. <a href="https://doi.org/10.1006/jcph.1994.1159" target="_blank">https://doi.org/10.1006/jcph.1994.1159</a></p><p id="ref-Modern_quantum_Sakura_2017"><span class="ref-num">[5]</span> Sakurai, J. J., & Napolitano, J. (2017). Modern quantum mechanics - 2. edicion.</p><p id="ref-Bose_Einstein_C_Pethic_2011"><span class="ref-num">[6]</span> Pethick, C., Pethick, C. J., & Smith, H. (2011). Bose-Einstein Condensation in Dilute Gases.</p></div>
+<hr />
+<p><em>Simulation created using QuantumOptics.jl, a comprehensive framework for quantum mechanical simulations in Julia.</em></p>
 <div class="page-foot">
     <!-- <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> {{ fill author }}. {{isnotpage /tag/*}}Last modified: {{ fill fd_mtime }}.{{end}}
     Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. -->

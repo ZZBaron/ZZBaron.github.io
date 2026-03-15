@@ -175,6 +175,25 @@
 
 <item>
   <title>
+    <![CDATA[  Quantum Wavepacket Scattering Through a 2D Lattice  ]]>
+  </title>
+  <link> https://zzbaron.github.io/projects/wave_lattice_scatter/index.html </link>
+  <guid> https://zzbaron.github.io/projects/wave_lattice_scatter/index.html </guid>
+  <description>
+    <![CDATA[  Interactive simulation of stock prices using Geometric Brownian Motion  ]]>
+  </description>  
+    
+  <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>  
+  
+  
+  <atom:author>
+    <atom:name>ZZBaron</atom:name>
+  </atom:author>
+        
+</item>
+
+<item>
+  <title>
     <![CDATA[  More goodies  ]]>
   </title>
   <link>  </link>

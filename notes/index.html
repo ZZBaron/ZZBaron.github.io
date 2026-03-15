@@ -8,6 +8,7 @@
    <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
  
   <link rel="stylesheet" href="/css/franklin.css">
+<link rel="stylesheet" href="/css/projects-table.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700" type="text/css">
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/gbm.css">
@@ -31,6 +32,7 @@
 </head>
 
 <body> <!-- closed in foot.html -->
+  <canvas id="m" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;"></canvas>
   <!--
 <header>
 <nav class="nav-main">
@@ -51,7 +53,7 @@
     <div class="side-bar">
       <div class="header">
         <a href="/" class="title">
-          <img style="height:70px;" src="/assets/favicon.png" alt="ZZBaron" />
+          <img style="height:70px;" src="/assets/favicon_light.png" alt="ZZBaron" />
           <style>
             @media (max-width: 31.25rem) {
               .side-bar .show-menu {
@@ -97,8 +99,10 @@
                   class="menu-list-link">Stock Sim</a>
               <li class="menu-list-item "><a href="/projects/lotka-volterra/"
                   class="menu-list-link">Lotka-Volterra Predator-Prey Simulation</a>
-              <li class ="menu-list-item "><a href="/projects/website/"
+              <li class="menu-list-item "><a href="/projects/website/"
                   class="menu-list-link">Website</a>
+              <li class="menu-list-item "><a href="/projects/wave_lattice_scatter"
+                  class="menu-list-link">Wave Packet Lattice Scatter Simulation</a>
                   
 
             </ul>
@@ -192,20 +196,26 @@
     </div>
     <!-- CONTENT -->
     <div class="main-content-wrap"> <!-- closed in foot.html -->
-      <div class="main-content" id="focus" tabindex="-1" style="outline:0;"> <!-- closed in foot.html -->
-        <div class="main-header">
-          <a name="pagetop"></a>
+      <div class="main-header">
+        <a name="pagetop"></a>
 
-          <!-- <a id="github" href="https://github.com/tlienart/Franklin.jl/blob/master/docs/{{fd_rpath}}">Page source</a> -->
-          <span style="width:30px; text-align: center;color:lightgray;">|</span>
-          
+        <!-- Title -->
+        
+          <span class="header-title">Development</span>
+        <!-- {{end}} -->
+
+        
+          <div class="header-right">
+            <span class="header-divider">|</span>
             <a id="github" href="" target="_blank" rel="noopener noreferrer">
-              <img src="/assets/github-mark.svg"
-                alt="GitHub Logo"
-                width="48" height="48" />
+              <img src="/assets/github-mark-white.svg" alt="GitHub Logo" width="24" height="24" />
             </a>
-          <!-- {{end}} -->
-        </div>
+          </div>
+        <!-- {{end}} -->
+      </div>
+
+      <div class="main-content" id="focus" tabindex="-1" style="outline:0;"> <!-- closed in foot.html -->
+
 
 
         <!-- Content appended here --><div class="franklin-content"><h2 id="development"><a href="#development" class="header-anchor">Development</a></h2>
@@ -226,5 +236,6 @@
 <script>hljs.highlightAll();hljs.configure({tabReplace: '    '});</script>
 
     
+    <script src="/assets/js/matrix.js"></script>
   </body>
 </html>

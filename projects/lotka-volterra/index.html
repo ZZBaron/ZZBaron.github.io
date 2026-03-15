@@ -9,6 +9,7 @@
    <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
  
   <link rel="stylesheet" href="/css/franklin.css">
+<link rel="stylesheet" href="/css/projects-table.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700" type="text/css">
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/gbm.css">
@@ -32,6 +33,7 @@
 </head>
 
 <body> <!-- closed in foot.html -->
+  <canvas id="m" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;"></canvas>
   <!--
 <header>
 <nav class="nav-main">
@@ -52,7 +54,7 @@
     <div class="side-bar">
       <div class="header">
         <a href="/" class="title">
-          <img style="height:70px;" src="/assets/favicon.png" alt="ZZBaron" />
+          <img style="height:70px;" src="/assets/favicon_light.png" alt="ZZBaron" />
           <style>
             @media (max-width: 31.25rem) {
               .side-bar .show-menu {
@@ -98,8 +100,10 @@
                   class="menu-list-link">Stock Sim</a>
               <li class="menu-list-item active"><a href="/projects/lotka-volterra/"
                   class="menu-list-link">Lotka-Volterra Predator-Prey Simulation</a>
-              <li class ="menu-list-item "><a href="/projects/website/"
+              <li class="menu-list-item "><a href="/projects/website/"
                   class="menu-list-link">Website</a>
+              <li class="menu-list-item "><a href="/projects/wave_lattice_scatter"
+                  class="menu-list-link">Wave Packet Lattice Scatter Simulation</a>
                   
 
             </ul>
@@ -193,28 +197,33 @@
     </div>
     <!-- CONTENT -->
     <div class="main-content-wrap"> <!-- closed in foot.html -->
-      <div class="main-content" id="focus" tabindex="-1" style="outline:0;"> <!-- closed in foot.html -->
-        <div class="main-header">
-          <a name="pagetop"></a>
+      <div class="main-header">
+        <a name="pagetop"></a>
 
-          <!-- <a id="github" href="https://github.com/tlienart/Franklin.jl/blob/master/docs/{{fd_rpath}}">Page source</a> -->
-          <span style="width:30px; text-align: center;color:lightgray;">|</span>
-          
+        <!-- Title -->
+        
+          <span class="header-title">Lotka-Volterra Predator-Prey Simulation</span>
+        <!-- {{end}} -->
+
+        
+          <div class="header-right">
+            <span class="header-divider">|</span>
             <a id="github" href="https://github.com/ZZBaron/2D-Black-Hole-Sim" target="_blank" rel="noopener noreferrer">
-              <img src="/assets/github-mark.svg"
-                alt="GitHub Logo"
-                width="48" height="48" />
+              <img src="/assets/github-mark-white.svg" alt="GitHub Logo" width="24" height="24" />
             </a>
-          <!-- {{end}} -->
-        </div>
+          </div>
+        <!-- {{end}} -->
+      </div>
+
+      <div class="main-content" id="focus" tabindex="-1" style="outline:0;"> <!-- closed in foot.html -->
+
 
 
         <!-- Content appended here --><div class="franklin-content">
 <h1 id="lotka-volterra_predator-prey_simulation"><a href="#lotka-volterra_predator-prey_simulation" class="header-anchor">Lotka-Volterra Predator-Prey Simulation</a></h1>
-<div class="franklin-toc"><ol><li><a href="#about">About</a></li><li><a href="#features">Features</a></li><li><a href="#lotka-volterra_model">Lotka-Volterra Model</a><ol><li><a href="#limitations">Limitations</a></li></ol></li><li><a href="#a_modified_lotka-volterra_model">A Modified Lotka-Volterra Model</a></li><li><a href="#limitations__2">Limitations</a></li><li><a href="#references">References</a></li></ol></div>
 <div class="row"><div class="container"><div class="center"><img src="/assets/lotka_volterra_plot.png" alt="" /></div></div>
 
-<div style="clear: both"></div></div>
+<div style="clear: both; mix-blend-mode: multiply;"></div></div>
 <h2 id="about"><a href="#about" class="header-anchor">About</a></h2>
 <p>Lotka-Volterra predator-prey model simulation, highlighting predator-prey population cycles over time. The mathematical model was independently developed by Lotka &#40;1920&#41; and Volterra &#40;1926&#41;. </p>
 <h2 id="features"><a href="#features" class="header-anchor">Features</a></h2>
@@ -298,7 +307,7 @@
 \[
 S(t) = 1 + A \sin(2  \pi  t / 12)
 \]
-<p>and the <a href="https://en.wikipedia.org/wiki/Functional_response#Type_II">Holling Type II</a> functional response was chosen</p>
+<p>and the <a href="https://en.wikipedia.org/wiki/Functional_response#Type_II">Beddington–DeAngelis</a> functional response was chosen</p>
 \[
 f(x,y) = \frac{ax}{1 + a h x + q y}
 \]
@@ -332,18 +341,7 @@ f(x,y) = \frac{ax}{1 + a h x + q y}
 </li>
 </ul>
 <h2 id="references"><a href="#references" class="header-anchor">References</a></h2>
-<ul>
-<li><p>Yeakel, J. D., Stiefs, D., Novak, M., &amp; Gross, T. &#40;2011&#41;. Generalized modeling of ecological population dynamics. <em>Theoretical Ecology</em>, 4, 179–194. Springer. <a href="https://link.springer.com/article/10.1007/s12080-011-0112-6">https://link.springer.com/article/10.1007/s12080-011-0112-6</a></p>
-</li>
-<li><p>Gurney, W. S. C., &amp; Nisbet, R. M. &#40;1998&#41;. Ecological dynamics. <em>Oxford University Press</em></p>
-</li>
-<li><p>Holling, C. S. &#40;1959&#41;. The components of predation as revealed by a study of small mammal predation of the European pine sawfly. <em>The Canadian Entomologist, 91</em>&#40;5&#41;, 293-320. </p>
-</li>
-<li><p>Lotka, A. J. &#40;1920&#41;. Analytical note on certain rhythmic relations in organic systems. <em>Proceedings of the National Academy of Sciences, 6</em>&#40;7&#41;, 410-415. </p>
-</li>
-<li><p>Volterra, V. &#40;1926&#41;. Fluctuations in the abundance of a species considered mathematically. <em>Nature, 118</em>&#40;2972&#41;, 558-560. </p>
-</li>
-</ul>
+<div class="reference-list"><p id="ref-Generalized_mod_Yeakel_2011"><span class="ref-num">[1]</span> Yeakel, J. D., Stiefs, D., Novak, M., & Gross, T. (2011). Generalized modeling of ecological population dynamics. <em>Theoretical Ecology</em>, <em>4</em>, 179--194. <a href="https://doi.org/10.1007/s12080-011-0112-6" target="_blank">https://doi.org/10.1007/s12080-011-0112-6</a></p><p id="ref-Ecological_dyna_Gurney_1998"><span class="ref-num">[2]</span> Gurney, W. S. C. (1998). Ecological dynamics.</p><p id="ref-The_Components_Hollin_1959"><span class="ref-num">[3]</span> Holling, C. S. (1959). The Components of Predation as Revealed by a Study of Small-Mammal Predation of the European Pine Sawfly. <em>The Canadian Entomologist</em>, <em>91</em>, 293--320. <a href="https://doi.org/10.4039/ent91293-5" target="_blank">https://doi.org/10.4039/ent91293-5</a></p><p id="ref-Analytical_Note_Lotka_1920"><span class="ref-num">[4]</span> Lotka, A. J. (1920). Analytical Note on Certain Rhythmic Relations in Organic Systems. <em>Proceedings of the National Academy of Sciences</em>, <em>6</em>, 410--415. <a href="https://doi.org/10.1073/pnas.6.7.410" target="_blank">https://doi.org/10.1073/pnas.6.7.410</a></p><p id="ref-Fluctuations_in_VOLTER_1926"><span class="ref-num">[5]</span> VOLTERRA, V. (1926). Fluctuations in the Abundance of a Species considered Mathematically1. <em>Nature</em>, <em>118</em>, 558--560. <a href="https://doi.org/10.1038/118558a0" target="_blank">https://doi.org/10.1038/118558a0</a></p></div>
 <div class="page-foot">
     <!-- <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> {{ fill author }}. {{isnotpage /tag/*}}Last modified: {{ fill fd_mtime }}.{{end}}
     Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. -->
@@ -363,5 +361,6 @@ f(x,y) = \frac{ax}{1 + a h x + q y}
 <script>hljs.highlightAll();hljs.configure({tabReplace: '    '});</script>
 
     
+    <script src="/assets/js/matrix.js"></script>
   </body>
 </html>

@@ -9,6 +9,7 @@
    <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
  
   <link rel="stylesheet" href="/css/franklin.css">
+<link rel="stylesheet" href="/css/projects-table.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700" type="text/css">
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/gbm.css">
@@ -32,6 +33,7 @@
 </head>
 
 <body> <!-- closed in foot.html -->
+  <canvas id="m" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;"></canvas>
   <!--
 <header>
 <nav class="nav-main">
@@ -52,7 +54,7 @@
     <div class="side-bar">
       <div class="header">
         <a href="/" class="title">
-          <img style="height:70px;" src="/assets/favicon.png" alt="ZZBaron" />
+          <img style="height:70px;" src="/assets/favicon_light.png" alt="ZZBaron" />
           <style>
             @media (max-width: 31.25rem) {
               .side-bar .show-menu {
@@ -98,8 +100,10 @@
                   class="menu-list-link">Stock Sim</a>
               <li class="menu-list-item "><a href="/projects/lotka-volterra/"
                   class="menu-list-link">Lotka-Volterra Predator-Prey Simulation</a>
-              <li class ="menu-list-item "><a href="/projects/website/"
+              <li class="menu-list-item "><a href="/projects/website/"
                   class="menu-list-link">Website</a>
+              <li class="menu-list-item "><a href="/projects/wave_lattice_scatter"
+                  class="menu-list-link">Wave Packet Lattice Scatter Simulation</a>
                   
 
             </ul>
@@ -193,28 +197,31 @@
     </div>
     <!-- CONTENT -->
     <div class="main-content-wrap"> <!-- closed in foot.html -->
-      <div class="main-content" id="focus" tabindex="-1" style="outline:0;"> <!-- closed in foot.html -->
-        <div class="main-header">
-          <a name="pagetop"></a>
+      <div class="main-header">
+        <a name="pagetop"></a>
 
-          <!-- <a id="github" href="https://github.com/tlienart/Franklin.jl/blob/master/docs/{{fd_rpath}}">Page source</a> -->
-          <span style="width:30px; text-align: center;color:lightgray;">|</span>
-          
+        <!-- Title -->
+        
+          <span class="header-title">Black Hole Light Ray Simulation</span>
+        <!-- {{end}} -->
+
+        
+          <div class="header-right">
+            <span class="header-divider">|</span>
             <a id="github" href="https://github.com/ZZBaron/2D-Black-Hole-Sim" target="_blank" rel="noopener noreferrer">
-              <img src="/assets/github-mark.svg"
-                alt="GitHub Logo"
-                width="48" height="48" />
+              <img src="/assets/github-mark-white.svg" alt="GitHub Logo" width="24" height="24" />
             </a>
-          <!-- {{end}} -->
-        </div>
+          </div>
+        <!-- {{end}} -->
+      </div>
+
+      <div class="main-content" id="focus" tabindex="-1" style="outline:0;"> <!-- closed in foot.html -->
+
 
 
         <!-- Content appended here --><div class="franklin-content">
 <h1 id="black_hole_light_ray_simulation"><a href="#black_hole_light_ray_simulation" class="header-anchor">Black Hole Light Ray Simulation</a></h1>
-<div class="franklin-toc"><ol><li><a href="#about">About</a></li><li><a href="#schwarzschild_metric">Schwarzschild Metric</a></li><li><a href="#schwarzschild_radius">Schwarzschild Radius</a></li><li><a href="#geodesic_equations">Geodesic Equations</a></li><li><a href="#effective_potential">Effective Potential</a></li><li><a href="#critical_radius">Critical Radius</a></li></ol></div>
-<div class="row"><div class="container"><div class="left"><img src="/assets/BlackHoleSim.mp4" alt="" /></div></div>
-
-<video width="70%" autoplay loop muted playsinline>
+<div class="center"><video width="50%" autoplay loop muted playsinline>
   <source src="/assets/BlackHoleSim.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video></div>
@@ -267,5 +274,6 @@ V_{eff}(r) = \frac{L^2}{2r^2}\left(1 - \frac{r_s}{r}\right)
 <script>hljs.highlightAll();hljs.configure({tabReplace: '    '});</script>
 
     
+    <script src="/assets/js/matrix.js"></script>
   </body>
 </html>

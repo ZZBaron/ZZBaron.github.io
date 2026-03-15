@@ -7,6 +7,7 @@
   
   
   <link rel="stylesheet" href="/css/franklin.css">
+<link rel="stylesheet" href="/css/projects-table.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700" type="text/css">
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/gbm.css">
@@ -30,6 +31,7 @@
 </head>
 
 <body> <!-- closed in foot.html -->
+  <canvas id="m" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;"></canvas>
   <!--
 <header>
 <nav class="nav-main">
@@ -50,7 +52,7 @@
     <div class="side-bar">
       <div class="header">
         <a href="/" class="title">
-          <img style="height:70px;" src="/assets/favicon.png" alt="ZZBaron" />
+          <img style="height:70px;" src="/assets/favicon_light.png" alt="ZZBaron" />
           <style>
             @media (max-width: 31.25rem) {
               .side-bar .show-menu {
@@ -96,8 +98,10 @@
                   class="menu-list-link">Stock Sim</a>
               <li class="menu-list-item "><a href="/projects/lotka-volterra/"
                   class="menu-list-link">Lotka-Volterra Predator-Prey Simulation</a>
-              <li class ="menu-list-item "><a href="/projects/website/"
+              <li class="menu-list-item "><a href="/projects/website/"
                   class="menu-list-link">Website</a>
+              <li class="menu-list-item "><a href="/projects/wave_lattice_scatter"
+                  class="menu-list-link">Wave Packet Lattice Scatter Simulation</a>
                   
 
             </ul>
@@ -191,20 +195,26 @@
     </div>
     <!-- CONTENT -->
     <div class="main-content-wrap"> <!-- closed in foot.html -->
-      <div class="main-content" id="focus" tabindex="-1" style="outline:0;"> <!-- closed in foot.html -->
-        <div class="main-header">
-          <a name="pagetop"></a>
+      <div class="main-header">
+        <a name="pagetop"></a>
 
-          <!-- <a id="github" href="https://github.com/tlienart/Franklin.jl/blob/master/docs/{{fd_rpath}}">Page source</a> -->
-          <span style="width:30px; text-align: center;color:lightgray;">|</span>
-          
+        <!-- Title -->
+        
+          <span class="header-title">Supersymmetry Research</span>
+        <!-- {{end}} -->
+
+        
+          <div class="header-right">
+            <span class="header-divider">|</span>
             <a id="github" href="" target="_blank" rel="noopener noreferrer">
-              <img src="/assets/github-mark.svg"
-                alt="GitHub Logo"
-                width="48" height="48" />
+              <img src="/assets/github-mark-white.svg" alt="GitHub Logo" width="24" height="24" />
             </a>
-          <!-- {{end}} -->
-        </div>
+          </div>
+        <!-- {{end}} -->
+      </div>
+
+      <div class="main-content" id="focus" tabindex="-1" style="outline:0;"> <!-- closed in foot.html -->
+
 
 
         <!-- Content appended here --><div class="franklin-content">
@@ -218,7 +228,7 @@
       alt="Adinkra graph of chiral multiplet"
       style="width: 100%; height: auto;"
     >
-    <figcaption style="margin-top: 0.5rem; font-style: italic; font-size: 0.95rem; color: #555;">
+    <figcaption style="margin-top: 0.5rem; font-style: italic; font-size: 0.95rem; color: var(--heading-color);">
       Adinkra graph of chiral multiplet.
     </figcaption>
   </figure>
@@ -314,14 +324,7 @@
 </li>
 </ul>
 <h2 id="references"><a href="#references" class="header-anchor">References</a></h2>
-<ul>
-<li><p>Gates, S. J. Jr., Gonzales, J., MacGregor, B., Parker, J., Polo‑Sherk, R., Rodgers, V. G. J., &amp; Wassink, L. &#40;2009&#41;. <em>4D, N &#61; 1 Supersymmetry Genomics &#40;I&#41;</em>. <em>Journal of High Energy Physics</em>, <strong>2009</strong>&#40;12&#41;, 008. <a href="https://arxiv.org/abs/0902.3830">https://arxiv.org/abs/0902.3830</a></p>
-</li>
-<li><p>Buchbinder, I. L., Gates, S. J. Jr., &amp; Koutrolikos, K. &#40;2018&#41;. <em>Interaction of supersymmetric nonlinear sigma models with external higher spin superfields via higher spin supercurrents</em>. arXiv preprint <strong>arXiv:1804.08539</strong>. <a href="https://arxiv.org/abs/1804.08539">https://arxiv.org/abs/1804.08539</a></p>
-</li>
-<li><p>Gates, S. J. Jr. &amp; Kuzenko, S. M. &#40;1999&#41;. <em>4D, N &#61; 2 Supersymmetric Off‑shell Sigma‑Models on the Cotangent Bundles of Kähler Manifolds</em>. <em>arXiv preprint</em> <strong>arXiv:hep-th/9903013</strong>. <a href="https://arxiv.org/abs/hep-th/9903013">https://arxiv.org/abs/hep-th/9903013</a></p>
-</li>
-</ul>
+<div class="reference-list"><p id="ref-4D_N_1_Super_Gates_2009"><span class="ref-num">[1]</span> Gates, S. J., Gonzales, J., MacGregor, B., Parker, J., Polo-Sherk, R., Rodgers, V. G. J., & Wassink, L. (2009). 4D, N = 1 Supersymmetry Genomics (I). <em>JHEP 0912:008,2009</em>. <a href="https://doi.org/10.1088/1126-6708/2009/12/008" target="_blank">https://doi.org/10.1088/1126-6708/2009/12/008</a></p><p id="ref-Interaction_of_Buchbi_2018"><span class="ref-num">[2]</span> Buchbinder, I. L., Gates, S. J., & Koutrolikos, K. (2018). Interaction of supersymmetric nonlinear sigma models with external higher spin superfields via higher spin supercurrents. <a href="https://doi.org/10.1007/JHEP05(2018)204" target="_blank">https://doi.org/10.1007/JHEP05(2018)204</a></p><p id="ref-4D_N_2_Super_1999"><span class="ref-num">[3]</span> (1999). 4D, N = 2 Supersymmetric Off-shell Sigma-Models on the Cotangent Bundles of Kahler Manifolds. <em>Fortsch.Phys.48:115-118,2000</em>. <a href="https://doi.org/10.1002/(SICI)1521-3978(20001)48:1/3<115::AID-PROP115>3.0.CO;2-F" target="_blank">https://doi.org/10.1002/(SICI)1521-3978(20001)48:1/3<115::AID-PROP115>3.0.CO;2-F</a></p></div>
 <div class="page-foot">
     <!-- <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> {{ fill author }}. {{isnotpage /tag/*}}Last modified: {{ fill fd_mtime }}.{{end}}
     Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. -->
@@ -332,5 +335,6 @@
     </div> <!-- end of class page-wrap-->
     
     
+    <script src="/assets/js/matrix.js"></script>
   </body>
 </html>

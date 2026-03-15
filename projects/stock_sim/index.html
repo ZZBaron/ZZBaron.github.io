@@ -9,6 +9,7 @@
    <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
  
   <link rel="stylesheet" href="/css/franklin.css">
+<link rel="stylesheet" href="/css/projects-table.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700" type="text/css">
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/gbm.css">
@@ -32,6 +33,7 @@
 </head>
 
 <body> <!-- closed in foot.html -->
+  <canvas id="m" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;"></canvas>
   <!--
 <header>
 <nav class="nav-main">
@@ -52,7 +54,7 @@
     <div class="side-bar">
       <div class="header">
         <a href="/" class="title">
-          <img style="height:70px;" src="/assets/favicon.png" alt="ZZBaron" />
+          <img style="height:70px;" src="/assets/favicon_light.png" alt="ZZBaron" />
           <style>
             @media (max-width: 31.25rem) {
               .side-bar .show-menu {
@@ -98,8 +100,10 @@
                   class="menu-list-link">Stock Sim</a>
               <li class="menu-list-item "><a href="/projects/lotka-volterra/"
                   class="menu-list-link">Lotka-Volterra Predator-Prey Simulation</a>
-              <li class ="menu-list-item "><a href="/projects/website/"
+              <li class="menu-list-item "><a href="/projects/website/"
                   class="menu-list-link">Website</a>
+              <li class="menu-list-item "><a href="/projects/wave_lattice_scatter"
+                  class="menu-list-link">Wave Packet Lattice Scatter Simulation</a>
                   
 
             </ul>
@@ -193,20 +197,26 @@
     </div>
     <!-- CONTENT -->
     <div class="main-content-wrap"> <!-- closed in foot.html -->
-      <div class="main-content" id="focus" tabindex="-1" style="outline:0;"> <!-- closed in foot.html -->
-        <div class="main-header">
-          <a name="pagetop"></a>
+      <div class="main-header">
+        <a name="pagetop"></a>
 
-          <!-- <a id="github" href="https://github.com/tlienart/Franklin.jl/blob/master/docs/{{fd_rpath}}">Page source</a> -->
-          <span style="width:30px; text-align: center;color:lightgray;">|</span>
-          
+        <!-- Title -->
+        
+          <span class="header-title">Geometric Brownian Motion Stock Price Simulation</span>
+        <!-- {{end}} -->
+
+        
+          <div class="header-right">
+            <span class="header-divider">|</span>
             <a id="github" href="https://github.com/ZZBaron/ZZBaron.github.io/blob/main/js/GBM.js" target="_blank" rel="noopener noreferrer">
-              <img src="/assets/github-mark.svg"
-                alt="GitHub Logo"
-                width="48" height="48" />
+              <img src="/assets/github-mark-white.svg" alt="GitHub Logo" width="24" height="24" />
             </a>
-          <!-- {{end}} -->
-        </div>
+          </div>
+        <!-- {{end}} -->
+      </div>
+
+      <div class="main-content" id="focus" tabindex="-1" style="outline:0;"> <!-- closed in foot.html -->
+
 
 
         <!-- Content appended here --><div class="franklin-content">
@@ -417,26 +427,7 @@ S_t &= S_0 \exp\left(\left(\mu - \frac{\sigma^2}{2} - \lambda k\right)t + \sigma
 </li>
 </ul>
 <h2 id="references"><a href="#references" class="header-anchor">References</a></h2>
-<ul>
-<li><p>Black, F., &amp; Scholes, M. &#40;1973&#41;. The pricing of options and corporate liabilities. <em>Journal of Political Economy, 81</em>&#40;3&#41;, 637-654.</p>
-</li>
-<li><p>Bollerslev, T. &#40;1986&#41;. Generalized autoregressive conditional heteroskedasticity. <em>Journal of Econometrics, 31</em>&#40;3&#41;, 307-327.</p>
-</li>
-<li><p>Cont, R. &#40;2001&#41;. Empirical properties of asset returns: stylized facts and statistical issues. <em>Quantitative Finance, 1</em>, 223-236.</p>
-</li>
-<li><p>Hamilton, J. D. &#40;1989&#41;. A new approach to the economic analysis of nonstationary time series and the business cycle. <em>Econometrica, 57</em>&#40;2&#41;, 357-384.</p>
-</li>
-<li><p>Heston, S. L. &#40;1993&#41;. A closed-form solution for options with stochastic volatility with applications to bond and currency options. <em>The Review of Financial Studies, 6</em>&#40;2&#41;, 327-343.</p>
-</li>
-<li><p>Hull, J. C. &#40;2017&#41;. <em>Options, futures, and other derivatives</em> &#40;10th ed.&#41;. Pearson.</p>
-</li>
-<li><p>Mandelbrot, B. &#40;1963&#41;. The variation of certain speculative prices. <em>The Journal of Business, 36</em>&#40;4&#41;, 394-419.</p>
-</li>
-<li><p>Mandelbrot, B., &amp; van Ness, J. W. &#40;1968&#41;. Fractional Brownian motions, fractional noises and applications. <em>SIAM Review, 10</em>&#40;4&#41;, 422-437.</p>
-</li>
-<li><p>Merton, R. C. &#40;1976&#41;. Option pricing when underlying stock returns are discontinuous. <em>Journal of Financial Economics, 3</em>&#40;1-2&#41;, 125-144.</p>
-</li>
-</ul>
+<div class="reference-list"><p id="ref-The_Pricing_of_Black_1973"><span class="ref-num">[1]</span> Black, F., & Scholes, M. (1973). The Pricing of Options and Corporate Liabilities. <em>Journal of Political Economy</em>, <em>81</em>, 637--654. <a href="https://doi.org/10.1086/260062" target="_blank">https://doi.org/10.1086/260062</a></p><p id="ref-Generalized_aut_Boller_1986"><span class="ref-num">[2]</span> Bollerslev, T. (1986). Generalized autoregressive conditional heteroskedasticity. <em>Journal of Econometrics</em>, <em>31</em>, 307--327. <a href="https://doi.org/10.1016/0304-4076(86)90063-1" target="_blank">https://doi.org/10.1016/0304-4076(86)90063-1</a></p><p id="ref-Empirical_prope_Cont_2001"><span class="ref-num">[3]</span> Cont, R. (2001). Empirical properties of asset returns: stylized facts and statistical issues. <em>Quantitative Finance</em>, <em>1</em>, 223--236. <a href="https://doi.org/10.1080/713665670" target="_blank">https://doi.org/10.1080/713665670</a></p><p id="ref-A_New_Approach_Hamilt_1989"><span class="ref-num">[4]</span> Hamilton, J. D. (1989). A New Approach to the Economic Analysis of Nonstationary Time Series and the Business Cycle. <em>Econometrica</em>, <em>57</em>, 357. <a href="https://doi.org/10.2307/1912559" target="_blank">https://doi.org/10.2307/1912559</a></p><p id="ref-A_Closed_Form_S_Heston_1993"><span class="ref-num">[5]</span> Heston, S. L. (1993). A Closed-Form Solution for Options with Stochastic Volatility with Applications to Bond and Currency Options. <em>Review of Financial Studies</em>, <em>6</em>, 327--343. <a href="https://doi.org/10.1093/rfs/6.2.327" target="_blank">https://doi.org/10.1093/rfs/6.2.327</a></p><p id="ref-Options_Future_Hull_2017"><span class="ref-num">[6]</span> Hull, J. C. (2017). Options, Futures, and Other Derivatives.</p><p id="ref-The_Variation_o_Mandel_1963"><span class="ref-num">[7]</span> Mandelbrot, B. (1963). The Variation of Certain Speculative Prices. <em>The Journal of Business</em>, <em>36</em>, 394. <a href="https://doi.org/10.1086/294632" target="_blank">https://doi.org/10.1086/294632</a></p><p id="ref-Fractional_Brow_Mandel_1968"><span class="ref-num">[8]</span> Mandelbrot, B. B., & Van Ness, J. W. (1968). Fractional Brownian Motions, Fractional Noises and Applications. <em>SIAM Review</em>, <em>10</em>, 422--437. <a href="https://doi.org/10.1137/1010093" target="_blank">https://doi.org/10.1137/1010093</a></p><p id="ref-Option_pricing_Merton_1976"><span class="ref-num">[9]</span> Merton, R. C. (1976). Option pricing when underlying stock returns are discontinuous. <em>Journal of Financial Economics</em>, <em>3</em>, 125--144. <a href="https://doi.org/10.1016/0304-405x(76)90022-2" target="_blank">https://doi.org/10.1016/0304-405x(76)90022-2</a></p></div>
 <div class="page-foot">
     <!-- <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> {{ fill author }}. {{isnotpage /tag/*}}Last modified: {{ fill fd_mtime }}.{{end}}
     Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. -->
@@ -456,5 +447,6 @@ S_t &= S_0 \exp\left(\left(\mu - \frac{\sigma^2}{2} - \lambda k\right)t + \sigma
 <script>hljs.highlightAll();hljs.configure({tabReplace: '    '});</script>
 
     
+    <script src="/assets/js/matrix.js"></script>
   </body>
 </html>
